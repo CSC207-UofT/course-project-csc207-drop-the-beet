@@ -1,3 +1,4 @@
+import javax.security.sasl.SaslClient;
 import java.util.ArrayList;
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -29,4 +30,10 @@ public class ScheduleManager{
 //
 //        }
 //    }
+
+    public static void main(String[] args) {
+        Schedule a = new Schedule("I need to cook");
+        ScheduleManager b = new ScheduleManager();
+        b.addSchedule("I need to sleep");
+    }
 }
