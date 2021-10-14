@@ -1,2 +1,2 @@
-public class Notification {
+public interface Notification {
 }
