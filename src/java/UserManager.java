@@ -6,7 +6,7 @@ public class UserManager {
 
     public UserManager() {
         this.userHashMap = new HashMap<>();
-        this.currentUser =
+//        this.currentUser =
     }
 
     /**
@@ -43,20 +43,20 @@ public class UserManager {
         return userPassword.equals(inputPassword);  // check if user's password equals input password
     }
 
-    public boolean UserLogOff () {
-
-    }
-
-    public boolean LoadUserTasks() {
-
-    }
-
-    public boolean UserChangePassword() {
-
-    }
-
-    public boolean UserChangeEmail() {
-
-    }
+//    public boolean UserLogOff () {
+//
+//    }
+//
+//    public boolean LoadUserTasks() {
+//
+//    }
+//
+//    public boolean UserChangePassword() {
+//
+//    }
+//
+//    public boolean UserChangeEmail() {
+//
+//    }
 
 }
