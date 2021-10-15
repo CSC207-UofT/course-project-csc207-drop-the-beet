@@ -6,7 +6,7 @@ public class UserManager {
 
     public UserManager() {
         this.userHashMap = new HashMap<>();
-        this.currentUser =
+//        this.currentUser =
     }
 
     public boolean containsUser(String username) {
