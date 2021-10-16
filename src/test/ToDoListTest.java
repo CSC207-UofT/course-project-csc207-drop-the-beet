@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-public class TodoListTest {
+public class ToDoListTest {
     ToDoList a;
     ToDoListManager b;
     ArrayList<String> c;
