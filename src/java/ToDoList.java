@@ -53,15 +53,14 @@ public class ToDoList implements Notification{
         return listName;
     }
 
-    public boolean completion(String task) {
+    public void completion(String task) {
         for (int i = 0; i < tasksToDo.size(); i++) {
             if (tasksToDo.get(i).equals(task)) {
                 tasksFinished.add(task);
                 tasksToDo.remove(task);
-                return true;
+                break;
             }
         }
-        return false;
     }
 
     // Todo Notification default
