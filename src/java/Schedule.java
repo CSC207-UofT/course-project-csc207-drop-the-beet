@@ -1,13 +1,30 @@
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class Schedule {
-    String title;
-    String info;
-    String fromTo = new String("HH:mm-HH:mm");
+/** Schedule is a single task with start time and end time.
+ */
 
-    public Schedule(String fromTo, String title, String info){
-        this.fromTo = fromTo;
-        this.title = title;
-        this.info = info;
+public class Schedule{
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd, HH:mm");
+    private String task;
+    private String from;
+    private String end;
+
+    public Schedule(String from, String end, String task){
+        this.from = from;
+        this.end = end;
+        this.task = task;
+    }
+
+    public String getFrom() {
+        return this.from;
+    }
+
+    public String getEnd() {
+        return this.end;
+    }
+
+    public String getTask() {
+        return this.task;
     }
 }

@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/** User contains basic information of this user.
+ */
+
 public class User {
     public String name;
     private String email;
@@ -26,4 +29,6 @@ public class User {
     public String getEmail() {
         return this.email;
     }
+
+    public String getName() { return this.name;}
 }

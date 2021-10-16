@@ -2,13 +2,19 @@ import java.util.ArrayList;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Date;
 
-public class ScheduleManager{
+/** ScheduleManager is to modify any of the schedules of the user.
+ */
+
+public class ScheduleManager implements Notification{
     Map<String, ArrayList<Object>> schedules = new HashMap<String, ArrayList<Object>>();
-    SimpleDateFormat time = new SimpleDateFormat("yyyy-MM-dd");
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+    String date;
 
-    public ScheduleManager(String time){
-        this.schedules.put(time, new ArrayList<Object>());
+    public ScheduleManager(String date){
+        this.date = date;
+        this.schedules.put(this.date, new ArrayList<Object>());
     }
 
     public void addSchedule(String time, Schedule schedule){
@@ -19,24 +25,35 @@ public class ScheduleManager{
         this.schedules.get(time).remove(schedule);
     }
 
-//    public void repeatSchedules(String info, int length){
-//        for (int i = 0; i <= length; i++){
-//
-//        }
-//    }
-//
-//    public void deleteRepeatSchedules(String info, int length) {
-//        for (int i = 0; i <= length; i++) {
-//
-//        }
-//    }
+    public void modifyFrom(Schedule schedule, String from) {
+        // Todo modify start time
+    }
 
-    public static void main(String[] args) {
+    public void modifyEnd(Schedule schedule, String end) {
+        // Todo modify end time
+    }
+
+    public void modifyTask(Schedule schedule, String task) {
+        // Todo modify task
+    }
+
+    public void repeatSchedules(String info, int length){
+        // Todo
+        // eg. repeat every wednesday from Feb 1st to Jul 15th
+    }
+
+    public void deleteRepeatSchedules(String info, int length) {
+        // Todo
+    }
+
+    // Todo Notification
+
+//    public static void main(String[] args) {
 //        Schedule a = new Schedule("13:00-14:00","Cook", "I need to cook");
 //        ScheduleManager b = new ScheduleManager("2021-10-14");
 //        b.addSchedule("2021-10-14", a);
 //        System.out.println(b.schedules.get("2021-10-14").get(0)==a);
 //        b.removeSchedule("2021-10-14", a);
 //        System.out.println(b.schedules.get("2021-10-14").isEmpty());
-    }
+//    }
 }

@@ -6,8 +6,8 @@ public class ScheduleTest {
     ScheduleManager b;
     @Before
     public void setUp() throws Exception {
-        a = new Schedule("13:00-14:00", "Cook", "I need to cook some chicken noodle soup");
-        b = new ScheduleManager("2021-10-14");
+        a = new Schedule("2021/10/14, 13:00", "2021/10/14, 14:00", "I need to cook some chicken noodle soup");
+        b = new ScheduleManager("2021/10/14");
     }
 
     @Test(timeout = 50)

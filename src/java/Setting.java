@@ -19,14 +19,14 @@ public class Setting {
     }
 
 //    public boolean userLogOff() {
-//
+//        // Todo
 //    }
 //
 //    public boolean userChangePassword(UserManager userManager) {
-////        userManager.
+//        // Todo
 //    }
 //
 //    public boolean userChangeEmail() {
-//
+//        // Todo
 //    }
 }
