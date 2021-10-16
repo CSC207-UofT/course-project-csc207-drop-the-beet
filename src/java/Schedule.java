@@ -4,7 +4,7 @@ import java.util.Date;
 /** Schedule is a single task with start time and end time.
  */
 
-public class Schedule{
+public class Schedule implements Notification{
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd, HH:mm");
     private String task;
     private String from;
