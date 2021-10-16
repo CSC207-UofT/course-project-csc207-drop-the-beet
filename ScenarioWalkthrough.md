@@ -1,4 +1,4 @@
-#Scenario Walkthrough
+# Scenario Walkthrough
 
 * Schedule: task, start time, duration, due date, alarmAt, repeated(boolean)
 * ToDoList: tasks(ArrayList<String>), due date, alarmAt(ArrayList<LocalDate>), repeated(boolean)
