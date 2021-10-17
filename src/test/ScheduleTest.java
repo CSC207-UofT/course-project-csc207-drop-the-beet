@@ -12,13 +12,13 @@ public class ScheduleTest {
 
     @Test(timeout = 50)
     public void TestAddSchedule() {
-        b.addSchedule("2021-10-14", a);
-        assertSame(b.schedules.get("2021-10-14").get(0), a);
+        b.addSchedule("2021/10/14", a);
+        assertSame(b.schedules.get("2021/10/14").get(0), a);
     }
 
     @Test(timeout = 50)
     public void TestRemoveSchedule() {
-        b.removeSchedule("2021-10-14", a);
-        assertTrue(b.schedules.get("2021-10-14").isEmpty());
+        b.removeSchedule("2021/10/14", a);
+        assertTrue(b.schedules.get("2021/10/14").isEmpty());
     }
 }
