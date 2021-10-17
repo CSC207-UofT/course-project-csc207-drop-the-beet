@@ -1,3 +1,6 @@
+/** Setting all user's preferences.
+ * Input registration information, email, password.
+ */
 public class Setting {
 
     public boolean userRegister(String username, String email, String password, UserManager userManager) {

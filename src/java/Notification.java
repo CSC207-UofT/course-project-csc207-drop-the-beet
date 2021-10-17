@@ -8,4 +8,7 @@ public interface Notification {
         // TODO: find a new name
     }
 
+    default void sound() {
+    }
+
 }

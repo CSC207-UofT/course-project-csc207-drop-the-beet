@@ -1,7 +1,12 @@
 # Specification
 
-Running the project starts a web-based service that allows users to interact with a daily planner web-application. While running, the web-application will run a daily planner with a graphic user interface. On the interface, users can add, delete, search, or modify their daily plans by clicking on the buttons –  selecting the cascader and using the checkbox, and input data with a basic widget to interact with the system.
-The web-application is to support multi-users and mysql database search as well as the message queues.
+Running the project starts a web-based service that allows users to interact with a daily planner web-application. 
+While running, the web-based application will run a daily planner with a graphic user interface. On the interface, 
+users can add, delete, search, or modify their daily plans by clicking on the buttons –  selecting the cascader and 
+using the checkbox, and input data with a basic widget to interact with the system.
+
+The web-based application supports multi-users and mysql database search as well as message queues.
+
 
 * Login: This feature will prompt a widget which allows users to enter their username and password. The user identity is then authenticated.
 

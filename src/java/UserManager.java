@@ -1,6 +1,7 @@
 import java.util.HashMap;
 
-/** UserManager is to validate the information input from Setting.
+/** UserManager is to validate the information input from Setting
+ * (and process input from PlanMaker).
  */
 
 public class UserManager {

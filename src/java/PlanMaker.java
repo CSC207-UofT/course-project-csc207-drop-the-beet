@@ -20,5 +20,9 @@ public class PlanMaker {
 //        // Todo general setup for notification
 //    }
 
+    public void getAllTasks() {
+        // Todo get all schedule and to-do for this user
+    }
+
 }
 
