@@ -31,7 +31,7 @@ specification. The classes include the entity classes of Schedule, ToDoList, Use
 ToDoListManager, UserManager. As well as an interface Notification that is implemented by Schedule, ScheduleManager, 
 ToDoList, ToDoListManager. In addition, we included controllers PlanMaker and Setting for the user to edit the 
 Schedules/ToDoList they wish to edit and change their profile settings. The commands include Delect, Edit, Flag, List, 
-Man, Past, PastDue, Select, Today, Add_List, New_Reminder.
+Man, Past, PastDue, Select, Today, Add_List, New_Schedule.
 
 ## Open-ended questions
 * How would the users interact with our program? Android or text UI?
