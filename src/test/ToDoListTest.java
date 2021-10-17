@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class ToDoListTest {
     ToDoList a;
     ToDoListManager b;
-    ArrayList<String> c;
+    ArrayList<String> c = new ArrayList<>(); // 1
 
     @Before
     public void setUp() throws Exception {
@@ -24,7 +24,9 @@ public class ToDoListTest {
 
     @Test(timeout = 50)
     public void TestRemoveSchedule() {
+        b.addNewList(a);
+        a.addTask("Project phase 0"); // 2
         a.completion("Project phase 0");
-        assertSame(b.getToDoList("csc207").getTasksToDo().get(0), null);
+        assertSame(b.getToDoList("csc207").getTasksToDo().isEmpty(), true); //3
     }
 }

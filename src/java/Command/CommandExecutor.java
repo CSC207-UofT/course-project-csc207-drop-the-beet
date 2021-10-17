@@ -8,9 +8,9 @@ public class CommandExecutor {
      * @param command the command line that is to be executed.
      * @return return the result of the command after executed
      */
-    public List<String> executeCommand(int StateCode, String command) {
-        //TODO: Implement the executor function.
-    }
+//    public List<String> executeCommand(int StateCode, String command) {
+//        //TODO: Implement the executor function.
+//    }
 
 
 

@@ -8,21 +8,21 @@ import java.util.Date;
  */
 
 public class ScheduleManager implements Notification{
-    Map<String, ArrayList<Object>> schedules = new HashMap<String, ArrayList<Object>>();
+    Map<String, ArrayList<Schedule>> schedules = new HashMap<>();
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
     String date;
 
     public ScheduleManager(String date){
         this.date = date;
-        this.schedules.put(this.date, new ArrayList<Object>());
+        this.schedules.put(this.date, new ArrayList<Schedule>());
     }
 
-    public void addSchedule(String time, Schedule schedule){
-        this.schedules.get(time).add(schedule);
+    public void addSchedule(String date, Schedule schedule){
+        this.schedules.get(date).add(schedule);
     }
 
-    public void removeSchedule(String time, Schedule schedule){
-        this.schedules.get(time).remove(schedule);
+    public void removeSchedule(String date, Schedule schedule){
+        this.schedules.get(date).remove(schedule);
     }
 
     public void modifyFrom(Schedule schedule, String from) {
