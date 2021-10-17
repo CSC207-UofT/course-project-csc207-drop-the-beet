@@ -11,7 +11,7 @@ The web-based application supports multi-users and mysql database search as well
 
 * Login: This feature will prompt a widget which allows users to enter their username and password. The user identity is then authenticated.
 
-* New_Reminder: Add a new plan to the to do list of the current user. This will prompt a widget that allows users to input the event, place, flagged or not, and due date, the time remaining is then being calculated and will appear on this event.
+* New_Schedule: Add a new schedule to the to do list of the current user. This will prompt a widget that allows users to input the event, place, flagged or not, and due date, the time remaining is then being calculated and will appear on this event.
 
 * Delete: This button allows users to delete an event. The event will be marked as deleted and will appear in the trash bin. The time remaining is still being calculated and the users are still able to check this event in the trash bin.
 
