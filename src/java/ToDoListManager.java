@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /** ToDoListManager is to modify any of the TodoLists of the user.
+ * eg. set notification for one of the to-do lists
  */
 
 public class ToDoListManager implements Notification{

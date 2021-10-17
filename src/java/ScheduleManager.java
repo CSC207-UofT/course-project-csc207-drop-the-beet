@@ -46,7 +46,7 @@ public class ScheduleManager implements Notification{
         // Todo
     }
 
-    // Todo Notification
+    // Todo Notification in ScheduleManager or in Schedule
 
 //    public static void main(String[] args) {
 //        Schedule a = new Schedule("13:00-14:00","Cook", "I need to cook");
