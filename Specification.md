@@ -7,20 +7,19 @@ using the checkbox, and input data with a basic widget to interact with the syst
 
 The web-based application supports multi-users and mysql database search as well as message queues.
 
+* Man: This displays the manual page which helps the users to understand the command.
 
 * Login: This feature will prompt a widget which allows users to enter their username and password. The user identity is then authenticated.
 
-* New Reminder: Add a new plan to the to do list of the current user. This will prompt a widget that allows users to input the event, place, flagged or not, and due date, the time remaining is then being calculated and will appear on this event.
-
-* Check Box: This feature allows users to mark any completed events. The event is then marked as past and the time before due will not be calculated.
+* New_Reminder: Add a new plan to the to do list of the current user. This will prompt a widget that allows users to input the event, place, flagged or not, and due date, the time remaining is then being calculated and will appear on this event.
 
 * Delete: This button allows users to delete an event. The event will be marked as deleted and will appear in the trash bin. The time remaining is still being calculated and the users are still able to check this event in the trash bin.
 
 * Edit: This button will enable the users to edit any events they wish to modify. A widget is prompted with contents recorded in the database. The users are able to modify the event, place, and due date. Then, it will be updated in the database.
 
-* Add List: This feature allows users to add a custom to-do list. This will prompt a widget that allows users to input the name of the to-do list, and the priority of the list. Then a to-do list will be created in the system.
+* Add_List: This feature allows users to add a custom to-do list. This will prompt a widget that allows users to input the name of the to-do list, and the priority of the list. Then a to-do list will be created in the system.
 
-* All: This feature allows users to retroact all the reminders. A new page will be prompted and list all the reminders including the past ones.
+* List: This feature allows users to retroact all the reminders. A new page will be prompted and list all the reminders including the past ones.
 
 * Today: This feature allows users to retroact all the reminders that will be due by today. A new page will be prompted and list all the events that will be due by today in the user's to-do list.
 

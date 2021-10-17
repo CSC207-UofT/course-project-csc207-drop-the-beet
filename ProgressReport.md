@@ -26,11 +26,12 @@ set up Notification for ToDoList, so that the user can be motivated to finish th
 for long-term planning of day-to-day events/tasks. The ToDoList is for short-term daily notes.
 
 ## Skeleton program Summary
-We have built the skeleton for all of the classes and interface described in the scenario walkthrough. This includes 
-the entity classes of Schedule, ToDoList, User. Use case classes of ScheduleManager. ToDoListManager, UserManager. As 
-well as an interface Notification that is implemented by Schedule, ScheduleManager, ToDoList, ToDoListManager. In 
-addition, we included controllers PlanMaker and Setting for the user to edit the Schedules/ToDoList they wish to edit 
-and change their profile settings.
+We have built the skeleton for all the classes and interface described in the scenario walkthrough and the commands in 
+specification. The classes include the entity classes of Schedule, ToDoList, User. Use case classes of ScheduleManager. 
+ToDoListManager, UserManager. As well as an interface Notification that is implemented by Schedule, ScheduleManager, 
+ToDoList, ToDoListManager. In addition, we included controllers PlanMaker and Setting for the user to edit the 
+Schedules/ToDoList they wish to edit and change their profile settings. The commands include Delect, Edit, Flag, List, 
+Man, Past, PastDue, Select, Today, Add_List, New_Reminder.
 
 ## Open-ended questions
 * How would the users interact with our program? Android or text UI?
@@ -48,7 +49,7 @@ relevant methods for notification purposes in our use case classes.
 ### We have been working on
 Yi: scenario walkthrough, CRC Model, skeleton (User, UserManager, Setting), progress report
 
-Vincent: scenario walkthrough, CRC Model, skeleton (Schedule, ScheduleManager, ScheduleManagerTest), progress report
+Vincent: scenario walkthrough, CRC Model, skeleton (Schedule, ScheduleManager, ScheduleTest), progress report
 
 Zheng: CRC Model, Skeleton (ToDoList, ToDoListManager), progress report
 
@@ -56,7 +57,7 @@ Hao: specification, command line design, ideas for front-end design, progress re
 
 Sunny: specification, command line design, progress report
 
-Yilin: scenario walkthrough, CRC Model, skeleton integration and (PlanMaker, ToDoListManagerTest), progress report
+Yilin: scenario walkthrough, CRC Model, skeleton integration and (PlanMaker, ToDoListTest), progress report
 
 ### We plan to work on next
 Yi: Compose User with ToDoListManager and ScheduleManager; implement User,
@@ -78,5 +79,5 @@ of code between classes, ensure our work is on track.
 
 From phase 0, we have found each member’s role in this team. Yi, Vincent and mainly do back-end programs. Hao and Sunny 
 perform more on front-end work. Zheng works in back-end programs and is responsible for communicating with our TA. 
-Yilin works in back-end programs and performs as a project manager in this group. In the future phases, we will carry 
-out this division of labor.
+Yilin works in back-end programs and performs as a project manager in this group. Any of us helped and assisted in each 
+other’s work if necessary. In the future phases, we will carry out this division of labor. 
