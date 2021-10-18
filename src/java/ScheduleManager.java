@@ -48,12 +48,12 @@ public class ScheduleManager implements Notification{
 
     // Todo Notification in ScheduleManager or in Schedule
 
-//    public static void main(String[] args) {
-//        Schedule a = new Schedule("13:00-14:00","Cook", "I need to cook");
-//        ScheduleManager b = new ScheduleManager("2021-10-14");
-//        b.addSchedule("2021-10-14", a);
-//        System.out.println(b.schedules.get("2021-10-14").get(0)==a);
-//        b.removeSchedule("2021-10-14", a);
-//        System.out.println(b.schedules.get("2021-10-14").isEmpty());
-//    }
+    public static void main(String[] args) {
+        Schedule a = new Schedule("2010/10/14 13:00","2010/10/14 14:00", "I need to cook");
+        ScheduleManager b = new ScheduleManager("2021/10/14");
+        b.addSchedule("2021/10/14", a);
+        System.out.println(b.schedules.get("2021/10/14").get(0));
+        b.removeSchedule("2021/10/14", a);
+        System.out.println(b.schedules.get("2021/10/14").isEmpty());
+    }
 }
