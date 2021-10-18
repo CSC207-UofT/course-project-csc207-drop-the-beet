@@ -41,10 +41,12 @@ Man, Past, PastDue, Select, Today, Add_List, New_Schedule.
 * Since we are putting logIn and register methods in Setting, which is a controller, we cannot refer to User directly. Are we supposed to take a UserManager(use case) object as a parameter in logIn and register? Moreover, are we supposed to implement these two methods in UserManager and just make one-line function calls in logIn and register?
 * Should we let the Schedule and ToDoList classes implement Notification or should ScheduleManager and ToDoList classes implement Notification?
 
-## What has worked well for the team so far?
+## What has worked well for the team so far with your design as you have started implementing the code?
 We think making the Notification class an interface is well designed because Schedule and ToDoList have different 
 notification and notification settings. Thus, making the notification class an interface allows us to polymorph the 
 relevant methods for notification purposes in our use case classes.
+When implementing the classes, we followed the single responsibility to make sure each class only does things that are 
+closely related to it. Those are what we have worked well so far.
 ## Summary of what each group member has worked
 ### We have been working on
 Yi: scenario walkthrough, CRC Model, skeleton (User, UserManager, Setting), progress report
