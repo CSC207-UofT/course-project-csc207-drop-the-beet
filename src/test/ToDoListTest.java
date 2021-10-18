@@ -27,6 +27,6 @@ public class ToDoListTest {
         b.addNewList(a);
         a.addTask("Project phase 0"); // 2
         a.completion("Project phase 0");
-        assertSame(b.getToDoList("csc207").getTasksToDo().isEmpty(), true); //3
+        assertTrue(b.getToDoList("csc207").getTasksToDo().isEmpty()); //3
     }
 }
