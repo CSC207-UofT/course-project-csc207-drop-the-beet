@@ -27,4 +27,10 @@ public class Schedule implements Notification{
     public String getTask() {
         return this.task;
     }
+
+    @Override
+    public String toString() {
+        return this.task.toString();
+    }
+
 }

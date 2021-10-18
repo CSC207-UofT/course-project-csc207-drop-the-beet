@@ -68,12 +68,19 @@ public class ToDoListManager implements Notification{
 //        }
 //        return all;
 //    }
+    @Override
+    public String toString() {
+        return toDoLists.toString();
+    }
 
-//    public static void main(String[] args) {
-//        ToDoListManager toDoListManager = new ToDoListManager();
-//        toDoListManager.addThingsToDo("Phase 0");
-//        toDoListManager.toDoLists.add(new ToDoList("13/10/2021", new ArrayList<String>())); //作弊
-//        System.out.println(toDoListManager);
-//
-//    }
+    public static void main(String[] args) {
+        ArrayList<String> c = new ArrayList<>();
+        ToDoList a = new ToDoList("csc207", c);
+        ToDoListManager b = new ToDoListManager();
+        b.addNewList(a);
+        a.addTask("Project phase 0");
+        a.addTask("shop grocery");
+        System.out.println(b.toDoLists);
+
+    }
 }

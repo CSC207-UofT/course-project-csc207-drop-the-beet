@@ -26,12 +26,14 @@ set up Notification for ToDoList, so that the user can be motivated to finish th
 for long-term planning of day-to-day events/tasks. The ToDoList is for short-term daily notes.
 
 ## Skeleton program Summary
-We have built the skeleton for all the classes and interface described in the scenario walkthrough and the commands in 
-specification. The classes include the entity classes of Schedule, ToDoList, User. Use case classes of ScheduleManager. 
-ToDoListManager, UserManager. As well as an interface Notification that is implemented by Schedule, ScheduleManager, 
-ToDoList, ToDoListManager. In addition, we included controllers PlanMaker and Setting for the user to edit the 
-Schedules/ToDoList they wish to edit and change their profile settings. The commands include Delect, Edit, Flag, List, 
-Man, Past, PastDue, Select, Today, Add_List, New_Schedule.
+We have created all the classes and interface described in the scenario walkthrough and all of the commands in 
+specification. The classes include the entity classes including Schedule, ToDoList, User. Use case classes including 
+ScheduleManager. ToDoListManager, UserManager. As well as an interface Notification that is implemented by those 
+classes. In addition, we included controllers PlanMaker and Setting for the user to edit the Schedules/ToDoList they 
+wish to edit and change their profile settings. The commands includes Delect, Edit, Flag, List, Man, Past, PastDue, 
+Select, Today, Add_List, New_Reminder. We have built the skeleton including constructors, some complete methods and 
+method signatures that need to be implemented. We also have tests for Schedule and ToDoList and their use case classes, 
+and they are all passed.
 
 ## Open-ended questions
 * How would the users interact with our program? Android or text UI?

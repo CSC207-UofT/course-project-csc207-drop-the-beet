@@ -63,6 +63,11 @@ public class ToDoList implements Notification{
         }
     }
 
+    @Override
+    public String toString() {
+        return this.tasksToDo.toString();
+    }
+
     // Todo Notification default
 
 
