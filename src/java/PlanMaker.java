@@ -6,14 +6,16 @@ import java.util.Date;
 public class PlanMaker {
     ToDoListManager toDoListManager;
     ScheduleManager scheduleManager;
-    UserManager userManager;
+    UserManager userManager = new UserManager();
 
-    public PlanMaker (String task, Date time) {
-        // Todo initialize toDoListManager
+    public PlanMaker (String date, String start, String task) {
+        this.scheduleManager = new ScheduleManager(date);
+        this.scheduleManager.addSchedule(date, start, task);
     }
 
     public PlanMaker (String name) {
-        // Todo initialize ScheduleManager
+        this.toDoListManager = new ToDoListManager();
+        toDoListManager.addNewList(name);
     }
 
 //    public boolean setNotification() {
