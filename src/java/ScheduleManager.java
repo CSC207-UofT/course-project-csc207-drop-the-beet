@@ -12,13 +12,20 @@ public class ScheduleManager implements Notification{
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
     String date;
 
-    public ScheduleManager(String date){
+    public ScheduleManager(String date){ // all dates should be default in the schedule manager
         this.date = date;
         this.schedules.put(this.date, new ArrayList<Schedule>());
     }
 
-    public void addSchedule(String date, Schedule schedule){
-        this.schedules.get(date).add(schedule);
+    public void addSchedule(String date, String start, String task){
+        Schedule schedule = new Schedule(start, task);
+        if (schedules.get(date).isEmpty()) {
+            ArrayList<Schedule> list = new ArrayList<>();
+            list.add(schedule);
+            this.schedules.put(date, list);
+        } else {
+            schedules.get(date).add(schedule);
+        }
     }
 
     public void removeSchedule(String date, Schedule schedule){
@@ -49,9 +56,9 @@ public class ScheduleManager implements Notification{
     // Todo Notification in ScheduleManager or in Schedule
 
     public static void main(String[] args) {
-        Schedule a = new Schedule("2010/10/14 13:00","2010/10/14 14:00", "I need to cook");
+        Schedule a = new Schedule("13:00","I need to cook");
         ScheduleManager b = new ScheduleManager("2021/10/14");
-        b.addSchedule("2021/10/14", a);
+        b.addSchedule("2021/10/14", "13:00","I need to cook");
         System.out.println(b.schedules.get("2021/10/14").get(0));
         b.removeSchedule("2021/10/14", a);
         System.out.println(b.schedules.get("2021/10/14").isEmpty());

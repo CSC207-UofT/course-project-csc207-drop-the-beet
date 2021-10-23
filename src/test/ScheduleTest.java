@@ -6,13 +6,13 @@ public class ScheduleTest {
     ScheduleManager b;
     @Before
     public void setUp() throws Exception {
-        a = new Schedule("2021/10/14, 13:00", "2021/10/14, 14:00", "I need to cook some chicken noodle soup");
+        a = new Schedule("13:00", "I need to cook some chicken noodle soup");
         b = new ScheduleManager("2021/10/14");
     }
 
     @Test(timeout = 50)
     public void TestAddSchedule() {
-        b.addSchedule("2021/10/14", a);
+        b.addSchedule("2021/10/14", "13:00", "I need to cook some chicken noodle soup");
         assertSame(b.schedules.get("2021/10/14").get(0), a);
     }
 

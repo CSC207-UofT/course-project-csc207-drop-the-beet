@@ -42,12 +42,8 @@ public class UserManager {
         }
         // create a new user object and save it to the userHashMap
         User user = new User(username, email, password);
-        this.addUser(username, user);
+        this.addNewUser(username, email, password);
         return true;
-    }
-
-    private void addUser(String username, User user) {
-        // Todo
     }
 
     /**
