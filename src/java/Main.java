@@ -1,9 +1,6 @@
 
 import java.util.*;
 
-/**
- * Contains the main game loop.
- */
 public class Main {
 
     public static void main(String[] args) {
