@@ -17,14 +17,14 @@ public class ToDoListTest {
 
     @Test(timeout = 50)
     public void TestAddTask() {
-        b.addNewList(a);
+        b.addNewList("Project phase 0");
         a.addTask("Project phase 0");
         assertSame(b.getToDoList("csc207").getTasksToDo().get(0), "Project phase 0");
     }
 
     @Test(timeout = 50)
     public void TestCompletion() {
-        b.addNewList(a);
+        b.addNewList("Project phase 0");
         a.addTask("Project phase 0"); // 2
         a.completion("Project phase 0");
         assertTrue(b.getToDoList("csc207").getTasksToDo().isEmpty()); //3

@@ -5,23 +5,17 @@ import java.util.Date;
  */
 
 public class Schedule implements Notification{
-    SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd, HH:mm");
+    SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
     private String task;
     private String from;
-    private String end;
 
-    public Schedule(String from, String end, String task){
+    public Schedule(String from, String task){
         this.from = from;
-        this.end = end;
         this.task = task;
     }
 
     public String getFrom() {
         return this.from;
-    }
-
-    public String getEnd() {
-        return this.end;
     }
 
     public String getTask() {

@@ -33,8 +33,10 @@ public class ToDoListManager implements Notification{
         return null;
     }
 
-    public void addNewList(ToDoList toDoList) {
-        toDoLists.put(toDoList.getListName(), toDoList);
+    public void addNewList(String name) {
+        ArrayList<String> list = new ArrayList<>();
+        ToDoList toDoList = new ToDoList(name, list);
+        toDoLists.put(name, toDoList);
     }
 
     public void removeList(String listName) {
@@ -68,6 +70,7 @@ public class ToDoListManager implements Notification{
 //        }
 //        return all;
 //    }
+
     @Override
     public String toString() {
         return toDoLists.toString();
@@ -77,7 +80,7 @@ public class ToDoListManager implements Notification{
         ArrayList<String> c = new ArrayList<>();
         ToDoList a = new ToDoList("csc207", c);
         ToDoListManager b = new ToDoListManager();
-        b.addNewList(a);
+        b.addNewList("csc207");
         a.addTask("Project phase 0");
         a.addTask("shop grocery");
         System.out.println(b.toDoLists);
