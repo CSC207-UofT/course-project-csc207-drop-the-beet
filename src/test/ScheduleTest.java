@@ -7,7 +7,7 @@ public class ScheduleTest {
     @Before
     public void setUp() throws Exception {
         a = new Schedule("13:00", "I need to cook some chicken noodle soup");
-        b = new ScheduleManager("2021/10/14");
+        b = new ScheduleManager();
     }
 
     @Test(timeout = 50)
