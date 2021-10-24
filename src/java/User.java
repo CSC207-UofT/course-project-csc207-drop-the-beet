@@ -7,7 +7,8 @@ public class User {
     public String name;
     private String email;
     private String password;
-//    public ArrayList<>
+    private ScheduleManager mySchedule;
+    private ToDoListManager myToDOList;
 
     /**
      *
@@ -20,15 +21,27 @@ public class User {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.mySchedule = new ScheduleManager("2021/10/14");
+        this.myToDOList = new ToDoListManager();
     }
 
-    public String getPassword() {
-        return this.password;
+    public String getName() {
+        return this.name;
     }
 
     public String getEmail() {
         return this.email;
     }
 
-    public String getName() { return this.name;}
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void changeEmail(String newEmail) {
+        this.email = newEmail;
+    }
+
+    public void changePassword(String newPassword) {
+        this.password = newPassword;
+    }
 }

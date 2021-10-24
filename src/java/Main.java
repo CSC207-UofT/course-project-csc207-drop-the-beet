@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         HashMap<String, User> users = new HashMap<>();
         UserManager userManager = new UserManager();
-        Setting setting = new Setting();
+        Setting setting = new Setting(userManager);
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Planner!");
@@ -22,7 +22,7 @@ public class Main {
                 String password = scanner.nextLine();
                 System.out.println("Please enter your email:");
                 String email = scanner.nextLine();
-                if (userManager.userRegister(userName, email, password)) {
+                if (setting.userRegister(userName, email, password)) {
                     System.out.println("Back to the main page, please enter 1."); //should create schedule and todolist right after registration
                     String enter = scanner.nextLine();
                 } else {
@@ -33,7 +33,7 @@ public class Main {
                 String userName = scanner.nextLine();
                 System.out.println("Please enter your password:");
                 String password = scanner.nextLine();
-                setting.userLogIn(userName, password, userManager);
+                setting.userLogIn(userName, password);
                 System.out.println("1. schedule, 2. to-do list");
                 String function = scanner.nextLine();
                 if (function.equals("1")) {
