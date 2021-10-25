@@ -10,7 +10,7 @@ public class ToDoListTest {
     ArrayList<String> c = new ArrayList<>(); // 1
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp(){
         a = new ToDoList("csc207", c);
         b = new ToDoListManager();
     }

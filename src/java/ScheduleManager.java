@@ -28,6 +28,14 @@ public class ScheduleManager implements Notification{
         this.schedules.get(date).remove(schedule);
     }
 
+//    public static void main(String[] args) {
+//        Schedule a = new Schedule("2021/10/14, 13:00", "2021/10/14, 14:00", "I need to cook some chicken noodle soup");
+//        ScheduleManager b = new ScheduleManager("2021/10/14");
+//        b.schedules.get("2021/10/14").add(a);
+//        b.schedules.get("2021/10/14").remove(a);
+//        System.out.println(b.schedules.get("2021/10/14").isEmpty());
+//    }
+
     public void modifyFrom(Schedule schedule, String from) {
         // Todo modify start time
     }
