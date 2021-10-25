@@ -43,6 +43,11 @@ public class UserManager {
         return true;
     }
 
+    public boolean addNewUser(User user) {
+        this.userHashMap.put(user.getName(), user);
+        return true;
+    }
+
     public User getCurrentUser() {
         return this.currentUser;
     }
