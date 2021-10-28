@@ -202,6 +202,7 @@ public class Main {
 //                    String date = scanner.nextLine();
 //                    System.out.println("Please enter the time: HH:mm");
 //                    String time = scanner.nextLine();
+
 //                    System.out.println("Please enter the event");
 //                    String task = scanner.nextLine();
 //                    PlanMaker planA = new PlanMaker(date, time, task); // all dates should be default in the schedule manager, shouldn't initialize here
