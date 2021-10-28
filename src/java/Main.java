@@ -1,8 +1,3 @@
-
-import sample.CMUtility;
-import sample.Customer;
-import sample.CustomerView;
-
 import java.util.*;
 
 public class Main {
@@ -44,9 +39,16 @@ public class Main {
         String username = CMUtility.readString(20);
         System.out.println("Password(max 20 letters)：");
         String password = CMUtility.readString(20);
-        System.out.println("Email：");
-        String email = CMUtility.readString(20);
-
+        String email;
+        for(;;){
+            System.out.println("Email：");
+            email = CMUtility.readString(20);
+            if(! email.contains("@")){
+                System.out.println("Please Enter A Real Email!\n");
+            }else{
+                break;
+            }
+        }
         boolean isSuccess = setting.userRegister(username,email,password);
 
         if(isSuccess){
@@ -93,6 +95,7 @@ public class Main {
                     System.out.println("Are You Sure?（Y/N)");
                     char isExit = CMUtility.readConfirmSelection();
                     if(isExit == 'Y'){
+                        setting.userLogOff();
                         isFlag = false;
                     }
             }
