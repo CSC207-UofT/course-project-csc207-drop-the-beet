@@ -8,9 +8,9 @@ public class PlanMaker {
     ScheduleManager scheduleManager;
     UserManager userManager = new UserManager();
 
-    public PlanMaker (String date, String start, String task) {
+    public PlanMaker (Schedule schedule) {
         this.scheduleManager = new ScheduleManager();
-        this.scheduleManager.addSchedule(date, start, task);
+        this.scheduleManager.addSchedule(schedule);
     }
 
     public PlanMaker (String name) {
