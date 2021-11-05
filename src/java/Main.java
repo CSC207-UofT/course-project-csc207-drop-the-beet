@@ -112,8 +112,8 @@ public class Main {
             System.out.println("                     Please Choose（1-3）");
 
             char menu = CMUtility.readMenuSelection();
-            switch(menu){
-                case '1':
+            switch (menu) {
+                case '1' -> {
                     System.out.println("What is the name of this ToDoList：");
                     String name = CMUtility.readString(20);
                     planMaker.toDoListManager.addNewList(name);
@@ -145,16 +145,15 @@ public class Main {
                     String content = CMUtility.readString(40);
                     planMaker.toDoListManager.getToDoList(name).addTask(content);
                     System.out.println("\n____________________ToDoList Added______________________");
-                    break;
-                case '2':
-                    System.out.println(planMaker.toDoListManager);
-                    break;
-                case '3':
+                }
+                case '2' -> System.out.println(planMaker.toDoListManager);
+                case '3' -> {
                     System.out.println("Are You Sure?（Y/N)");
                     char isExit = CMUtility.readConfirmSelection();
-                    if(isExit == 'Y'){
+                    if (isExit == 'Y') {
                         isFlag = false;
                     }
+                }
             }
         }
     }

@@ -1,4 +1,4 @@
-import org.jetbrains.annotations.NotNull;
+//import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * ScheduleManager is to modify any of the schedules of the user.
  */
-public class ScheduleManager{
+public class ScheduleManager {
     Map<String, ArrayList<Schedule>> schedules = new HashMap<>();
 
     /**
@@ -23,9 +23,10 @@ public class ScheduleManager{
 
     /**
      * addSchedule adds a schedule to schedules if schedules does not contain schedule
+     *
      * @param schedule is the schedule to be added
      */
-    public void addSchedule(@NotNull Schedule schedule) {
+    public void addSchedule(Schedule schedule) {
         if (!this.schedules.containsKey(schedule.getDate())) {
             ArrayList<Schedule> list = new ArrayList<>();
             list.add(schedule);
@@ -37,84 +38,93 @@ public class ScheduleManager{
 
     /**
      * removeSchedule removes a schedule in schedules if it is in schedules
+     *
      * @param schedule is the schedule to be removed
      */
-    public void removeSchedule(@NotNull Schedule schedule) {
-        if (this.schedules.containsKey(schedule.getDate())){
+    public void removeSchedule(Schedule schedule) {
+        if (this.schedules.containsKey(schedule.getDate())) {
             this.schedules.get(schedule.getDate()).remove(schedule);
         }
     }
 
     /**
      * modifyDate changes the schedule's current date with a given schedule and new date
+     *
      * @param schedule is the schedule to be modified
-     * @param date is the new date
+     * @param date     is the new date
      */
-    public void modifyDate(@NotNull Schedule schedule, String date) {
+    public void modifyDate(Schedule schedule, String date) {
         schedule.setDate(date);
     }
 
     /**
      * modifyFrom changes the schedule's current start time with a given schedule and new start time
+     *
      * @param schedule is the schedule to be modified
-     * @param from is the new start time
+     * @param from     is the new start time
      */
-    public void modifyFrom(@NotNull Schedule schedule, String from) {
+    public void modifyFrom(Schedule schedule, String from) {
         schedule.setFrom(from);
     }
 
     /**
      * modifyTo changes the schedule's current end time with a given schedule and new end time
+     *
      * @param schedule is the schedule to be modified
-     * @param to is the new end time
+     * @param to       is the new end time
      */
-    public void modifyTo(@NotNull Schedule schedule, String to) {
+    public void modifyTo(Schedule schedule, String to) {
         schedule.setTo(to);
     }
 
     /**
      * modifyTask changes the schedule's current task with a given schedule and new task
+     *
      * @param schedule is the schedule to be modified
-     * @param task is the new task
+     * @param task     is the new task
      */
-    public void modifyTask(@NotNull Schedule schedule, String task) {
+    public void modifyTask(Schedule schedule, String task) {
         schedule.setTask(task);
     }
 
 
     /**
      * viewDate accesses the date of the schedule
+     *
      * @param schedule is the schedule to be checked
      * @return returns a string of the current date
      */
-    public String viewDate(@NotNull Schedule schedule) {
+    public String viewDate(Schedule schedule) {
         return schedule.getDate();
     }
 
     /**
      * viewFrom accesses the start time of the schedule
+     *
      * @param schedule is the schedule to be checked
      * @return returns a string of the current start time
      */
-    public String viewFrom(@NotNull Schedule schedule) {
+    public String viewFrom(Schedule schedule) {
         return schedule.getFrom();
     }
 
     /**
      * viewTo accesses the end time of the schedule
+     *
      * @param schedule is the schedule to be checked
      * @return returns a string of the current end time
      */
-    public String viewTo(@NotNull Schedule schedule) {
+    public String viewTo(Schedule schedule) {
         return schedule.getTo();
     }
 
     /**
      * viewTask accesses the task of the schedule
+     *
      * @param schedule is the schedule to be checked
      * @return returns a string of the current task
      */
-    public String viewTask(@NotNull Schedule schedule) {
+    public String viewTask(Schedule schedule) {
         return schedule.getTask();
     }
 
@@ -149,6 +159,5 @@ public class ScheduleManager{
         System.out.println(b.schedules.get("2021/10/14"));
         b.removeSchedule(a);
         System.out.println(b.schedules.get("2021/10/14").isEmpty());
-
     }
 }

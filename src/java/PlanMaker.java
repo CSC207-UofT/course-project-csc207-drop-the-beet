@@ -25,6 +25,5 @@ public class PlanMaker {
     public void getAllTasks() {
         // Todo get all schedule and to-do for this user
     }
-
 }
 
