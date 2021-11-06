@@ -1,46 +1,124 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
-import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Date;
 
-/** ScheduleManager is to modify any of the schedules of the user.
+/**
+ * ScheduleManager is to modify any of the schedules of the user.
  */
-
-public class ScheduleManager implements Notification{
+public class ScheduleManager{
     Map<String, ArrayList<Schedule>> schedules = new HashMap<>();
-    SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
 
-    public ScheduleManager(){}
+    /**
+     * Constructor of the ScheduleManager
+     */
+    public ScheduleManager() {
+        Schedule s = new Schedule();
+        ArrayList<Schedule> list = new ArrayList<>();
+        list.add(s);
+        schedules.put("0000/00/00", list);
+    }
 
-    public void addSchedule(String date, String start, String task){
-        Schedule schedule = new Schedule(start, task);
-        if (schedules.get(date).isEmpty()) {
+
+    /**
+     * addSchedule adds a schedule to schedules if schedules does not contain schedule
+     * @param schedule is the schedule to be added
+     */
+    public void addSchedule(@NotNull Schedule schedule) {
+        if (!this.schedules.containsKey(schedule.getDate())) {
             ArrayList<Schedule> list = new ArrayList<>();
             list.add(schedule);
-            this.schedules.put(date, list);
+            this.schedules.put(schedule.getDate(), list);
         } else {
-            schedules.get(date).add(schedule);
+            this.schedules.get(schedule.getDate()).add(schedule);
         }
     }
 
-    public void removeSchedule(String date, Schedule schedule){
-        this.schedules.get(date).remove(schedule);
+    /**
+     * removeSchedule removes a schedule in schedules if it is in schedules
+     * @param schedule is the schedule to be removed
+     */
+    public void removeSchedule(@NotNull Schedule schedule) {
+        if (this.schedules.containsKey(schedule.getDate())){
+            this.schedules.get(schedule.getDate()).remove(schedule);
+        }
     }
 
-    public void modifyFrom(Schedule schedule, String from) {
-        // Todo modify start time
+    /**
+     * modifyDate changes the schedule's current date with a given schedule and new date
+     * @param schedule is the schedule to be modified
+     * @param date is the new date
+     */
+    public void modifyDate(@NotNull Schedule schedule, String date) {
+        schedule.setDate(date);
     }
 
-    public void modifyEnd(Schedule schedule, String end) {
-        // Todo modify end time
+    /**
+     * modifyFrom changes the schedule's current start time with a given schedule and new start time
+     * @param schedule is the schedule to be modified
+     * @param from is the new start time
+     */
+    public void modifyFrom(@NotNull Schedule schedule, String from) {
+        schedule.setFrom(from);
     }
 
-    public void modifyTask(Schedule schedule, String task) {
-        // Todo modify task
+    /**
+     * modifyTo changes the schedule's current end time with a given schedule and new end time
+     * @param schedule is the schedule to be modified
+     * @param to is the new end time
+     */
+    public void modifyTo(@NotNull Schedule schedule, String to) {
+        schedule.setTo(to);
     }
 
-    public void repeatSchedules(String info, int length){
+    /**
+     * modifyTask changes the schedule's current task with a given schedule and new task
+     * @param schedule is the schedule to be modified
+     * @param task is the new task
+     */
+    public void modifyTask(@NotNull Schedule schedule, String task) {
+        schedule.setTask(task);
+    }
+
+
+    /**
+     * viewDate accesses the date of the schedule
+     * @param schedule is the schedule to be checked
+     * @return returns a string of the current date
+     */
+    public String viewDate(@NotNull Schedule schedule) {
+        return schedule.getDate();
+    }
+
+    /**
+     * viewFrom accesses the start time of the schedule
+     * @param schedule is the schedule to be checked
+     * @return returns a string of the current start time
+     */
+    public String viewFrom(@NotNull Schedule schedule) {
+        return schedule.getFrom();
+    }
+
+    /**
+     * viewTo accesses the end time of the schedule
+     * @param schedule is the schedule to be checked
+     * @return returns a string of the current end time
+     */
+    public String viewTo(@NotNull Schedule schedule) {
+        return schedule.getTo();
+    }
+
+    /**
+     * viewTask accesses the task of the schedule
+     * @param schedule is the schedule to be checked
+     * @return returns a string of the current task
+     */
+    public String viewTask(@NotNull Schedule schedule) {
+        return schedule.getTask();
+    }
+
+    public void repeatSchedules(String info, int length) {
         // Todo
         // eg. repeat every wednesday from Feb 1st to Jul 15th
     }
@@ -50,13 +128,27 @@ public class ScheduleManager implements Notification{
     }
 
     // Todo Notification in ScheduleManager or in Schedule
-
     public static void main(String[] args) {
-        Schedule a = new Schedule("13:00","I need to cook");
+//        Map<String, ArrayList<String>> m = new HashMap<>();
+//        ArrayList<String> list = new ArrayList<>();
+//        list.add("1");
+//        list.add("2");
+//        m.put("a", list);
+//        System.out.println(list);
+//        System.out.println(m.containsKey("a"));
+//        System.out.println(m.values());
+//        System.out.println(m.get("a").remove("2"));
+//        System.out.println(m.values());
+//        System.out.println(m);
+//        System.out.println(m.get("a").isEmpty());
+
+        Schedule a = new Schedule("2021/10/14", " 11:00", "12:00", "I need to cook");
+        System.out.println(a);
         ScheduleManager b = new ScheduleManager();
-        b.addSchedule("2021/10/14", "13:00","I need to cook");
-        System.out.println(b.schedules.get("2021/10/14").get(0));
-        b.removeSchedule("2021/10/14", a);
+        b.addSchedule(a);
+        System.out.println(b.schedules.get("2021/10/14"));
+        b.removeSchedule(a);
         System.out.println(b.schedules.get("2021/10/14").isEmpty());
+
     }
 }

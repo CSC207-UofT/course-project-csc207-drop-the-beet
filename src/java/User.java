@@ -21,7 +21,7 @@ public class User {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.mySchedule = new ScheduleManager("2021/10/14");
+        this.mySchedule = new ScheduleManager();
         this.myToDOList = new ToDoListManager();
     }
 
