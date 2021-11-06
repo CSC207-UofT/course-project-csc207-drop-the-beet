@@ -10,12 +10,8 @@ import java.util.Date;
 public class ScheduleManager implements Notification{
     Map<String, ArrayList<Schedule>> schedules = new HashMap<>();
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
-    String date;
 
-    public ScheduleManager(String date){ // all dates should be default in the schedule manager
-        this.date = date;
-        this.schedules.put(this.date, new ArrayList<Schedule>());
-    }
+    public ScheduleManager(){}
 
     public void addSchedule(String date, String start, String task){
         Schedule schedule = new Schedule(start, task);
@@ -57,7 +53,7 @@ public class ScheduleManager implements Notification{
 
     public static void main(String[] args) {
         Schedule a = new Schedule("13:00","I need to cook");
-        ScheduleManager b = new ScheduleManager("2021/10/14");
+        ScheduleManager b = new ScheduleManager();
         b.addSchedule("2021/10/14", "13:00","I need to cook");
         System.out.println(b.schedules.get("2021/10/14").get(0));
         b.removeSchedule("2021/10/14", a);
