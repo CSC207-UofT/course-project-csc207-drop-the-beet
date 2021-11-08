@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="521.2" prefWidth="648.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.ui.OverViewController">
+   <children>
+      <TableView layoutX="2.0" layoutY="107.0" prefHeight="414.0" prefWidth="650.0">
+        <columns>
+          <TableColumn fx:id="overViewCol1" prefWidth="209.60000920295715" style="-fx-background-color: white;" text="Event Name" />
+          <TableColumn fx:id="overViewCol2" prefWidth="228.40000915527344" style="-fx-background-color: white;" text="Start" />
+            <TableColumn fx:id="overViewCol3" minWidth="0.0" prefWidth="211.20001220703125" style="-fx-background-color: white;" text="End" />
+        </columns>
+      </TableView>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="94.0" prefWidth="157.0" text="Overview">
+         <font>
+            <Font name="Times New Roman Bold" size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
