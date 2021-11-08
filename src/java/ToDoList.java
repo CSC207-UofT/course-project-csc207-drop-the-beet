@@ -6,7 +6,7 @@ import java.util.*;
  * If a task is done, mark the task as complete(move that into the list of completion).
 */
 
-public class ToDoList implements Notification{
+public class ToDoList{
     private String listName;
 
     private ArrayList<String> tasksToDo = new ArrayList<>();
@@ -59,6 +59,9 @@ public class ToDoList implements Notification{
                 tasksFinished.add(task);
                 tasksToDo.remove(task);
                 break;
+            }else{
+                System.out.println("Task does not exist.");
+                break;
             }
         }
     }
@@ -69,6 +72,17 @@ public class ToDoList implements Notification{
     }
 
     // Todo Notification default
+
+
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Phase 0");
+        list.add("Phase 1");
+        list.add("Phase 2");
+        ToDoList toDoList = new ToDoList("CSC207", list);
+        toDoList.modifyName("csc");
+        System.out.println(toDoList.getListName());
+    }
 
 
 //    public ToDoList(String listName, ArrayList<String> tasksToDo) {

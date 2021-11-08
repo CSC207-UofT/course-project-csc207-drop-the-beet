@@ -105,54 +105,108 @@ public class Main {
     public void useToDoList(PlanMaker planMaker){
         boolean isFlag = true;
         while(isFlag){
-            System.out.println("\n_______________________ToDoList______________________");
+            System.out.println("\n_______________________ToDoList_________________________");
             System.out.println("                      1. New ToDOList");
-            System.out.println("                      2. View All ToDOLists");
-            System.out.println("                      3. Back\n");
-            System.out.println("                     Please Choose（1-3）");
+            System.out.println("                      2. Modify ToDOList");
+            System.out.println("                      3. Delete ToDOLists");
+            System.out.println("                      4. View All ToDOLists");
+            System.out.println("                      5. Back\n");
+            System.out.println("                     Please Choose（1-5）");
 
             char menu = CMUtility.readMenuSelection();
             switch(menu){
                 case '1':
                     System.out.println("What is the name of this ToDoList：");
                     String name = CMUtility.readString(20);
+                    if(planMaker.toDoListManager.ifAlreadyExists(name) != null){
+                        System.out.println("ToDoList is already exist. Pick a new name!");
+                        break;
+                    }
                     planMaker.toDoListManager.addNewList(name);
-
-//                    boolean isFlag2 = true;
-//                    while(isFlag){
-//                        System.out.println("\n___________________Login, Now Start______________________");
-//                        System.out.println("                      1. Schedule (To Be Continue)");
-//                        System.out.println("                      2. ToDoList");
-//                        System.out.println("                      3. Logout\n");
-//                        System.out.println("                    Please Choose（1-3）");
-//
-//                        char menu = CMUtility.readMenuSelection();
-//                        switch(menu){
-//                            case '1':
-//                                // Schedule
-//                                break;
-//                            case '2':
-//                                useToDoList(planMaker);
-//                                break;
-//                            case '3':
-//                                System.out.println("Are You Sure?（Y/N)");
-//                                char isExit = CMUtility.readConfirmSelection();
-//                                if(isExit == 'Y'){
-//                                    isFlag = false;
-//                                }
-
                     System.out.println("What is the content, be brief:");
                     String content = CMUtility.readString(40);
                     planMaker.toDoListManager.getToDoList(name).addTask(content);
+                    for(;;){
+                        System.out.println("Anything else? (enter No to stop adding)");
+                        content = CMUtility.readString(20);
+                        if(content.equals("No") || content.equals("no")){
+                            break;
+                        }else{
+                            planMaker.toDoListManager.getToDoList(name).addTask(content);
+                        }
+                    }
                     System.out.println("\n____________________ToDoList Added______________________");
                     break;
                 case '2':
-                    System.out.println(planMaker.toDoListManager);
+                    System.out.print("Which ToDoList do you want to modify? ");
+                    planMaker.toDoListManager.printAllNames();
+                    String name2 = CMUtility.readString(20);
+                    ToDoList toDoList = planMaker.toDoListManager.getToDoList(name2);
+                    modifyToDOList(planMaker, toDoList);
                     break;
                 case '3':
+                    System.out.print("Which ToDoList do you want to delete? ");
+                    planMaker.toDoListManager.printAllNames();
+                    String name3 = CMUtility.readString(20);
+                    if(planMaker.toDoListManager.ifAlreadyExists(name3) == null){
+                        System.out.println("ToDoList doesn't exist");
+                        break;
+                    }
                     System.out.println("Are You Sure?（Y/N)");
                     char isExit = CMUtility.readConfirmSelection();
                     if(isExit == 'Y'){
+                        planMaker.toDoListManager.removeList(name3);
+                        System.out.println("\n____________________ToDoList Deleted______________________");
+                    }
+                    break;
+                case '4':
+                    System.out.println(planMaker.toDoListManager);
+                    break;
+                case '5':
+                    System.out.println("Are You Sure?（Y/N)");
+                    char isExit2 = CMUtility.readConfirmSelection();
+                    if(isExit2 == 'Y'){
+                        isFlag = false;
+                    }
+            }
+        }
+    }
+
+    public void modifyToDOList(PlanMaker planMaker, ToDoList toDoList){
+        boolean isFlag = true;
+        while(isFlag){
+            System.out.println("\n___________________What to do?______________________");
+            System.out.println("                      1. Change ToDOList Name");
+            System.out.println("                      2. Add Tasks");
+            System.out.println("                      3. Complete Task");
+            System.out.println("                      4. Back\n");
+            System.out.println("                    Please Choose（1-4）");
+
+            char menu = CMUtility.readMenuSelection();
+            switch(menu){
+                case '1':
+                    System.out.println("Enter A New Name");
+                    String name = CMUtility.readString(20);
+                    toDoList.modifyName(name);
+                    System.out.println("\n____________________Complete!______________________");
+                    break;
+                case '2':
+                    System.out.println("What is the task?");
+                    String content = CMUtility.readString(40);
+                    toDoList.addTask(content);
+                    System.out.println("\n____________________Complete!______________________");
+                    break;
+                case '3':
+                    System.out.println("What is the task?");
+                    content = CMUtility.readString(40);
+                    planMaker.toDoListManager.completeTask(toDoList, content);
+                    System.out.println("\n____________________Complete!______________________");
+                    break;
+                case '4':
+                    System.out.println("Are You Sure?（Y/N)");
+                    char isExit = CMUtility.readConfirmSelection();
+                    if(isExit == 'Y'){
+                        setting.userLogOff();
                         isFlag = false;
                     }
             }

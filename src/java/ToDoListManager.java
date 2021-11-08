@@ -8,20 +8,25 @@ import java.util.Map;
  * eg. set notification for one of the to-do lists
  */
 
-public class ToDoListManager implements Notification{
-    Map<String, ToDoList> toDoLists = new HashMap<>();
-//    public ArrayList<ToDoList> toDoLists = new ArrayList<>();
+public class ToDoListManager{
+    private Map<String, ToDoList> toDoLists = new HashMap<>();
+
+    private ArrayList<String> completedTasks = new ArrayList<>();
 
     public ToDoListManager() {
     }
 
-//    private static String getDate(){
-//        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-//        Date date = new Date();
-//        return formatter.format(date);
-//    }
+    public void printAllNames(){
+        System.out.println(toDoLists.keySet());
+    }
 
-    private ToDoList ifAlreadyExists(String name){
+    private static String getDate(){
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        return formatter.format(date);
+    }
+
+    public ToDoList ifAlreadyExists(String name){
         if (toDoLists.containsKey(name)) {
             return toDoLists.get(name);
         }
@@ -47,6 +52,16 @@ public class ToDoListManager implements Notification{
         return toDoLists.get(name);
     }
 
+    public void modifyListName(ToDoList toDoList, String newName){
+        toDoLists.remove(toDoList.getListName());
+        toDoList.modifyName(newName);
+        toDoLists.put(toDoList.getListName(), toDoList);
+    }
+
+    public void completeTask(ToDoList toDoList, String content) {
+        toDoList.completion(content);
+        completedTasks.add(content + " completed at " + getDate());
+    }
     // Todo Notification
 
 //    public void addThingsToDo(String thingToDo){
@@ -73,17 +88,27 @@ public class ToDoListManager implements Notification{
 
     @Override
     public String toString() {
-        return toDoLists.toString();
+        return "Your todo lists: " + toDoLists.toString() + "\nYour works done: " + completedTasks.toString();
     }
 
     public static void main(String[] args) {
-        ArrayList<String> c = new ArrayList<>();
-        ToDoList a = new ToDoList("csc207", c);
-        ToDoListManager b = new ToDoListManager();
-        b.addNewList("csc207");
-        a.addTask("Project phase 0");
-        a.addTask("shop grocery");
-        System.out.println(b.toDoLists);
 
+        ToDoListManager toDoListManager = new ToDoListManager();
+        toDoListManager.addNewList("csc207");
+        ToDoList toDoList = toDoListManager.getToDoList("csc207");
+        toDoList.addTask("Project phase 0");
+        toDoList.addTask("Project phase 1");
+        toDoList.addTask("Project phase 2");
+        System.out.println(toDoListManager);
+        toDoListManager.modifyListName(toDoList, "CSC207");
+        System.out.println(toDoListManager);
+        toDoListManager.completeTask(toDoList, "Project phase 0");
+        toDoListManager.completeTask(toDoList, "Project phase 1");
+        System.out.println(toDoListManager);
+        //toDoListManager.addNewList("CSC207");
+        toDoListManager.addNewList("CSC236");
+        toDoListManager.addNewList("CSC258");
+        System.out.println(toDoListManager);
+        toDoListManager.printAllNames();
     }
 }
