@@ -15,6 +15,7 @@ import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -68,6 +69,8 @@ public class DashboardController implements Initializable {
     private TableColumn todayCol3;
     @FXML
     private TableView todayTable;
+    @FXML
+    ArrayList<Button> arrBtn = new ArrayList<Button>();
 
 
 
@@ -96,6 +99,16 @@ public class DashboardController implements Initializable {
         todayCol2.setText("Start (Change me)");
         // Change Table Today's third column
         todayCol3.setText("End (Change me)");
+
+        if (arrBtn.size() == 0) {
+            arrBtn.add(dashboardBtn);
+            arrBtn.add(incomingBtn);
+            arrBtn.add(overviewBtn);
+            arrBtn.add(todolistBtn);
+            arrBtn.add(importantBtn);
+            arrBtn.add(settingsBtn);
+            arrBtn.add(settingsBtn);
+        }
 
         try{
             incomingView = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("incoming-view.fxml")));
@@ -136,11 +149,28 @@ public class DashboardController implements Initializable {
     }
 
     /**
+     * Called to refresh all button status after a button is clicked
+     *
+     * @param curr The button that is clicked
+     */
+    @FXML
+    private void refreshBtnStatus(Button curr) {
+        curr.setUnderline(true);
+        for (Button btn: arrBtn) {
+            System.out.println(btn);
+            if (!btn.equals(curr)) {
+                btn.setUnderline(false);
+            }
+        }
+    }
+
+    /**
      * Called when the dashboard button is clicked.
      */
     @FXML
     protected void ondashboardBtnClicked() {
         dashboardPane.toFront();
+        refreshBtnStatus(dashboardBtn);
         System.out.println("dashboard btn clicked");
     }
 
@@ -154,8 +184,10 @@ public class DashboardController implements Initializable {
 
     @FXML
     protected void onincomingBtnClicked() {
-        System.out.println("incoming btn clicked!");
         incomingView.toFront();
+        refreshBtnStatus(incomingBtn);
+        System.out.println("incoming btn clicked!");
+
     }
 
     @FXML
@@ -166,6 +198,7 @@ public class DashboardController implements Initializable {
     @FXML
     protected void onoverviewBtnClicked() {
         overviewView.toFront();
+        refreshBtnStatus(overviewBtn);
         System.out.println("all plans btn clicked");
     }
 
@@ -177,6 +210,7 @@ public class DashboardController implements Initializable {
     @FXML
     protected void ontodolistClicked() {
         todoListView.toFront();
+        refreshBtnStatus(todolistBtn);
         System.out.println("to do list btn clicked");
     }
 
@@ -188,6 +222,7 @@ public class DashboardController implements Initializable {
     @FXML
     protected void onimportantBtnClicked() {
         importantView.toFront();
+        refreshBtnStatus(importantBtn);
         System.out.println("Important Btn Clicked");
     }
 
@@ -198,6 +233,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     protected void onsignoutBtnClicked() {
+        refreshBtnStatus(signoutBtn);
         Platform.exit();
     }
 
@@ -209,6 +245,7 @@ public class DashboardController implements Initializable {
     @FXML
     protected void onsettingsBtnClicked() {
         settingsView.toFront();
+        refreshBtnStatus(settingsBtn);
         System.out.println("Settings clicked!");
     }
 

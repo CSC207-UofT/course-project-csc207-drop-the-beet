@@ -18,7 +18,7 @@
          <children>
             <AnchorPane fx:id="sideAnchorPane" prefHeight="528.0" prefWidth="536.0" style="-fx-background-color: linear-gradient(to bottom, #0da4df, #000845);">
                <children>
-                  <Button fx:id="dashboardBtn" layoutX="47.0" layoutY="96.0" mnemonicParsing="false" onAction="#ondashboardBtnClicked" onMouseEntered="#ondashboardBtnMouseEntered" prefHeight="21.0" prefWidth="97.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Dashboard" textFill="WHITE" AnchorPane.bottomAnchor="411.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="96.0">
+                  <Button fx:id="dashboardBtn" layoutX="47.0" layoutY="96.0" mnemonicParsing="false" onAction="#ondashboardBtnClicked" onMouseEntered="#ondashboardBtnMouseEntered" prefHeight="21.0" prefWidth="97.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Dashboard" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="411.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="96.0">
                      <font>
                         <Font name="Times New Roman" size="13.0" />
                      </font>
