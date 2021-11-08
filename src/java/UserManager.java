@@ -119,6 +119,26 @@ public class UserManager {
         this.currentUser.changeEmail(newEmail);
     }
 
+    public void userAddSchedule(Schedule schedule) {
+        this.currentUser.addSchedule(schedule);
+    }
+
+    public void userCreateToDoList(String name) {
+        this.currentUser.createToDoList(name);
+    }
+
+    public void userAddToDo(String name) {
+        this.currentUser.addToDo(name);
+    }
+
+    public void userRemoveList(String listName) {
+        this.currentUser.removeList(listName);
+    }
+
+    public void userRemoveSchedule(Schedule schedule) {
+        this.currentUser.removeSchedule(schedule);
+    }
+
     public static void main(String[] args) {
         UserManager um = new UserManager();
         System.out.println(um.getCurrentUser());

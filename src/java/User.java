@@ -1,9 +1,9 @@
-import java.util.ArrayList;
+import java.io.Serializable;
 
 /** User contains basic information of this user.
  */
 
-public class User {
+public class User implements Serializable {
     public String name;
     private String email;
     private String password;
@@ -43,5 +43,34 @@ public class User {
 
     public void changePassword(String newPassword) {
         this.password = newPassword;
+    }
+
+    public void addSchedule(Schedule schedule) {
+        this.mySchedule.addSchedule(schedule);
+    }
+
+    public void removeSchedule(Schedule schedule) {
+        this.mySchedule.removeSchedule(schedule);
+    }
+
+    public void createToDoList(String name) {
+        this.myToDOList.addNewList(name);
+    }
+
+    public void addToDo(String name) {
+        ToDoList toDoList = this.myToDOList.getToDoList(name);
+        toDoList.addTask(name);
+    }
+
+    public void removeList(String listName) {
+        myToDOList.removeList(listName);
+    }
+
+    public ScheduleManager getMySchedules() {
+        return mySchedule;
+    }
+
+    public ToDoListManager getMyToDOLists() {
+        return myToDOList;
     }
 }
