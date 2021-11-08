@@ -18,7 +18,7 @@
          <children>
             <AnchorPane fx:id="sideAnchorPane" prefHeight="528.0" prefWidth="536.0" style="-fx-background-color: linear-gradient(to bottom, #0da4df, #000845);">
                <children>
-                  <Button fx:id="dashboardBtn" layoutX="47.0" layoutY="96.0" mnemonicParsing="false" onAction="#ondashboardBtnClicked" onMouseEntered="#ondashboardBtnMouseEntered" prefHeight="21.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="Dashboard" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="411.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="96.0">
+                  <Button fx:id="dashboardBtn" layoutX="47.0" layoutY="96.0" mnemonicParsing="false" onAction="#ondashboardBtnClicked" onMouseEntered="#ondashboardBtnMouseEntered" prefHeight="21.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="Dashboard" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="412.79999999999995" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="38.999999999999986" AnchorPane.topAnchor="96.0">
                      <font>
                         <Font name="Times New Roman" size="13.0" />
                      </font>
@@ -78,7 +78,7 @@
                         <Font name="Times New Roman" size="14.0" />
                      </font>
                   </Button>
-                  <Label alignment="CENTER_RIGHT" layoutX="3.0" layoutY="487.0" prefHeight="41.0" prefWidth="81.0" style="-fx-alignment: left;" text="CSC 207 Project Phase 1&#10;Drop The Beets Group&#10;University of Toronto" textFill="WHITE">
+                  <Label alignment="CENTER_RIGHT" layoutX="3.0" layoutY="487.0" prefHeight="41.0" prefWidth="81.0" text="CSC 207 Project Phase 1&#10;Drop The Beets Group&#10;University of Toronto" textFill="WHITE">
                      <font>
                         <Font size="7.0" />
                      </font>
