@@ -18,7 +18,7 @@
          <children>
             <AnchorPane fx:id="sideAnchorPane" prefHeight="528.0" prefWidth="536.0" style="-fx-background-color: linear-gradient(to bottom, #0da4df, #000845);">
                <children>
-                  <Button fx:id="dashboardBtn" layoutX="47.0" layoutY="96.0" mnemonicParsing="false" onAction="#ondashboardBtnClicked" onMouseEntered="#ondashboardBtnMouseEntered" prefHeight="21.0" prefWidth="97.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Dashboard" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="411.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="96.0">
+                  <Button fx:id="dashboardBtn" layoutX="47.0" layoutY="96.0" mnemonicParsing="false" onAction="#ondashboardBtnClicked" onMouseEntered="#ondashboardBtnMouseEntered" prefHeight="21.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="Dashboard" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="411.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="96.0">
                      <font>
                         <Font name="Times New Roman" size="13.0" />
                      </font>
@@ -48,22 +48,22 @@
                         <Image url="@../../../../images/filled-flag-xxl.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="incomingBtn" layoutX="47.0" layoutY="128.0" mnemonicParsing="false" onAction="#onincomingBtnClicked" onMouseEntered="#onincomingBtnMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Incoming" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="379.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="128.0">
+                  <Button fx:id="incomingBtn" layoutX="47.0" layoutY="128.0" mnemonicParsing="false" onAction="#onincomingBtnClicked" onMouseEntered="#onincomingBtnMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="Incoming" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="379.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="128.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="overviewBtn" layoutX="47.0" layoutY="159.0" mnemonicParsing="false" onAction="#onoverviewBtnClicked" onMouseEntered="#onoverviewBtnMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Overview" textFill="WHITE" AnchorPane.bottomAnchor="348.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="159.0">
+                  <Button fx:id="overviewBtn" layoutX="47.0" layoutY="159.0" mnemonicParsing="false" onAction="#onoverviewBtnClicked" onMouseEntered="#onoverviewBtnMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="Overview" textFill="WHITE" AnchorPane.bottomAnchor="348.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="159.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="todolistBtn" layoutX="47.0" layoutY="192.0" mnemonicParsing="false" onAction="#ontodolistClicked" onMouseEntered="#ontodolistMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="To-do List" textFill="WHITE" AnchorPane.bottomAnchor="315.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="192.0">
+                  <Button fx:id="todolistBtn" layoutX="47.0" layoutY="192.0" mnemonicParsing="false" onAction="#ontodolistClicked" onMouseEntered="#ontodolistMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="To-do List" textFill="WHITE" AnchorPane.bottomAnchor="315.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="192.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="importantBtn" layoutX="48.0" layoutY="225.0" mnemonicParsing="false" onAction="#onimportantBtnClicked" onMouseEntered="#onimportantBtnMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Important" textFill="WHITE" AnchorPane.bottomAnchor="282.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="225.0">
+                  <Button fx:id="importantBtn" layoutX="48.0" layoutY="225.0" mnemonicParsing="false" onAction="#onimportantBtnClicked" onMouseEntered="#onimportantBtnMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="Important" textFill="WHITE" AnchorPane.bottomAnchor="282.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="225.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
@@ -73,7 +73,7 @@
                         <Image url="@../../../../images/switch-off-xxl.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="signoutBtn" layoutX="48.0" layoutY="312.0" mnemonicParsing="false" onAction="#onsignoutBtnClicked" onMouseEntered="#onsignoutBtnMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Sign out" textFill="WHITE">
+                  <Button fx:id="signoutBtn" layoutX="48.0" layoutY="312.0" mnemonicParsing="false" onAction="#onsignoutBtnClicked" onMouseEntered="#onsignoutBtnMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="Sign out" textFill="WHITE">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
@@ -103,7 +103,7 @@
                         <Image url="@../../../../images/settings-4-xxl.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="settingsBtn" layoutX="48.0" layoutY="343.0" mnemonicParsing="false" onAction="#onsettingsBtnClicked" onMouseEntered="#onsettingsBtnMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Settings" textFill="WHITE">
+                  <Button fx:id="settingsBtn" layoutX="48.0" layoutY="343.0" mnemonicParsing="false" onAction="#onsettingsBtnClicked" onMouseEntered="#onsettingsBtnMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="Settings" textFill="WHITE">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
