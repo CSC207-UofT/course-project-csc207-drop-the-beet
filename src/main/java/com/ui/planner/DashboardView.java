@@ -7,12 +7,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 
-public class DashboardApplication extends Application {
+public class DashboardView extends Application {
     Stage stage = new Stage();
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("dashboard-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginView.class.getResource("dashboard-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 842, 521);
         stage.setTitle("Drop The Beets Group Planner Demo");
         stage.setScene(scene);

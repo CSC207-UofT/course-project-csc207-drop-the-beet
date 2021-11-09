@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class LoginView extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginView.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 850, 670);
         stage.setTitle("Drop The Beets Group Login Demo");
         stage.setScene(scene);

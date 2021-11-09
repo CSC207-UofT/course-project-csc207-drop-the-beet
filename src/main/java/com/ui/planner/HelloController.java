@@ -95,7 +95,7 @@ public class HelloController implements Initializable {
         // To handle the username and password the user entered.
         if (userName.equals("Drop") && passWord.equals("thebeets")) {
             // The password and username is successful.
-            com.ui.planner.DashboardApplication dashboard = new com.ui.planner.DashboardApplication();
+            DashboardView dashboard = new DashboardView();
             dashboard.showWindow();
             Stage stage = (Stage) loginButton.getScene().getWindow();
             stage.close();

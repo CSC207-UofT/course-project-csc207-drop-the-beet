@@ -65,7 +65,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.ui.planner/com.ui.planner.HelloApplication</mainClass>
+                            <mainClass>com.ui.planner/com.ui.planner.LoginView</mainClass>
                         </configuration>
                     </execution>
                 </executions>
