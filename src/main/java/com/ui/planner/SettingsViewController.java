@@ -34,16 +34,19 @@ public class SettingsViewController implements Initializable {
 
     @FXML
     protected void onConfirmButtonClicked() {
-        if (newPasswordText.equals(confirmPasswordText)) {
+        if (newPasswordText.getText().equals(confirmPasswordText.getText()) && newPasswordText.getLength() != 0 && confirmPasswordText.getLength() != 0) {
             // TODO: Change the user's information in the database
             String newUserName = userNameText.getText();
             String newEmail = emailText.getText();
             String newPassword = newPasswordText.getText();
+            System.out.println(newUserName);
+            System.out.println(newEmail);
+            System.out.println(newPassword);
 
         } else {
             // if two password not match
             // TODO: Reset the UserName and email.
-            userNameText.setText("Elin");
+            userNameText.setText("ElinLengLeng");
             emailText.setText("lengleng@lengleng.com");
 
             // No need to change code under this line
@@ -63,14 +66,18 @@ public class SettingsViewController implements Initializable {
     }
 
     @FXML
-    protected void onCancelBtnClicked() {
+    protected void onResetBtnClicked() {
         // TODO: If the user cancel the change, set the username, email to the original one.
-        userNameText.setText("Elin");
+        userNameText.setText("ElinLengLeng");
         emailText.setText("lengleng@lengleng.com");
+
+        // No need to change code under this line.
+        newPasswordText.clear();
+        confirmPasswordText.clear();
     }
 
     @FXML
-    protected void onCancelBtnMouseEntered() {
+    protected void onResetBtnMouseEntered() {
         cancelBtn.setCursor(Cursor.HAND);
     }
 

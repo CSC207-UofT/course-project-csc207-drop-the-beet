@@ -37,7 +37,7 @@
          </font>
       </Label>
       <Button fx:id="confirmBtn" layoutX="496.0" layoutY="301.0" mnemonicParsing="false" onAction="#onConfirmButtonClicked" onMouseEntered="#onConfirmBtnMouseEntered" prefHeight="39.0" prefWidth="96.0" text="Confirm" />
-      <Button fx:id="cancelBtn" layoutX="382.0" layoutY="301.0" mnemonicParsing="false" onAction="#onCancelBtnClicked" onMouseEntered="#onCancelBtnMouseEntered" prefHeight="39.0" prefWidth="96.0" text="Cancel" />
+      <Button fx:id="cancelBtn" layoutX="382.0" layoutY="301.0" mnemonicParsing="false" onAction="#onResetBtnClicked" onMouseEntered="#onResetBtnMouseEntered" prefHeight="39.0" prefWidth="96.0" text="Reset" />
       <PasswordField fx:id="newPasswordText" layoutX="28.0" layoutY="246.0" prefHeight="30.0" prefWidth="246.0" />
       <PasswordField fx:id="confirmPasswordText" layoutX="349.0" layoutY="246.0" prefHeight="30.0" prefWidth="246.0" />
    </children>

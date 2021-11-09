@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Add New UI Features">
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Add New Setting Features">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/SettingsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/SettingsViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/settings-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/settings-view.fxml" afterDir="false" />
@@ -133,7 +133,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1636442258112</updated>
-      <workItem from="1636442261808" duration="12080000" />
+      <workItem from="1636442261808" duration="12509000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>
@@ -184,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636452686810</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add New Setting Features">
+      <created>1636454708146</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1636454708146</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +216,7 @@
     <MESSAGE value="Add Important Add New Event Button UI" />
     <MESSAGE value="Add Incoming Add New Event Button UI" />
     <MESSAGE value="Add New UI Features" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add New UI Features" />
+    <MESSAGE value="Add New Setting Features" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add New Setting Features" />
   </component>
 </project>
