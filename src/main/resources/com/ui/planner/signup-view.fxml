@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="442.0" style="-fx-background-size: stretch;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.planner.SignupController">
+   <children>
+      <AnchorPane layoutX="-4.0" layoutY="1.0" opacity="0.88" prefHeight="546.0" prefWidth="450.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="68.0" layoutY="69.0" prefHeight="53.0" prefWidth="313.0" text="Welcome to the planner. Sign up to &#10;continue.">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="userNameText" layoutX="69.0" layoutY="146.0" onKeyTyped="#onUserNameTyped" prefHeight="42.0" prefWidth="301.0" promptText="Username" />
+            <TextField fx:id="emailText" layoutX="69.0" layoutY="199.0" onKeyTyped="#onEmailTyped" prefHeight="42.0" prefWidth="301.0" promptText="Email" />
+            <PasswordField fx:id="passWordText" layoutX="69.0" layoutY="252.0" onKeyTyped="#onPasswordTyped" prefHeight="42.0" prefWidth="301.0" promptText="Password" />
+            <PasswordField fx:id="confirmPasswordText" layoutX="69.0" layoutY="306.0" onKeyTyped="#onConfirmPasswordTyped" prefHeight="42.0" prefWidth="301.0" promptText="Confirm Password" />
+            <Button fx:id="signupBtn" disable="true" layoutX="69.0" layoutY="373.0" mnemonicParsing="false" onAction="#onSignUpBtnClicked" onMouseEntered="#onSignUpBtnMouseEntered" prefHeight="42.0" prefWidth="301.0" style="-fx-background-color: rgb(36,39, 62);" text="Sign Up" textFill="WHITE" />
+            <Button fx:id="backToLoginBtn" layoutX="69.0" layoutY="426.0" mnemonicParsing="false" onAction="#onBackToLoginBtnClicked" onMouseEntered="#onBackToLoginBtnMouseEntered" prefHeight="42.0" prefWidth="301.0" style="-fx-background-color: rgb(36,39, 62);" text="Back to login" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

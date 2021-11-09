@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Add New Setting Features">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/signup-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/SettingsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/SettingsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/settings-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/settings-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +51,7 @@
       <recent name="com.ui.planner" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DashboardView">
+  <component name="RunManager" selected="Application.LoginView">
     <configuration name="AddImportantView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ui.planner.AddImportantView" />
       <module name="planner" />
@@ -102,12 +104,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="planner.Main" />
+    <configuration name="SignupView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ui.planner.SignupView" />
       <module name="planner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="planner.*" />
+          <option name="PATTERN" value="com.ui.planner.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,11 +119,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DashboardView" />
         <item itemvalue="Application.LoginView" />
+        <item itemvalue="Application.SignupView" />
+        <item itemvalue="Application.DashboardView" />
         <item itemvalue="Application.AddImportantView" />
         <item itemvalue="Application.AddtodoListView" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -133,7 +135,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1636442258112</updated>
-      <workItem from="1636442261808" duration="12509000" />
+      <workItem from="1636442261808" duration="15875000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>
@@ -191,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636454708146</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add New Setting Features">
+      <created>1636455084550</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1636455084550</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

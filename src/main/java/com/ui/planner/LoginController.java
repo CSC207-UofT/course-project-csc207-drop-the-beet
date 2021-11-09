@@ -137,7 +137,9 @@ public class LoginController {
     }
 
     @FXML
-    protected void onSignUpClicked() {
+    protected void onSignUpClicked() throws IOException {
+        SignupView signupView = new SignupView();
+        signupView.showWindow();
         System.out.println("Sign up Click!");
     }
 
