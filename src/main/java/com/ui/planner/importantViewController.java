@@ -2,8 +2,12 @@ package com.ui.planner;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -14,6 +18,8 @@ public class importantViewController implements Initializable {
     private TableColumn importantCol2;
     @FXML
     private TableColumn importantCol3;
+    @FXML
+    private Button importantNewEventBtn;
 
     /**
      * Called to initialize a controller after its root element has been
@@ -31,6 +37,16 @@ public class importantViewController implements Initializable {
         importantCol3.setText("End (Chang me)");
     }
 
+    @FXML
+    protected void newEventBtnMouseEntered() {
+        importantNewEventBtn.setCursor(Cursor.HAND);
+    }
+
+    @FXML
+    protected void newEventBtnClicked() throws IOException {
+        AddImportantView addImportantView = new AddImportantView();
+        addImportantView.showWindow();
+    }
 
 
 

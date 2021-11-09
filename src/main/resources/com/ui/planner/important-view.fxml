@@ -21,7 +21,7 @@
             <Font name="Times New Roman Bold" size="21.0" />
          </font>
       </Label>
-      <Button fx:id="importantNewEventBtn" layoutX="488.0" layoutY="43.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: rgb(13, 159, 218);" text="New Event" textFill="WHITE">
+      <Button fx:id="importantNewEventBtn" layoutX="488.0" layoutY="43.0" mnemonicParsing="false" onAction="#newEventBtnClicked" onMouseEntered="#newEventBtnMouseEntered" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: rgb(13, 159, 218);" text="New Event" textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="14.0" />
          </font>

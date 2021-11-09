@@ -44,7 +44,6 @@ public class todoListViewController implements Initializable {
     protected void todoListNewEventBtnClicked() throws IOException {
         AddtodoListView addtodoList = new AddtodoListView();
         addtodoList.showWindow();
-        Stage stage = (Stage) todoListNewEventBtn.getScene().getWindow();
     }
 
 }
