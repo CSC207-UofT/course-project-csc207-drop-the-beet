@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="todoListAnchorPane" prefHeight="521.2" prefWidth="648.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.planner.todoListViewController">
+<AnchorPane fx:id="todoListAnchorPane" prefHeight="521.2" prefWidth="648.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.planner.TodoListViewController">
    <children>
       <TableView layoutX="2.0" layoutY="107.0" prefHeight="414.0" prefWidth="650.0">
          <columns>

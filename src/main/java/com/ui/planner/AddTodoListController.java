@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.time.LocalDate;
 
-public class addTodoListController {
+public class AddTodoListController {
     @FXML
     private DatePicker whenDatePicker;
     @FXML

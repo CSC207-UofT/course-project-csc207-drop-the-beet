@@ -1,25 +1,29 @@
 package com.ui.planner;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Cursor;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class importantViewController implements Initializable {
+public class TodoListViewController implements Initializable {
     @FXML
-    private TableColumn importantCol1;
+    private TableColumn todolistCol1;
     @FXML
-    private TableColumn importantCol2;
+    private TableColumn todolistCol2;
     @FXML
-    private TableColumn importantCol3;
+    private TableColumn todolistCol3;
     @FXML
-    private Button importantNewEventBtn;
+    private Button todoListNewEventBtn;
 
     /**
      * Called to initialize a controller after its root element has been
@@ -31,23 +35,15 @@ public class importantViewController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // TODO: Change the column name.
-        importantCol1.setText("Events (Change me)");
-        importantCol2.setText("Start (Change me)");
-        importantCol3.setText("End (Chang me)");
+        todolistCol1.setText("Events (Change me)");
+        todolistCol2.setText("Start (Change me)");
+        todolistCol3.setText("End (Change me)");
     }
 
     @FXML
-    protected void newEventBtnMouseEntered() {
-        importantNewEventBtn.setCursor(Cursor.HAND);
+    protected void todoListNewEventBtnClicked() throws IOException {
+        AddtodoListView addtodoList = new AddtodoListView();
+        addtodoList.showWindow();
     }
-
-    @FXML
-    protected void newEventBtnClicked() throws IOException {
-        AddImportantView addImportantView = new AddImportantView();
-        addImportantView.showWindow();
-    }
-
-
 
 }

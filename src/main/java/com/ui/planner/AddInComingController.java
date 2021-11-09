@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.time.LocalDate;
 
-public class addImportantController {
+public class AddInComingController {
     @FXML
     private DatePicker startDatePicker;
     @FXML
@@ -29,8 +29,8 @@ public class addImportantController {
             LocalDate startDateInput = startDatePicker.getValue();
             LocalDate endingDateInput = endingDatePicker.getValue();
             String event = eventTextField.getText();
-            System.out.println(startDateInput);
-            System.out.println(endingDateInput);
+            System.out.println("Starting date: " + startDateInput);
+            System.out.println("Ending date: " + endingDateInput);
             System.out.println(event);
 
             // To close the dialog.

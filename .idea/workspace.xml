@@ -4,14 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Add New Event UI">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddImportantView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/addImportantController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/addImportantList-view.fxml" afterDir="false" />
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Add Important Add New Event Button UI">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddInComingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddIncomingApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/addIncoming-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/addoverview-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/importantViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/importantViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/todoListViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/todoListViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/addImportantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddImportantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/addTodoListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddTodoListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/importantViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/settingsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/SettingsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/todoListViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/TodoListViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/addImportantList-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/addImportantList-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/addTodoList-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/addTodoList-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/dashboard-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/dashboard-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/important-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/important-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/incoming-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/incoming-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/overview-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/overview-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/settings-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/settings-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/todoList-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/todoList-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +149,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1636442258112</updated>
-      <workItem from="1636442261808" duration="8233000" />
+      <workItem from="1636442261808" duration="9478000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>
@@ -167,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636449027231</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add Important Add New Event Button UI">
+      <created>1636450839212</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1636450839212</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +208,7 @@
     <MESSAGE value="Name Change" />
     <MESSAGE value="Change to functions" />
     <MESSAGE value="Add New Event UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add New Event UI" />
+    <MESSAGE value="Add Important Add New Event Button UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Important Add New Event Button UI" />
   </component>
 </project>

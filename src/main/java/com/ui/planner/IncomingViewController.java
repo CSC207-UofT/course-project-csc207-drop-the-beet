@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -28,5 +29,11 @@ public class IncomingViewController implements Initializable {
         incomingCol1.setText("Events (Change me)");
         incomingCol2.setText("Start (Change me)");
         incomingCol3.setText("End (Change me)");
+    }
+
+    @FXML
+    protected void onNewEventClicked() throws IOException {
+        AddIncomingApplication addIncomingApplication = new AddIncomingApplication();
+        addIncomingApplication.showWindow();
     }
 }
