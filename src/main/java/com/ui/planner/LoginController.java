@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LoginController implements Initializable {
+public class LoginController {
     @FXML
     private Label forgotPassword;
     @FXML
@@ -33,25 +33,44 @@ public class LoginController implements Initializable {
     private Pane bgPane;
 
     /**
-     * Called to initialize a controller after its root element has been
-     * completely processed.
-     *
-     * @param location  The location used to resolve relative paths for the root object, or
-     *                  {@code null} if the location is not known.
-     * @param resources The resources used to localize the root object, or {@code null} if
+     * @Description: This is a GUI interface to handle the event when the login button is clicked.
+     * @Param: void
+     * @Return: void
      */
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        System.out.println(System.getProperty("user.dir"));
+    @FXML
+    protected void onLoginButtonClick() throws IOException {
+        String userName = userNameText.getText();
+        String passWord = passWordText.getText();
+
+        // TODO: Change the if condition to a function that compares the password
+        if (userName.equals("Drop") && passWord.equals("thebeets")) {
+            passwordSuccessView();
+        }
+        else {
+            passwordFailedView();
+        }
+    }
+
+    /**
+     * @Description: This is a GUI interface to handle the event when the remember me check box is selected.
+     * @Param: void
+     * @Return: void
+     */
+    @FXML
+    protected void onRememberMeChecked() {
+        // TODO: Write a function to read a file stored to determined whether remember me should be slected
+        //  or not.
+        rememberMe.setSelected(true);
+
+        // TODO: Write a function to read username from a local file to fill the Username textile.
+        if (rememberMe.isSelected()) {
+            userNameText.setText("Elin");
+        }
     }
 
     @FXML
     protected void onUserNameTyped() {
-        if (userNameText.getLength() != 0 && passWordText.getLength() != 0) {
-            loginButton.setDisable(false);
-        } else {
-            loginButton.setDisable(true);
-        }
+        loginButton.setDisable(userNameText.getLength() == 0 || passWordText.getLength() == 0);
 
         if (userNameText.getLength() != 0) {
             unableToLoginLabel.setVisible(false);
@@ -65,15 +84,12 @@ public class LoginController implements Initializable {
         } else {
             loginButton.setDisable(true);
 
-            passWordText.setOnKeyPressed(new EventHandler<KeyEvent>() {
-                @Override
-                public void handle(KeyEvent event) {
-                    if(event.getCode() == KeyCode.ENTER && userNameText.getLength() != 0 && passWordText.getLength() != 0) {
-                        try {
-                            onLoginButtonClick();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+            passWordText.setOnKeyPressed(event -> {
+                if(event.getCode() == KeyCode.ENTER && userNameText.getLength() != 0 && passWordText.getLength() != 0) {
+                    try {
+                        onLoginButtonClick();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
                 }
             });
@@ -81,54 +97,29 @@ public class LoginController implements Initializable {
 
     }
 
-    /**
-     * @Description: This is a GUI interface to handle the event when the login button is clicked.
-     * @Param: void
-     * @Return: void
-     */
     @FXML
-    protected void onLoginButtonClick() throws IOException {
-        LoginInfo loginInfo = new LoginInfo(userNameText.getText(), passWordText.getText());
-        String userName = loginInfo.getUserName();
-        String passWord = loginInfo.getPassWord();
+    protected void passwordSuccessView() throws IOException {
+        DashboardView dashboard = new DashboardView();
+        dashboard.showWindow();
+        Stage stage = (Stage) loginButton.getScene().getWindow();
+        stage.close();
+    }
 
-        // To handle the username and password the user entered.
-        if (userName.equals("Drop") && passWord.equals("thebeets")) {
-            // The password and username is successful.
-            DashboardView dashboard = new DashboardView();
-            dashboard.showWindow();
-            Stage stage = (Stage) loginButton.getScene().getWindow();
-            stage.close();
-        }
-
-        else {
-            // The password and username is unsuccessful.
-            unableToLoginLabel.setVisible(true);
-            userNameText.clear();
-            passWordText.clear();
-            userNameText.setPromptText("Username");
-            passWordText.setPromptText("Password");
-            loginButton.setDisable(true);
-            userNameText.requestFocus();
-        }
+    @FXML
+    protected void passwordFailedView() {
+        // The password and username is unsuccessful.
+        unableToLoginLabel.setVisible(true);
+        userNameText.clear();
+        passWordText.clear();
+        userNameText.setPromptText("Username");
+        passWordText.setPromptText("Password");
+        loginButton.setDisable(true);
+        userNameText.requestFocus();
     }
 
     @FXML
     protected void onUserNameMouseClicked() {
         unableToLoginLabel.setVisible(false);
-    }
-
-    /**
-     * @Description: This is a GUI interface to handle the event when the remember me check box is selected.
-     * @Param: void
-     * @Return: void
-     */
-    @FXML
-    protected void onRememberMeChecked() {
-        // To read json file and fill the text field.
-        if (rememberMe.isSelected()) {
-            userNameText.setText("Elin");
-        }
     }
 
     @FXML
@@ -160,4 +151,5 @@ public class LoginController implements Initializable {
     protected void onloginBtnMouseEntered() {
         loginButton.setCursor(Cursor.HAND);
     }
+
 }
