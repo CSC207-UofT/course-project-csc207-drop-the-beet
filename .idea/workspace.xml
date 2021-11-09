@@ -5,7 +5,7 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="RunManager" selected="Application.DashboardView">
+  <component name="RunManager" selected="Application.LoginView">
     <configuration name="DashboardView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ui.planner.DashboardView" />
       <module name="planner" />
@@ -47,8 +47,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DashboardView" />
         <item itemvalue="Application.LoginView" />
+        <item itemvalue="Application.DashboardView" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>

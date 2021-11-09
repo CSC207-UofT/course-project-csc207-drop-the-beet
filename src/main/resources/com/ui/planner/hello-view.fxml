@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="850.0" style="-fx-background-image: url(&quot;https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ffe2cab0fb5dd44fb457f90%2FPapier-planner%2F960x0.jpg%3FcropX1%3D0%26cropX2%3D1000%26cropY1%3D174%26cropY2%3D841&quot;); -fx-background-size: stretch;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.planner.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="850.0" style="-fx-background-image: url(&quot;https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ffe2cab0fb5dd44fb457f90%2FPapier-planner%2F960x0.jpg%3FcropX1%3D0%26cropX2%3D1000%26cropY1%3D174%26cropY2%3D841&quot;); -fx-background-size: stretch;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.planner.LoginController">
    <children>
       <AnchorPane layoutX="200.0" layoutY="133.0" opacity="0.88" prefHeight="404.0" prefWidth="450.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="133.0">
          <children>
