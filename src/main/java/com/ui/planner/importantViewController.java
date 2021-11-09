@@ -25,8 +25,13 @@ public class importantViewController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // TODO: Change the column name.
         importantCol1.setText("Events (Change me)");
         importantCol2.setText("Start (Change me)");
         importantCol3.setText("End (Chang me)");
     }
+
+
+
+
 }

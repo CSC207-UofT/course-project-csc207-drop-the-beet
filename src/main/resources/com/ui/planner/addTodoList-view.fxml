@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="268.0" prefWidth="369.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.planner.addTodoListController">
+   <children>
+      <DatePicker fx:id="whenDatePicker" layoutX="115.0" layoutY="83.0" />
+      <Label layoutX="62.0" layoutY="83.0" prefHeight="23.0" prefWidth="66.0" text="When" />
+      <Label layoutX="62.0" layoutY="119.0" prefHeight="23.0" prefWidth="66.0" text="Event" />
+      <TextField fx:id="eventTextField" layoutX="115.0" layoutY="119.0" prefHeight="23.0" prefWidth="186.0" />
+      <Label layoutX="20.0" layoutY="14.0" prefHeight="47.0" prefWidth="149.0" text="Add To-do Task">
+         <font>
+            <Font name="Times New Roman Bold" size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="confirmBtn" layoutX="62.0" layoutY="168.0" mnemonicParsing="false" onAction="#onConfirmBtnClicked" onMouseEntered="#onConfirmBtnMouseEntered" prefHeight="34.0" prefWidth="95.0" text="Confirm" />
+      <Button fx:id="cancelBtn" layoutX="205.0" layoutY="168.0" mnemonicParsing="false" onAction="#onCancelBtnClicked" onMouseEntered="#onCancelButtonMouseEntered" prefHeight="34.0" prefWidth="95.0" text="Cancel" />
+   </children>
+</AnchorPane>
