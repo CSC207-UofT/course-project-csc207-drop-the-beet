@@ -48,7 +48,12 @@ public class DashboardController implements Initializable {
     private Label importantProgressLabel;
     @FXML
     private StackPane innerStackPane;
-
+    @FXML
+    private AnchorPane todoListBubble;
+    @FXML
+    private AnchorPane allBubble;
+    @FXML
+    private AnchorPane importantBubble;
     @FXML
     private AnchorPane dashboardPane;
     @FXML
@@ -252,5 +257,29 @@ public class DashboardController implements Initializable {
     @FXML
     protected void onsettingsBtnMouseEntered() {
         settingsBtn.setCursor(Cursor.HAND);
+    }
+
+    @FXML
+    protected void onToDoBubbleMouseEntered() {todoListBubble.setCursor(Cursor.HAND);}
+
+    @FXML
+    protected void onAllBubbleMouseEntered() {allBubble.setCursor(Cursor.HAND);}
+
+    @FXML
+    protected void onImportantBubbleMouseEntered() {importantBubble.setCursor(Cursor.HAND);}
+
+    @FXML
+    protected void ontodoBubbleClicked() {
+        ontodolistClicked();
+    }
+
+    @FXML
+    protected void onOverviewBubbleClicked() {
+        onoverviewBtnClicked();
+    }
+
+    @FXML
+    protected void onImportantBubbleClicked() {
+        onimportantBtnClicked();
     }
 }
