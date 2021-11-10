@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Add Sign up Features">
+      <change afterPath="$PROJECT_DIR$/src/main/java/datebase/JDBCSQlite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/database/test.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/database/testDB.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,49 +42,41 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/ui/planner" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/com/ui/planner" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/database/sqlite-jdbc-3.36.0.3.jar" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.41264367" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\qin18\Desktop\course-project-csc207-drop-the-beet\src\main\resources\database" />
+      <recent name="C:\Users\qin18\Desktop\course-project-csc207-drop-the-beet\src\main\resources\SQLiteJdbcDriver" />
       <recent name="C:\Users\qin18\Desktop\course-project-csc207-drop-the-beet\src\main\resources\com\ui\planner" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.ui.planner" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SignupView">
-    <configuration name="AddImportantView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ui.planner.AddImportantView" />
-      <module name="planner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ui.planner.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AddtodoListView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ui.planner.AddtodoListView" />
-      <module name="planner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ui.planner.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.JDBCSQlite">
     <configuration name="DashboardView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ui.planner.DashboardView" />
       <module name="planner" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.ui.planner.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JDBCSQlite" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="datebase.JDBCSQlite" />
+      <module name="planner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="datebase.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,13 +110,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="sqlite-jdbc-3.36.0.3.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/src/main/resources/database/sqlite-jdbc-3.36.0.3.jar" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.JDBCSQlite" />
+        <item itemvalue="JAR Application.sqlite-jdbc-3.36.0.3.jar" />
         <item itemvalue="Application.SignupView" />
         <item itemvalue="Application.LoginView" />
         <item itemvalue="Application.DashboardView" />
-        <item itemvalue="Application.AddImportantView" />
-        <item itemvalue="Application.AddtodoListView" />
       </list>
     </recent_temporary>
   </component>
@@ -133,7 +133,9 @@
       <option name="presentableId" value="Default" />
       <updated>1636442258112</updated>
       <workItem from="1636442261808" duration="16112000" />
-      <workItem from="1636492455566" duration="363000" />
+      <workItem from="1636492455566" duration="1157000" />
+      <workItem from="1636497119317" duration="597000" />
+      <workItem from="1636508170986" duration="2482000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>
@@ -212,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636492667459</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add Sign up Features">
+      <created>1636492835905</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1636492835905</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
