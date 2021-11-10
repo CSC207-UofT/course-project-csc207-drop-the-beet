@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Add Sign up Features">
-      <change afterPath="$PROJECT_DIR$/src/main/java/datebase/JDBCSQlite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/database/test.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/database/testDB.db" afterDir="false" />
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Modified Maven Dependency">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datebase/JDBCSQlite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datebase/JDBCSQlite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/test.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +38,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/ui/planner" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/database/sqlite-jdbc-3.36.0.3.jar" />
@@ -117,10 +116,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.JDBCSQlite" />
+        <item itemvalue="Application.DashboardView" />
+        <item itemvalue="Application.LoginView" />
         <item itemvalue="JAR Application.sqlite-jdbc-3.36.0.3.jar" />
         <item itemvalue="Application.SignupView" />
-        <item itemvalue="Application.LoginView" />
-        <item itemvalue="Application.DashboardView" />
       </list>
     </recent_temporary>
   </component>
@@ -135,7 +134,13 @@
       <workItem from="1636442261808" duration="16112000" />
       <workItem from="1636492455566" duration="1157000" />
       <workItem from="1636497119317" duration="597000" />
-      <workItem from="1636508170986" duration="2482000" />
+      <workItem from="1636508170986" duration="3809000" />
+      <workItem from="1636512266014" duration="6000" />
+      <workItem from="1636513377835" duration="76000" />
+      <workItem from="1636513621450" duration="243000" />
+      <workItem from="1636513953848" duration="89000" />
+      <workItem from="1636515127003" duration="61000" />
+      <workItem from="1636527339239" duration="3443000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>
@@ -221,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636492835905</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Modified Maven Dependency">
+      <created>1636510692845</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1636510692845</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +261,7 @@
     <MESSAGE value="Add New UI Features" />
     <MESSAGE value="Add New Setting Features" />
     <MESSAGE value="Add Sign up Features" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Sign up Features" />
+    <MESSAGE value="Modified Maven Dependency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified Maven Dependency" />
   </component>
 </project>
