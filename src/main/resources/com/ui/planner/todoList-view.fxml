@@ -9,11 +9,10 @@
 
 <AnchorPane fx:id="todoListAnchorPane" prefHeight="521.2" prefWidth="648.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.planner.TodoListViewController">
    <children>
-      <TableView layoutX="2.0" layoutY="107.0" prefHeight="414.0" prefWidth="650.0">
+      <TableView fx:id="toDoLstTb" layoutX="2.0" layoutY="107.0" prefHeight="414.0" prefWidth="650.0">
          <columns>
-            <TableColumn fx:id="todolistCol1" prefWidth="209.60000920295715" style="-fx-background-color: white;" text="Event Name" />
-            <TableColumn fx:id="todolistCol2" prefWidth="228.40000915527344" style="-fx-background-color: white;" text="Start" />
-            <TableColumn fx:id="todolistCol3" minWidth="0.0" prefWidth="211.20001220703125" style="-fx-background-color: white;" text="End" />
+            <TableColumn fx:id="event" prefWidth="302.40000009536743" style="-fx-background-color: white;" text="Event Name" />
+            <TableColumn fx:id="end" minWidth="0.0" prefWidth="343.5999450683594" style="-fx-background-color: white;" text="End" />
          </columns>
       </TableView>
       <Label layoutX="14.0" layoutY="14.0" prefHeight="93.0" prefWidth="178.0" text="To-do List">

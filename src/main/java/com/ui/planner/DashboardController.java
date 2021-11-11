@@ -159,6 +159,7 @@ public class DashboardController implements Initializable {
             todoListView = fxmlLoader.load();
             TodoListViewController todoListViewController = (TodoListViewController) fxmlLoader.getController();
             todoListViewController.setUser(currUser);
+            todoListViewController.showEvents();
         } catch (IOException e) {
             e.printStackTrace();
         }
