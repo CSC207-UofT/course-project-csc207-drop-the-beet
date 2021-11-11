@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="850.0" style="-fx-background-image: url(&quot;https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ffe2cab0fb5dd44fb457f90%2FPapier-planner%2F960x0.jpg%3FcropX1%3D0%26cropX2%3D1000%26cropY1%3D174%26cropY2%3D841&quot;); -fx-background-size: stretch;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.ui.HelloController">
+   <children>
+      <AnchorPane layoutX="200.0" layoutY="133.0" opacity="0.88" prefHeight="404.0" prefWidth="450.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="133.0">
+         <children>
+            <TextField fx:id="userNameText" layoutX="69.0" layoutY="141.0" onKeyTyped="#onUserNameTyped" onMouseClicked="#onUserNameMouseClicked" prefHeight="42.0" prefWidth="301.0" promptText="Username" AnchorPane.bottomAnchor="221.0" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="53.80000000000001" AnchorPane.topAnchor="141.0" />
+            <PasswordField fx:id="passWordText" layoutX="69.0" layoutY="193.0" onKeyTyped="#onPassWordTyped" prefHeight="42.0" prefWidth="301.0" promptText="Password" AnchorPane.bottomAnchor="169.0" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="53.80000000000001" AnchorPane.topAnchor="193.0" />
+            <Button fx:id="loginButton" disable="true" layoutX="69.0" layoutY="245.0" mnemonicParsing="false" onAction="#onLoginButtonClick" onMouseEntered="#onloginBtnMouseEntered" prefHeight="42.0" prefWidth="301.0" style="-fx-background-color: rgb(36,39, 62);" text="Login" textFill="WHITE" AnchorPane.bottomAnchor="117.0" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="53.80000000000001" AnchorPane.topAnchor="245.0" />
+            <Label layoutX="69.0" layoutY="77.0" prefHeight="51.0" prefWidth="301.0" text="Welcome to the planner. Sign in to &#10;continue." AnchorPane.bottomAnchor="276.0" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="77.0">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="forgotPassword" layoutX="266.0" layoutY="312.0" onMouseClicked="#onForgotPasswordClicked" onMouseEntered="#onForgotPasswordMouseEntered" prefHeight="15.0" prefWidth="107.0" text="Forgot Password?" AnchorPane.bottomAnchor="76.80000000000001" AnchorPane.leftAnchor="266.0" AnchorPane.rightAnchor="50.80000000000001" AnchorPane.topAnchor="312.0" />
+            <Label fx:id="signUp" layoutX="266.0" layoutY="334.0" onMouseClicked="#onSignUpClicked" onMouseEntered="#onSignUpEntered" prefHeight="15.0" prefWidth="107.0" text="Sign up" AnchorPane.bottomAnchor="54.80000000000001" AnchorPane.leftAnchor="266.0" AnchorPane.rightAnchor="50.80000000000001" AnchorPane.topAnchor="334.0" />
+            <Label fx:id="unableToLoginLabel" layoutX="69.0" layoutY="49.0" nodeOrientation="LEFT_TO_RIGHT" text="Unable to login, &#10;please check your username or password." textFill="RED" visible="false" AnchorPane.bottomAnchor="325.8" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="155.39999999999998" AnchorPane.topAnchor="49.0">
+               <font>
+                  <Font name="Times New Roman" size="12.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="rememberMe" layoutX="69.0" layoutY="311.0" mnemonicParsing="false" onAction="#onRememberMeChecked" onMouseEntered="#onRememberMeEntered" prefWidth="116.0" text="Remember me" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="738.0" layoutY="638.0" text="CSC 207 Course Project Phase 1&#10;Drop The Beets Group&#10;University of Toronto" textAlignment="RIGHT" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="738.0" AnchorPane.rightAnchor="0.4000000000000057" AnchorPane.topAnchor="638.0">
+         <font>
+            <Font name="Times New Roman Bold" size="8.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
