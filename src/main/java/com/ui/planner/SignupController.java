@@ -9,8 +9,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import com.datebase.*;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class SignupController {
     @FXML
@@ -35,25 +37,25 @@ public class SignupController {
 
             confirmPasswordText.setOnKeyPressed(event -> {
                 if(event.getCode() == KeyCode.ENTER && userNameText.getLength() != 0 && passWordText.getLength() != 0) {
-                    onSignUpBtnClicked();
+                    try {
+                        onSignUpBtnClicked();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 }
             });
         }
     }
 
     @FXML
-    protected void onSignUpBtnClicked() {
-        if (passWordText.getText().equals(confirmPasswordText.getText())) {
-            // TODO: Check if the user is duplicate in database.
-            System.out.println(userNameText.getText());
-            System.out.println(emailText.getText());
-            System.out.println(passWordText.getText());
-            System.out.println(confirmPasswordText.getText());
+    protected void onSignUpBtnClicked() throws SQLException {
+        JDBCSQlite jdbcsQlite = new JDBCSQlite();
+        jdbcsQlite.create();
 
-            // TODO: if fail to sign up, call signUpFailureHandler.
-            // TODO: if succeed signing up, call signUpSuccessHandler.
+        if (passWordText.getText().equals(confirmPasswordText.getText()) && !jdbcsQlite.isUserNameExist(userNameText.getText())) {
+            jdbcsQlite.createNewUser(userNameText.getText(), emailText.getText(), passWordText.getText());
             signUpSuccessHandler();
-
+            jdbcsQlite.close();
 
         } else {
             // No need to Change the code under this line
@@ -63,6 +65,7 @@ public class SignupController {
             alert.setContentText("Fail to sign up, the password not match.");
             alert.showAndWait();
             signUpFailureHandler();
+            jdbcsQlite.close();
         }
     }
 

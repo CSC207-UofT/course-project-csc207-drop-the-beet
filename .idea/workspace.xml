@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Add SQL">
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Added DB Interface">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Driver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/planner/Schedule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/planner/ScheduleManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/planner/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/planner/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datebase/JDBCSQlite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datebase/JDBCSQlite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datebase/JDBCSQlite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/datebase/JDBCSQlite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/dashboard-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/dashboard-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/database/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/test.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/testDB.db" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,13 +61,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/ui/planner" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/database/sqlite-jdbc-3.36.0.3.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/planner" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.41264367" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\qin18\Desktop\course-project-csc207-drop-the-beet\src\main\java\com\planner" />
       <recent name="C:\Users\qin18\Desktop\course-project-csc207-drop-the-beet\src\main\resources\database" />
       <recent name="C:\Users\qin18\Desktop\course-project-csc207-drop-the-beet\src\main\resources\SQLiteJdbcDriver" />
       <recent name="C:\Users\qin18\Desktop\course-project-csc207-drop-the-beet\src\main\resources\com\ui\planner" />
@@ -65,8 +77,11 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.ui.planner" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.JDBCSQlite">
+  <component name="RunManager" selected="Application.Driver">
     <configuration name="DashboardView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ui.planner.DashboardView" />
       <module name="planner" />
@@ -80,12 +95,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Driver" />
+      <module name="planner" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JDBCSQlite" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="datebase.JDBCSQlite" />
+      <option name="MAIN_CLASS_NAME" value="com.datebase.JDBCSQlite" />
       <module name="planner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="datebase.*" />
+          <option name="PATTERN" value="com.datebase.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -106,30 +128,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignupView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ui.planner.SignupView" />
-      <module name="planner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ui.planner.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="sqlite-jdbc-3.36.0.3.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/src/main/resources/database/sqlite-jdbc-3.36.0.3.jar" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Driver" />
         <item itemvalue="Application.JDBCSQlite" />
         <item itemvalue="Application.LoginView" />
         <item itemvalue="Application.DashboardView" />
         <item itemvalue="JAR Application.sqlite-jdbc-3.36.0.3.jar" />
-        <item itemvalue="Application.SignupView" />
       </list>
     </recent_temporary>
   </component>
@@ -153,6 +162,12 @@
       <workItem from="1636527339239" duration="3708000" />
       <workItem from="1636598792854" duration="66000" />
       <workItem from="1636598969157" duration="11635000" />
+      <workItem from="1636611502250" duration="1114000" />
+      <workItem from="1636613416516" duration="599000" />
+      <workItem from="1636614070859" duration="6623000" />
+      <workItem from="1636620958519" duration="142000" />
+      <workItem from="1636621303243" duration="379000" />
+      <workItem from="1636624879014" duration="6571000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>
@@ -259,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636530922302</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added DB Interface">
+      <created>1636611616468</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1636611616468</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +311,7 @@
     <MESSAGE value="Add Sign up Features" />
     <MESSAGE value="Modified Maven Dependency" />
     <MESSAGE value="Add SQL" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add SQL" />
+    <MESSAGE value="Added DB Interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DB Interface" />
   </component>
 </project>

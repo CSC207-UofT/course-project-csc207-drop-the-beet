@@ -1,5 +1,9 @@
 package com.ui.planner;
 
+import com.planner.User;
+import com.datebase.*;
+
+import planner.*;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,9 +16,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class LoginController {
+public class LoginController implements Initializable {
     @FXML
     private Label forgotPassword;
     @FXML
@@ -32,19 +37,27 @@ public class LoginController {
     @FXML
     private Pane bgPane;
 
+    private final JDBCSQlite jdbcsQlite = new JDBCSQlite();
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        jdbcsQlite.create();
+    }
+
     /**
      * @Description: This is a GUI interface to handle the event when the login button is clicked.
      * @Param: void
      * @Return: void
      */
     @FXML
-    protected void onLoginButtonClick() throws IOException {
+    protected void onLoginButtonClick() throws IOException, SQLException {
         String userName = userNameText.getText();
         String passWord = passWordText.getText();
 
-        // TODO: Change the if condition to a function that compares the password
-        if (userName.equals("Drop") && passWord.equals("thebeets")) {
-            passwordSuccessView();
+        if (jdbcsQlite.getUserPassword(userName).equals(passWord)) {
+            String userEmail = jdbcsQlite.getUserEmail(userName);
+            User currUser = new User(userName, userEmail, passWord);
+            passwordSuccessView(userName, userEmail, passWord);
         }
         else {
             passwordFailedView();
@@ -88,7 +101,7 @@ public class LoginController {
                 if(event.getCode() == KeyCode.ENTER && userNameText.getLength() != 0 && passWordText.getLength() != 0) {
                     try {
                         onLoginButtonClick();
-                    } catch (IOException e) {
+                    } catch (IOException | SQLException e) {
                         e.printStackTrace();
                     }
                 }
@@ -97,10 +110,11 @@ public class LoginController {
     }
 
     @FXML
-    protected void passwordSuccessView() throws IOException {
-        DashboardView dashboard = new DashboardView();
+    protected void passwordSuccessView(String userName, String userEmail, String passWord) throws IOException {
+        DashboardView dashboard = new DashboardView(userName, userEmail, passWord);
         dashboard.showWindow();
         Stage stage = (Stage) loginButton.getScene().getWindow();
+        jdbcsQlite.close();
         stage.close();
     }
 
@@ -152,5 +166,6 @@ public class LoginController {
     protected void onloginBtnMouseEntered() {
         loginButton.setCursor(Cursor.HAND);
     }
+
 
 }
