@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Change Btn">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantEventModel.java" afterDir="false" />
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Add Show Important Events">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ScheduleEventModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddImportantView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddImportantView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddInComingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddInComingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddIncomingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddIncomingApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/important-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/important-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/incoming-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/incoming-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/database/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/test.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +162,7 @@
       <workItem from="1636614070859" duration="6623000" />
       <workItem from="1636620958519" duration="142000" />
       <workItem from="1636621303243" duration="379000" />
-      <workItem from="1636624879014" duration="21267000" />
+      <workItem from="1636624879014" duration="22807000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>
@@ -330,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636640585044</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Add Show Important Events">
+      <created>1636646324239</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1636646324239</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,6 +376,7 @@
     <MESSAGE value="Added add important event function" />
     <MESSAGE value="Added add todo list event function" />
     <MESSAGE value="Change Btn" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Btn" />
+    <MESSAGE value="Add Show Important Events" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Show Important Events" />
   </component>
 </project>

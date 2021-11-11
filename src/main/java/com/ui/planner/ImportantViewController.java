@@ -49,8 +49,6 @@ public class ImportantViewController implements Initializable {
         event.setCellValueFactory(new PropertyValueFactory<>("Event"));
         start.setCellValueFactory(new PropertyValueFactory<>("Start"));
         end.setCellValueFactory(new PropertyValueFactory<>("End"));
-
-        ;
     }
 
     @FXML
@@ -70,6 +68,7 @@ public class ImportantViewController implements Initializable {
             }
             importantEventTb.setItems(importantEventModels);
         }
+        jdbcsQlite.close();
     }
 
     @FXML

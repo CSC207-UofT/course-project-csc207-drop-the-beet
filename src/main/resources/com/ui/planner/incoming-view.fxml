@@ -9,11 +9,11 @@
 
 <AnchorPane prefHeight="521.2" prefWidth="648.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.planner.IncomingViewController">
    <children>
-      <TableView layoutX="2.0" layoutY="107.0" prefHeight="414.0" prefWidth="650.0">
+      <TableView fx:id="inComingTb" layoutX="2.0" layoutY="107.0" prefHeight="414.0" prefWidth="650.0">
         <columns>
-          <TableColumn fx:id="incomingCol1" prefWidth="209.60000920295715" style="-fx-background-color: white;" text="Event Name" />
-          <TableColumn fx:id="incomingCol2" prefWidth="228.40000915527344" style="-fx-background-color: white;" text="Start" />
-            <TableColumn fx:id="incomingCol3" minWidth="0.0" prefWidth="211.20001220703125" style="-fx-background-color: white;" text="End" />
+          <TableColumn fx:id="event" prefWidth="209.60000920295715" style="-fx-background-color: white;" text="Event Name" />
+          <TableColumn fx:id="start" prefWidth="228.40000915527344" style="-fx-background-color: white;" text="Start" />
+            <TableColumn fx:id="end" minWidth="0.0" prefWidth="211.20001220703125" style="-fx-background-color: white;" text="End" />
         </columns>
       </TableView>
       <Label layoutX="14.0" layoutY="14.0" prefHeight="93.0" prefWidth="200.0" text="Incoming Events">

@@ -137,7 +137,11 @@ public class DashboardController implements Initializable {
         importantNumLabel.setText(Integer.toString(importantNum));
 
         try{
-            incomingView = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("incoming-view.fxml")));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("incoming-view.fxml"));
+            incomingView = fxmlLoader.load();
+            IncomingViewController incomingViewController = (IncomingViewController) fxmlLoader.getController();
+            incomingViewController.setUser(currUser);
+            incomingViewController.showEvents();
         } catch (IOException e) {
             e.printStackTrace();
         }
