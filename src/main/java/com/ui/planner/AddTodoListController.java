@@ -2,6 +2,8 @@ package com.ui.planner;
 
 import com.planner.User;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.Alert;
@@ -26,6 +28,8 @@ public class AddTodoListController {
     private Button cancelBtn;
 
     private User user;
+
+
 
     @FXML
     protected void onConfirmBtnClicked() {

@@ -27,7 +27,7 @@ public class AddtodoListView extends Application {
         Scene scene = new Scene(root, 369, 268);
         stage.setTitle("Add To-do List Task Demo");
         stage.setScene(scene);
-        stage.show();
+        stage.showAndWait();
     }
 
     public void showWindow() throws IOException{
