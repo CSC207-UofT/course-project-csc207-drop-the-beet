@@ -310,6 +310,18 @@ public class JDBCSQlite {
         return null;
     }
 
+    public ArrayList<ArrayList<String>> getAllUserToDoTasksTodayByUserName(String userName) throws SQLException {
+        ArrayList<ArrayList<String>> res = new ArrayList<>();
+        if (isUserNameExist(userName)) {
+            ResultSet rs = stmt.executeQuery("SELECT * FROM TODOLIST WHERE USERNAME = " + "'" + userName + "'" + " AND" + " END = " + "'" + LocalDate.now().toString() + "'");
+            fetchAllUserToDoTasks(res, rs);
+        }
+        if (res.size() > 0) {
+            return res;
+        }
+        return null;
+    }
+
     private void fetchAllUserToDoTasks(ArrayList<ArrayList<String>> res, ResultSet rs) throws SQLException {
         while (rs.next()) {
             ArrayList<String> tmp = new ArrayList<String>();
