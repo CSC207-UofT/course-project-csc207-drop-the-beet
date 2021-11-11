@@ -403,7 +403,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     protected void onOverviewBubbleClicked() {
-        onoverviewBtnClicked();
+        onincomingBtnClicked();
     }
 
     @FXML
