@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Added add important event function">
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Added add todo list event function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddTodoListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddTodoListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddtodoListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddtodoListView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/TodoListViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/TodoListViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/test.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/dashboard-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/dashboard-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +156,7 @@
       <workItem from="1636614070859" duration="6623000" />
       <workItem from="1636620958519" duration="142000" />
       <workItem from="1636621303243" duration="379000" />
-      <workItem from="1636624879014" duration="14952000" />
+      <workItem from="1636624879014" duration="15424000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>
@@ -308,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636638950169</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added add todo list event function">
+      <created>1636640235848</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1636640235848</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,6 +347,7 @@
     <MESSAGE value="Work on Account Settings" />
     <MESSAGE value="Added Refresh Bubble function" />
     <MESSAGE value="Added add important event function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added add important event function" />
+    <MESSAGE value="Added add todo list event function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added add todo list event function" />
   </component>
 </project>
