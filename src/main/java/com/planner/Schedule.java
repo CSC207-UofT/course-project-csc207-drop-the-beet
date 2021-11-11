@@ -6,20 +6,9 @@ package com.planner;
 public class Schedule{
     private String date;
     private String task;
-    private String from;
-    private String to;
+    private String start;
+    private String end;
 //    private ArrayList<Object> repeat = new ArrayList<>();
-
-    /**
-     * A simpler constructor of the Schedule
-     */
-    public Schedule(){
-        this.date = "";
-        this.from = "";
-        this.to = "";
-        this.task = "";
-//        this.repeat.add(false);
-    }
 
     /**
      * Constructor of the Schedule
@@ -30,8 +19,8 @@ public class Schedule{
      */
     public Schedule(String date, String from, String to, String task){
         this.date = date;
-        this.from = from;
-        this.to = to;
+        this.start = from;
+        this.end = to;
         this.task = task;
     }
 
@@ -49,55 +38,6 @@ public class Schedule{
      */
     public void setDate(String date) {
         this.date = date;
-    }
-
-
-    /**
-     * This method returns the current start time
-     * @return this schedules' start time
-     */
-    public String getFrom() {
-        return this.from;
-    }
-
-    /**
-     * This method updates a new start time
-     * @param from is the new start time
-     */
-    public void setFrom(String from) {
-        this.from = from;
-    }
-
-    /**
-     * This method returns the current end time
-     * @return this schedules' end time
-     */
-    public String getTo() {
-        return this.to;
-    }
-
-    /**
-     * This method updates a new end time
-     * @param to is the new end time
-     */
-    public void setTo(String to) {
-        this.to = to;
-    }
-
-    /**
-     * This method returns the current task descriptions
-     * @return this schedules' task
-     */
-    public String getTask() {
-        return this.task;
-    }
-
-    /**
-     * This method updates a new task description
-     * @param task is the new task descriptions
-     */
-    public void setTask(String task) {
-        this.task = task;
     }
 
     @Override

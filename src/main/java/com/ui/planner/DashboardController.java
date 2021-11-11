@@ -158,7 +158,10 @@ public class DashboardController implements Initializable {
         innerStackPane.getChildren().add(todoListView);
 
         try{
-            importantView = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("important-view.fxml")));
+            FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("important-view.fxml")));
+            importantView = fxmlLoader.load();
+            ImportantViewController importantViewController = (ImportantViewController) fxmlLoader.getController();
+            importantViewController.setUser(currUser);
         } catch (IOException e) {
             e.printStackTrace();
         }
