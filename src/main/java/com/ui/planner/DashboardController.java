@@ -78,10 +78,6 @@ public class DashboardController implements Initializable {
     private ArrayList<ArrayList<String>> allUserSchedules;
     private ArrayList<ArrayList<String>> allUserImportantTasks;
 
-    private int todoNum;
-    private int scheduleNum;
-    private int importantNum;
-
     private JDBCSQlite jdbcsQlite;
 
     private User currUser;
@@ -113,18 +109,21 @@ public class DashboardController implements Initializable {
             e.printStackTrace();
         }
 
+        int todoNum;
         if (allUserToDoTasks == null) {
             todoNum = 0;
         } else {
             todoNum = allUserToDoTasks.size();
         }
 
+        int scheduleNum;
         if (allUserSchedules == null) {
             scheduleNum = 0;
         } else {
             scheduleNum = allUserSchedules.size();
         }
 
+        int importantNum;
         if (allUserImportantTasks == null) {
             importantNum = 0;
         } else {
@@ -220,6 +219,46 @@ public class DashboardController implements Initializable {
         jdbcsQlite.close();
     }
 
+    private void refreshBubbleStatus() {
+        JDBCSQlite jdbcsQlite = new JDBCSQlite();
+        jdbcsQlite.create();
+        try {
+            allUserToDoTasks = jdbcsQlite.getAllUserToDoTasksByUserName(currUser.getName());
+            allUserImportantTasks = jdbcsQlite.getAllUserImportantTasksByUserName(currUser.getName());
+            allUserSchedules = jdbcsQlite.getAllUserEventTasksByUserName(currUser.getName());
+
+            int todoNum;
+            if (allUserToDoTasks == null) {
+                todoNum = 0;
+            } else {
+                todoNum = allUserToDoTasks.size();
+            }
+
+            int scheduleNum;
+            if (allUserSchedules == null) {
+                scheduleNum = 0;
+            } else {
+                scheduleNum = allUserSchedules.size();
+            }
+
+            int importantNum;
+            if (allUserImportantTasks == null) {
+                importantNum = 0;
+            } else {
+                importantNum = allUserImportantTasks.size();
+            }
+
+            todoNumLabel.setText(Integer.toString(todoNum));
+
+            scheduledNumLabel.setText(Integer.toString(scheduleNum));
+
+            importantNumLabel.setText(Integer.toString(importantNum));
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
     /**
      * Called to refresh all button status after a button is clicked
      *
@@ -244,6 +283,7 @@ public class DashboardController implements Initializable {
         dashboardPane.toFront();
         refreshBtnStatus(dashboardBtn);
         refreshUserStatus();
+        refreshBubbleStatus();
         System.out.println("dashboard btn clicked");
     }
 
@@ -260,6 +300,7 @@ public class DashboardController implements Initializable {
         incomingView.toFront();
         refreshBtnStatus(incomingBtn);
         refreshUserStatus();
+        refreshBubbleStatus();
         System.out.println("incoming btn clicked!");
 
     }
@@ -274,6 +315,7 @@ public class DashboardController implements Initializable {
         overviewView.toFront();
         refreshBtnStatus(overviewBtn);
         refreshUserStatus();
+        refreshBubbleStatus();
         System.out.println("all plans btn clicked");
     }
 
@@ -287,6 +329,7 @@ public class DashboardController implements Initializable {
         todoListView.toFront();
         refreshBtnStatus(todolistBtn);
         refreshUserStatus();
+        refreshBubbleStatus();
         System.out.println("to do list btn clicked");
     }
 
@@ -300,6 +343,7 @@ public class DashboardController implements Initializable {
         importantView.toFront();
         refreshBtnStatus(importantBtn);
         refreshUserStatus();
+        refreshBubbleStatus();
         System.out.println("Important Btn Clicked");
     }
 
@@ -312,6 +356,7 @@ public class DashboardController implements Initializable {
     protected void onsignoutBtnClicked() {
         refreshBtnStatus(signoutBtn);
         refreshUserStatus();
+        refreshBubbleStatus();
         jdbcsQlite.close();
         Platform.exit();
     }
@@ -325,6 +370,7 @@ public class DashboardController implements Initializable {
     protected void onsettingsBtnClicked() {
         settingsView.toFront();
         refreshUserStatus();
+        refreshBubbleStatus();
         refreshBtnStatus(settingsBtn);
         System.out.println("Settings clicked!");
     }
