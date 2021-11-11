@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Added add todo list event function">
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Change Btn">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantEventModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddImportantView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddImportantView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/dashboard-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/dashboard-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/ui/planner/important-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/ui/planner/important-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/test.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +54,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/ui/planner" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/planner" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aaa" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -156,7 +160,7 @@
       <workItem from="1636614070859" duration="6623000" />
       <workItem from="1636620958519" duration="142000" />
       <workItem from="1636621303243" duration="379000" />
-      <workItem from="1636624879014" duration="15424000" />
+      <workItem from="1636624879014" duration="21267000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>
@@ -312,7 +316,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636640235848</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Change Btn">
+      <created>1636640434771</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1636640434771</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Change Btn">
+      <created>1636640585044</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1636640585044</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,6 +366,7 @@
     <MESSAGE value="Added Refresh Bubble function" />
     <MESSAGE value="Added add important event function" />
     <MESSAGE value="Added add todo list event function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added add todo list event function" />
+    <MESSAGE value="Change Btn" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Btn" />
   </component>
 </project>

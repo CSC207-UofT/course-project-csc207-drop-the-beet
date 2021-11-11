@@ -165,6 +165,7 @@ public class DashboardController implements Initializable {
             importantView = fxmlLoader.load();
             ImportantViewController importantViewController = (ImportantViewController) fxmlLoader.getController();
             importantViewController.setUser(currUser);
+            importantViewController.showEvents();
         } catch (IOException e) {
             e.printStackTrace();
         }
