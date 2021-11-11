@@ -204,7 +204,6 @@ public class JDBCSQlite {
     public boolean changeUserEmailByUserName(String userName, String newEmail) throws SQLException {
         if (isUserNameExist(userName)) {
             stmt.executeUpdate("UPDATE ACCOUNT SET EMAIL =" + "'" + newEmail + "'" + "WHERE USERNAME = " + "'" + userName + "'");
-            close();
             return true;
         }
         return false;
@@ -222,7 +221,6 @@ public class JDBCSQlite {
     public boolean changeUserPasswordByUserName(String userName, String newPassword) throws SQLException {
         if (isUserNameExist(userName)) {
             stmt.executeUpdate("UPDATE ACCOUNT SET PASSWORD =" + "'" + newPassword + "'" + "WHERE USERNAME = " + "'" + userName + "'");
-            close();
             return true;
         }
         return false;
