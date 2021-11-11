@@ -40,6 +40,10 @@ public class User {
         return this.password;
     }
 
+    public void setPassword(String password) {this.password = password; }
+
+    public void setEmail (String Email) {this.email = email; }
+
 
     public void changeEmail(String newEmail) {
         this.email = newEmail;

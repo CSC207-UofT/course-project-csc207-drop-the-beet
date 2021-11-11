@@ -206,7 +206,19 @@ public class DashboardController implements Initializable {
         }
     }
 
+    private void refreshUserStatus() {
+        JDBCSQlite jdbcsQlite = new JDBCSQlite();
+        jdbcsQlite.create();
+        try{
+            currUser.setEmail(jdbcsQlite.getUserEmail(currUser.getName()));
+            currUser.setPassword(jdbcsQlite.getUserPassword(currUser.getName()));
+        } catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
 
+        jdbcsQlite.close();
+    }
 
     /**
      * Called to refresh all button status after a button is clicked
@@ -231,6 +243,7 @@ public class DashboardController implements Initializable {
     protected void ondashboardBtnClicked() {
         dashboardPane.toFront();
         refreshBtnStatus(dashboardBtn);
+        refreshUserStatus();
         System.out.println("dashboard btn clicked");
     }
 
@@ -246,6 +259,7 @@ public class DashboardController implements Initializable {
     protected void onincomingBtnClicked() {
         incomingView.toFront();
         refreshBtnStatus(incomingBtn);
+        refreshUserStatus();
         System.out.println("incoming btn clicked!");
 
     }
@@ -259,6 +273,7 @@ public class DashboardController implements Initializable {
     protected void onoverviewBtnClicked() {
         overviewView.toFront();
         refreshBtnStatus(overviewBtn);
+        refreshUserStatus();
         System.out.println("all plans btn clicked");
     }
 
@@ -271,6 +286,7 @@ public class DashboardController implements Initializable {
     protected void ontodolistClicked() {
         todoListView.toFront();
         refreshBtnStatus(todolistBtn);
+        refreshUserStatus();
         System.out.println("to do list btn clicked");
     }
 
@@ -283,6 +299,7 @@ public class DashboardController implements Initializable {
     protected void onimportantBtnClicked() {
         importantView.toFront();
         refreshBtnStatus(importantBtn);
+        refreshUserStatus();
         System.out.println("Important Btn Clicked");
     }
 
@@ -294,6 +311,7 @@ public class DashboardController implements Initializable {
     @FXML
     protected void onsignoutBtnClicked() {
         refreshBtnStatus(signoutBtn);
+        refreshUserStatus();
         jdbcsQlite.close();
         Platform.exit();
     }
@@ -306,6 +324,7 @@ public class DashboardController implements Initializable {
     @FXML
     protected void onsettingsBtnClicked() {
         settingsView.toFront();
+        refreshUserStatus();
         refreshBtnStatus(settingsBtn);
         System.out.println("Settings clicked!");
     }
