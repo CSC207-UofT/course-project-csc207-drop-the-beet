@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Modified Maven Dependency">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="Add SQL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/datebase/JDBCSQlite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datebase/JDBCSQlite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/database/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/test.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database/testDB.db" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +25,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="20fit97KyV7vIepMHrBp1eiRiQZ" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -36,10 +44,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/ui/planner" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/database/sqlite-jdbc-3.36.0.3.jar" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -116,8 +126,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.JDBCSQlite" />
-        <item itemvalue="Application.DashboardView" />
         <item itemvalue="Application.LoginView" />
+        <item itemvalue="Application.DashboardView" />
         <item itemvalue="JAR Application.sqlite-jdbc-3.36.0.3.jar" />
         <item itemvalue="Application.SignupView" />
       </list>
@@ -140,7 +150,9 @@
       <workItem from="1636513621450" duration="243000" />
       <workItem from="1636513953848" duration="89000" />
       <workItem from="1636515127003" duration="61000" />
-      <workItem from="1636527339239" duration="3443000" />
+      <workItem from="1636527339239" duration="3708000" />
+      <workItem from="1636598792854" duration="66000" />
+      <workItem from="1636598969157" duration="11635000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>
@@ -233,7 +245,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636510692845</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add SQL">
+      <created>1636530906683</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1636530906683</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add SQL">
+      <created>1636530922302</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1636530922302</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +288,7 @@
     <MESSAGE value="Add New Setting Features" />
     <MESSAGE value="Add Sign up Features" />
     <MESSAGE value="Modified Maven Dependency" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified Maven Dependency" />
+    <MESSAGE value="Add SQL" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add SQL" />
   </component>
 </project>
