@@ -160,7 +160,7 @@
                       <TableColumn fx:id="end" prefWidth="320.00006103515625" style="-fx-background-color: white;" text="End" />
                     </columns>
                   </TableView>
-                  <Label layoutX="15.0" layoutY="219.0" prefHeight="41.0" prefWidth="577.0" text="Today">
+                  <Label layoutX="15.0" layoutY="219.0" prefHeight="41.0" prefWidth="577.0" text="Today's To-do">
                      <font>
                         <Font name="Times New Roman Bold" size="20.0" />
                      </font>
