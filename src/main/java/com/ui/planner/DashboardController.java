@@ -2,6 +2,8 @@ package com.ui.planner;
 
 import com.planner.User;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import com.datebase.*;
@@ -60,19 +63,19 @@ public class DashboardController implements Initializable {
     @FXML
     private Parent settingsView;
     @FXML
-    private TableColumn todayCol1;
+    private TableColumn<ToDoEventModel, String> event;
     @FXML
-    private TableColumn todayCol2;
+    private TableColumn<ToDoEventModel, String> end;
     @FXML
-    private TableColumn todayCol3;
-    @FXML
-    private TableView todayTable;
+    private TableView<ToDoEventModel> todayTable;
     @FXML
     ArrayList<Button> arrBtn = new ArrayList<Button>();
 
     private ArrayList<ArrayList<String>> allUserToDoTasks;
     private ArrayList<ArrayList<String>> allUserSchedules;
     private ArrayList<ArrayList<String>> allUserImportantTasks;
+
+    private ObservableList<ToDoEventModel> toDoEventModels = FXCollections.observableArrayList();
 
     private JDBCSQlite jdbcsQlite;
 
@@ -177,6 +180,7 @@ public class DashboardController implements Initializable {
         innerStackPane.getChildren().add(settingsView);
 
         dashboardPane.toFront();
+        showEvents();
     }
 
     /**
@@ -189,13 +193,6 @@ public class DashboardController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Change Table Today's first column
-        todayCol1.setText("Events (Change me)");
-        // Change Table Today's second column
-        todayCol2.setText("Start (Change me)");
-        // Change Table Today's third column
-        todayCol3.setText("End (Change me)");
-
         if (arrBtn.size() == 0) {
             arrBtn.add(dashboardBtn);
             arrBtn.add(incomingBtn);
@@ -204,6 +201,28 @@ public class DashboardController implements Initializable {
             arrBtn.add(settingsBtn);
             arrBtn.add(settingsBtn);
         }
+        event.setCellValueFactory(new PropertyValueFactory<>("Event"));
+        end.setCellValueFactory(new PropertyValueFactory<>("End"));
+    }
+
+    @FXML
+    public void showEvents() {
+        JDBCSQlite jdbcsQlite = new JDBCSQlite();
+        jdbcsQlite.create();
+        ArrayList<ArrayList<String>> lst = null;
+        try{
+            lst = jdbcsQlite.getAllUserToDoTasksTodayByUserName(currUser.getName());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if (lst != null && lst.size() >= 1) {
+            for (ArrayList<String> l : lst){
+                toDoEventModels.add(new ToDoEventModel(l.get(3), l.get(4)));
+            }
+            todayTable.setItems(toDoEventModels);
+        }
+        jdbcsQlite.close();
     }
 
     private void refreshUserStatus() {
@@ -286,6 +305,8 @@ public class DashboardController implements Initializable {
         refreshBtnStatus(dashboardBtn);
         refreshUserStatus();
         refreshBubbleStatus();
+        toDoEventModels.clear();
+        showEvents();
         System.out.println("dashboard btn clicked");
     }
 
