@@ -29,42 +29,32 @@
                         <Image url="@../../../images/dashboard.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="21.0" fitWidth="20.0" layoutX="17.0" layoutY="192.0" pickOnBounds="true" AnchorPane.bottomAnchor="319.79999999999995" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="146.2" AnchorPane.topAnchor="192.0">
+                  <ImageView fitHeight="21.0" fitWidth="20.0" layoutX="17.0" layoutY="156.0" pickOnBounds="true" AnchorPane.bottomAnchor="355.79999999999995" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="146.2" AnchorPane.topAnchor="156.0">
                      <image>
                         <Image url="@../../../images/today.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="21.0" fitWidth="20.0" layoutX="17.0" layoutY="128.0" pickOnBounds="true" AnchorPane.bottomAnchor="383.79999999999995" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="146.2" AnchorPane.topAnchor="128.0">
-                     <image>
-                        <Image url="@../../../images/planner.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="21.0" fitWidth="20.0" layoutX="16.0" layoutY="160.0" pickOnBounds="true" AnchorPane.bottomAnchor="351.79999999999995" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="147.2" AnchorPane.topAnchor="160.0">
+                  <ImageView fitHeight="21.0" fitWidth="20.0" layoutX="16.0" layoutY="124.0" pickOnBounds="true" AnchorPane.bottomAnchor="387.79999999999995" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="147.2" AnchorPane.topAnchor="124.0">
                      <image>
                         <Image url="@../../../images/textfile.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="22.0" fitWidth="20.0" layoutX="18.0" layoutY="224.0" pickOnBounds="true" AnchorPane.bottomAnchor="286.79999999999995" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="145.2" AnchorPane.topAnchor="224.0">
+                  <ImageView fitHeight="22.0" fitWidth="20.0" layoutX="18.0" layoutY="188.0" pickOnBounds="true" AnchorPane.bottomAnchor="322.79999999999995" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="145.2" AnchorPane.topAnchor="188.0">
                      <image>
                         <Image url="@../../../images/flag.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="incomingBtn" layoutX="47.0" layoutY="191.0" mnemonicParsing="false" onAction="#onincomingBtnClicked" onMouseEntered="#onincomingBtnMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="Scheduled" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="316.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="191.0">
+                  <Button fx:id="incomingBtn" layoutX="47.0" layoutY="155.0" mnemonicParsing="false" onAction="#onincomingBtnClicked" onMouseEntered="#onincomingBtnMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="Scheduled" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="352.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="155.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="overviewBtn" layoutX="48.0" layoutY="127.0" mnemonicParsing="false" onAction="#onoverviewBtnClicked" onMouseEntered="#onoverviewBtnMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="Overview" textFill="WHITE" AnchorPane.bottomAnchor="380.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="127.0">
+                  <Button fx:id="todolistBtn" layoutX="48.0" layoutY="123.0" mnemonicParsing="false" onAction="#ontodolistClicked" onMouseEntered="#ontodolistMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="To-do List" textFill="WHITE" AnchorPane.bottomAnchor="384.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="123.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="todolistBtn" layoutX="48.0" layoutY="159.0" mnemonicParsing="false" onAction="#ontodolistClicked" onMouseEntered="#ontodolistMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="To-do List" textFill="WHITE" AnchorPane.bottomAnchor="348.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="159.0">
-                     <font>
-                        <Font name="Times New Roman" size="14.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="importantBtn" layoutX="48.0" layoutY="222.0" mnemonicParsing="false" onAction="#onimportantBtnClicked" onMouseEntered="#onimportantBtnMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="Important" textFill="WHITE" AnchorPane.bottomAnchor="285.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="222.0">
+                  <Button fx:id="importantBtn" layoutX="48.0" layoutY="186.0" mnemonicParsing="false" onAction="#onimportantBtnClicked" onMouseEntered="#onimportantBtnMouseEntered" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: transparent;" text="Important" textFill="WHITE" AnchorPane.bottomAnchor="321.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="186.0">
                      <font>
                         <Font name="Times New Roman" size="14.0" />
                      </font>
@@ -131,7 +121,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="allBubble" layoutX="226.0" layoutY="86.0" onMouseClicked="#onOverviewBubbleClicked" onMouseEntered="#onAllBubbleMouseEntered" prefHeight="130.0" prefWidth="208.0" style="-fx-background-color: #b882f9; -fx-border-width: 2px 2px 2px 2px; -fx-background-radius: 10px;">
+                  <AnchorPane fx:id="allBubble" layoutX="226.0" layoutY="86.0" onMouseClicked="#onScheduledBubbleClicked" onMouseEntered="#onAllBubbleMouseEntered" prefHeight="130.0" prefWidth="208.0" style="-fx-background-color: #b882f9; -fx-border-width: 2px 2px 2px 2px; -fx-background-radius: 10px;">
                      <children>
                         <Label fx:id="scheduledNumLabel" layoutX="25.0" layoutY="24.0" prefHeight="41.0" prefWidth="55.0" text="999" textFill="WHITE">
                            <font>

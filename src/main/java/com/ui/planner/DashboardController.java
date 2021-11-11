@@ -28,8 +28,6 @@ public class DashboardController implements Initializable {
     @FXML
     private Button incomingBtn;
     @FXML
-    private Button overviewBtn;
-    @FXML
     private Button todolistBtn;
     @FXML
     private Button importantBtn;
@@ -55,8 +53,6 @@ public class DashboardController implements Initializable {
     private AnchorPane dashboardPane;
     @FXML
     private Parent incomingView;
-    @FXML
-    private Parent overviewView;
     @FXML
     private Parent todoListView;
     @FXML
@@ -147,12 +143,6 @@ public class DashboardController implements Initializable {
         }
         innerStackPane.getChildren().add(incomingView);
 
-        try{
-            overviewView = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("overview-view.fxml")));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        innerStackPane.getChildren().add(overviewView);
 
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("todoList-view.fxml"));
@@ -209,7 +199,6 @@ public class DashboardController implements Initializable {
         if (arrBtn.size() == 0) {
             arrBtn.add(dashboardBtn);
             arrBtn.add(incomingBtn);
-            arrBtn.add(overviewBtn);
             arrBtn.add(todolistBtn);
             arrBtn.add(importantBtn);
             arrBtn.add(settingsBtn);
@@ -324,20 +313,6 @@ public class DashboardController implements Initializable {
     }
 
     @FXML
-    protected void onoverviewBtnClicked() {
-        overviewView.toFront();
-        refreshBtnStatus(overviewBtn);
-        refreshUserStatus();
-        refreshBubbleStatus();
-        System.out.println("all plans btn clicked");
-    }
-
-    @FXML
-    protected void onoverviewBtnMouseEntered() {
-        overviewBtn.setCursor(Cursor.HAND);
-    }
-
-    @FXML
     protected void ontodolistClicked() {
         todoListView.toFront();
         refreshBtnStatus(todolistBtn);
@@ -408,7 +383,7 @@ public class DashboardController implements Initializable {
     }
 
     @FXML
-    protected void onOverviewBubbleClicked() {
+    protected void onScheduledBubbleClicked() {
         onincomingBtnClicked();
     }
 
