@@ -176,7 +176,6 @@ public class JDBCSQlite {
         ResultSet rs = stmt.executeQuery(getUserEmailByIDSql + "'" + Integer.toString(ID) + "'");
         if (rs.next()) {
             String res = rs.getString("EMAIL");
-            close();
             return res;
         } else {
             return null;
@@ -186,7 +185,6 @@ public class JDBCSQlite {
     public boolean changeUserNameByID (int ID, String newUserName) throws SQLException {
         if (isUserIDExist(ID)){
             stmt.executeUpdate("UPDATE ACCOUNT SET USERNAME = " + "'" + newUserName + "'" + " WHERE ID = " + Integer.toString(ID) + ";");
-            close();
             return true;
         }
         return false;
@@ -195,7 +193,6 @@ public class JDBCSQlite {
     public boolean changeUserNameByUserName(String oldUserName, String newUserName) throws SQLException {
         if (isUserNameExist(oldUserName)) {
             stmt.executeUpdate("UPDATE ACCOUNT SET USERNAME = " + "'" + newUserName + "'" + " WHERE USERNAME = " + "'" + oldUserName + "'" + ";");
-            close();
             return true;
         }
         return false;
@@ -212,7 +209,6 @@ public class JDBCSQlite {
     public boolean changeUserEmailByID(int ID, String newEmail) throws SQLException {
         if (isUserIDExist(ID)) {
             stmt.executeUpdate("UPDATE ACCOUNT SET EMAIL =" + "'" + newEmail + "'" + "WHERE ID = " + Integer.toString(ID));
-            close();
             return true;
         }
         return false;
@@ -229,7 +225,6 @@ public class JDBCSQlite {
     public boolean changeUserPasswordByID(int ID, String newPassword) throws SQLException {
         if (isUserIDExist(ID)) {
             stmt.executeUpdate("UPDATE ACCOUNT SET PASSWORD =" + "'" + newPassword + "'" + "WHERE ID = " + ID);
-            close();
             return true;
         }
         return false;
@@ -244,7 +239,6 @@ public class JDBCSQlite {
         int userID = getUserIDByUserName(userName);
         if (userID != -1) {
             stmt.executeUpdate("INSERT INTO TODOLIST VALUES (" + nextID + "," + "'" + userID + "'" + "," + "'" + userName + "'" + "," + "'" + task + "'" + "," + "'" + end.toString() + "'" + ")");
-            close();
             return true;
         }
         return false;
@@ -269,7 +263,6 @@ public class JDBCSQlite {
         if (rs.next()) {
             System.out.println("UPDATE TODOLIST SET TASK = " + "'" + task + "'" + " WHERE ID = " + TaskID);
             stmt.executeUpdate("UPDATE TODOLIST SET TASK = " + "'" + task + "'" + " WHERE ID = " + TaskID);
-            close();
             return true;
         }
         return false;
@@ -279,7 +272,6 @@ public class JDBCSQlite {
         ResultSet rs = stmt.executeQuery("SELECT * FROM TODOLIST WHERE ID = " + TaskID);
         if (rs.next()) {
             stmt.executeUpdate("UPDATE TODOLIST SET END = " + "'" + end.toString() + "'" + " WHERE ID = " + TaskID);
-            close();
             return true;
         }
         return false;
@@ -301,7 +293,6 @@ public class JDBCSQlite {
             fetchAllUserToDoTasks(res, rs);
         }
         if (res.size() > 0) {
-            close();
             return res;
         }
         return null;
@@ -314,7 +305,6 @@ public class JDBCSQlite {
             fetchAllUserToDoTasks(res, rs);
         }
         if (res.size() > 0) {
-            close();
             return res;
         }
         return null;
@@ -341,7 +331,6 @@ public class JDBCSQlite {
         String userName = getUserNameByID(userID);
         if (userName != null && userName.length() > 0) {
             stmt.executeUpdate("INSERT INTO EVENT VALUES (" + nextID + ","  + userID  + "," + "'" + userName + "'" + "," + "'" + task + "'" + "," + "'" + start.toString()  + "'" + "," + "'" + end.toString() + "'" + ")");
-            close();
             return true;
         }
         return false;
@@ -356,7 +345,6 @@ public class JDBCSQlite {
         int userID = getUserIDByUserName(userName);
         if (userID != -1) {
             stmt.executeUpdate("INSERT INTO EVENT VALUES (" + nextID + ","  + userID  + "," + "'" + userName + "'" + "," + "'" + task + "'" + "," + "'" + start.toString()  + "'" + "," + "'" + end.toString() + "'" + ")");
-            close();
             return true;
         }
         return false;
@@ -366,7 +354,6 @@ public class JDBCSQlite {
         ResultSet rs = stmt.executeQuery("SELECT * FROM EVENT WHERE ID = " + TaskID);
         if (rs.next()) {
             stmt.executeUpdate("UPDATE EVENT SET TASK = " + "'" + task + "'" + " WHERE ID = " + TaskID);
-            close();
             return true;
         }
         return false;
@@ -377,7 +364,6 @@ public class JDBCSQlite {
         ResultSet rs = stmt.executeQuery("SELECT * FROM EVENT WHERE ID = " + TaskID);
         if (rs.next()) {
             stmt.executeUpdate("UPDATE EVENT SET START = " + "'" + start.toString() + "'" + " WHERE ID = " + TaskID);
-            close();
             return true;
         }
         return false;

@@ -151,7 +151,10 @@ public class DashboardController implements Initializable {
         innerStackPane.getChildren().add(overviewView);
 
         try{
-            todoListView = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("todoList-view.fxml")));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("todoList-view.fxml"));
+            todoListView = fxmlLoader.load();
+            TodoListViewController todoListViewController = (TodoListViewController) fxmlLoader.getController();
+            todoListViewController.setUser(currUser);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -260,6 +263,7 @@ public class DashboardController implements Initializable {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        jdbcsQlite.close();
     }
 
     /**

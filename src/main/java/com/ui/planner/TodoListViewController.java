@@ -1,5 +1,6 @@
 package com.ui.planner;
 
+import com.planner.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -25,6 +26,8 @@ public class TodoListViewController implements Initializable {
     @FXML
     private Button todoListNewEventBtn;
 
+    private User user;
+
     /**
      * Called to initialize a controller after its root element has been
      * completely processed.
@@ -43,7 +46,11 @@ public class TodoListViewController implements Initializable {
     @FXML
     protected void todoListNewEventBtnClicked() throws IOException {
         AddtodoListView addtodoList = new AddtodoListView();
+        addtodoList.setUser(user);
         addtodoList.showWindow();
     }
 
+    public void setUser(User currUser) {
+        this.user = currUser;
+    }
 }
