@@ -1,5 +1,6 @@
 package com.ui.planner;
 
+import com.planner.User;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
@@ -7,9 +8,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import com.datebase.*;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 public class SettingsViewController implements Initializable {
     @FXML
@@ -25,29 +29,51 @@ public class SettingsViewController implements Initializable {
     @FXML
     private Button cancelBtn;
 
+    private String userName;
+    private String userEmail;
+    private String userPassWord;
+
+
+    public void setUser(User user) {
+        userName = user.getName();
+        userEmail = user.getEmail();
+        userPassWord = user.getPassword();
+        userNameText.setText(userName);
+        emailText.setText(userEmail);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        userNameText.setText("ElinLengLeng");
-        emailText.setText("Lengleng@lengleng.com");
+        ;
     }
 
     @FXML
-    protected void onConfirmButtonClicked() {
+    protected void onConfirmButtonClicked() throws SQLException {
         if (newPasswordText.getText().equals(confirmPasswordText.getText()) && newPasswordText.getLength() != 0 && confirmPasswordText.getLength() != 0) {
-            // TODO: Change the user's information in the database
+            JDBCSQlite jdbcsQlite = new JDBCSQlite();
+            jdbcsQlite.create();
             String newUserName = userNameText.getText();
             String newEmail = emailText.getText();
             String newPassword = newPasswordText.getText();
-            System.out.println(newUserName);
-            System.out.println(newEmail);
-            System.out.println(newPassword);
+            userEmail = emailText.getText();
+
+            jdbcsQlite.changeUserEmailByUserName(newUserName, newEmail);
+            jdbcsQlite.changeUserPasswordByUserName(newUserName, newPassword);
+            jdbcsQlite.close();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Change User Info Successfully!");
+            alert.setHeaderText(null);
+            alert.setContentText("Change User Info Successfully!");
+            alert.showAndWait();
+
+            emailText.setText(userEmail);
+            newPasswordText.clear();
+            confirmPasswordText.clear();
 
         } else {
             // if two password not match
-            // TODO: Reset the UserName and email.
-            userNameText.setText("ElinLengLeng");
-            emailText.setText("lengleng@lengleng.com");
+            emailText.setText(userEmail);
 
             // No need to change code under this line
             newPasswordText.clear();
@@ -67,9 +93,8 @@ public class SettingsViewController implements Initializable {
 
     @FXML
     protected void onResetBtnClicked() {
-        // TODO: If the user cancel the change, set the username, email to the original one.
-        userNameText.setText("ElinLengLeng");
-        emailText.setText("lengleng@lengleng.com");
+        userNameText.setText(userName);
+        emailText.setText(userEmail);
 
         // No need to change code under this line.
         newPasswordText.clear();

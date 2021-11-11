@@ -136,34 +136,6 @@ public class DashboardController implements Initializable {
         scheduledNumLabel.setText(Integer.toString(scheduleNum));
 
         importantNumLabel.setText(Integer.toString(importantNum));
-    }
-
-    /**
-     * Called to initialize a controller after its root element has been
-     * completely processed.
-     *
-     * @param location  The location used to resolve relative paths for the root object, or
-     *                  {@code null} if the location is not known.
-     * @param resources The resources used to localize the root object, or {@code null} if
-     */
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        // Change Table Today's first column
-        todayCol1.setText("Events (Change me)");
-        // Change Table Today's second column
-        todayCol2.setText("Start (Change me)");
-        // Change Table Today's third column
-        todayCol3.setText("End (Change me)");
-
-        if (arrBtn.size() == 0) {
-            arrBtn.add(dashboardBtn);
-            arrBtn.add(incomingBtn);
-            arrBtn.add(overviewBtn);
-            arrBtn.add(todolistBtn);
-            arrBtn.add(importantBtn);
-            arrBtn.add(settingsBtn);
-            arrBtn.add(settingsBtn);
-        }
 
         try{
             incomingView = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("incoming-view.fxml")));
@@ -194,13 +166,44 @@ public class DashboardController implements Initializable {
         innerStackPane.getChildren().add(importantView);
 
         try{
-            settingsView = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("settings-view.fxml")));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("settings-view.fxml"));
+            settingsView = fxmlLoader.load();
+            SettingsViewController settingsViewController = (SettingsViewController) fxmlLoader.getController();
+            settingsViewController.setUser(currUser);
         } catch (IOException e) {
             e.printStackTrace();
         }
         innerStackPane.getChildren().add(settingsView);
 
         dashboardPane.toFront();
+    }
+
+    /**
+     * Called to initialize a controller after its root element has been
+     * completely processed.
+     *
+     * @param location  The location used to resolve relative paths for the root object, or
+     *                  {@code null} if the location is not known.
+     * @param resources The resources used to localize the root object, or {@code null} if
+     */
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        // Change Table Today's first column
+        todayCol1.setText("Events (Change me)");
+        // Change Table Today's second column
+        todayCol2.setText("Start (Change me)");
+        // Change Table Today's third column
+        todayCol3.setText("End (Change me)");
+
+        if (arrBtn.size() == 0) {
+            arrBtn.add(dashboardBtn);
+            arrBtn.add(incomingBtn);
+            arrBtn.add(overviewBtn);
+            arrBtn.add(todolistBtn);
+            arrBtn.add(importantBtn);
+            arrBtn.add(settingsBtn);
+            arrBtn.add(settingsBtn);
+        }
     }
 
 

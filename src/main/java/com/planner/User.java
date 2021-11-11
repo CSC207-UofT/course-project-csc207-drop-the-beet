@@ -10,7 +10,7 @@ import java.io.Serializable;
 /** User contains basic information of this user.
  */
 
-public class User implements Serializable {
+public class User {
     private String name;
     private String email;
     private String password;
@@ -39,12 +39,6 @@ public class User implements Serializable {
     public String getPassword() {
         return this.password;
     }
-
-    public void setName(String name) {this.name = name; }
-
-    public void setPassword(String password) {this.password = password; }
-
-    public void setEmail (String Email) {this.email = email; }
 
 
     public void changeEmail(String newEmail) {
