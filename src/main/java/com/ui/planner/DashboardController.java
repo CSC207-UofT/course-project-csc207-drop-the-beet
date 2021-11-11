@@ -1,5 +1,6 @@
 package com.ui.planner;
 
+import com.planner.User;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,9 +13,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import com.datebase.*;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -37,15 +40,9 @@ public class DashboardController implements Initializable {
     @FXML
     private Label todoNumLabel;
     @FXML
-    private Label todoProgressLabel;
-    @FXML
-    private Label pastNumLabel;
-    @FXML
-    private Label pastProgressLabel;
+    private Label scheduledNumLabel;
     @FXML
     private Label importantNumLabel;
-    @FXML
-    private Label importantProgressLabel;
     @FXML
     private StackPane innerStackPane;
     @FXML
@@ -77,7 +74,69 @@ public class DashboardController implements Initializable {
     @FXML
     ArrayList<Button> arrBtn = new ArrayList<Button>();
 
+    private ArrayList<ArrayList<String>> allUserToDoTasks;
+    private ArrayList<ArrayList<String>> allUserSchedules;
+    private ArrayList<ArrayList<String>> allUserImportantTasks;
 
+    private int todoNum;
+    private int scheduleNum;
+    private int importantNum;
+
+    private JDBCSQlite jdbcsQlite;
+
+    private User currUser;
+
+
+    public void setUser(String userName, String userEmail, String passWord) {
+        jdbcsQlite = new JDBCSQlite();
+        jdbcsQlite.create();
+        System.out.println(userName);
+        System.out.println(userEmail);
+        System.out.println(passWord);
+
+        currUser = new User(userName, userEmail, passWord);
+        try {
+            allUserToDoTasks = jdbcsQlite.getAllUserToDoTasksByUserName(currUser.getName());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            allUserSchedules = jdbcsQlite.getAllUserEventTasksByUserName(currUser.getName());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            allUserImportantTasks = jdbcsQlite.getAllUserImportantTasksByUserName(currUser.getName());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if (allUserToDoTasks == null) {
+            todoNum = 0;
+        } else {
+            todoNum = allUserToDoTasks.size();
+        }
+
+        if (allUserSchedules == null) {
+            scheduleNum = 0;
+        } else {
+            scheduleNum = allUserSchedules.size();
+        }
+
+        if (allUserImportantTasks == null) {
+            importantNum = 0;
+        } else {
+            importantNum = allUserImportantTasks.size();
+        }
+
+        todoNumLabel.setText(Integer.toString(todoNum));
+
+        scheduledNumLabel.setText(Integer.toString(scheduleNum));
+
+        importantNumLabel.setText(Integer.toString(importantNum));
+    }
 
     /**
      * Called to initialize a controller after its root element has been
@@ -89,15 +148,6 @@ public class DashboardController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        todoNumLabel.setText("10");
-        todoProgressLabel.setText("Progress: 100%");
-
-        pastNumLabel.setText("20");
-        pastProgressLabel.setText("Progress: 88%");
-
-        importantNumLabel.setText("1");
-        importantProgressLabel.setText("Progress: 10%");
-
         // Change Table Today's first column
         todayCol1.setText("Events (Change me)");
         // Change Table Today's second column
@@ -152,6 +202,8 @@ public class DashboardController implements Initializable {
 
         dashboardPane.toFront();
     }
+
+
 
     /**
      * Called to refresh all button status after a button is clicked
@@ -239,6 +291,7 @@ public class DashboardController implements Initializable {
     @FXML
     protected void onsignoutBtnClicked() {
         refreshBtnStatus(signoutBtn);
+        jdbcsQlite.close();
         Platform.exit();
     }
 

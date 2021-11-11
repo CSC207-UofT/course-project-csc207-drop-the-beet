@@ -1,15 +1,9 @@
-package datebase;
-import javafx.concurrent.Task;
+package com.datebase;
 import org.jetbrains.annotations.Nullable;
-import org.xml.sax.Locator;
-import planner.User;
 
-import javax.xml.transform.Result;
-import java.nio.file.FileSystemAlreadyExistsException;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.stream.StreamSupport;
 
 public class JDBCSQlite {
     Connection dbConnection;
@@ -61,11 +55,11 @@ public class JDBCSQlite {
     }
 
     public void InitializeDB() throws SQLException {
-        if (!isTableExist("ACCOUNT")){
+        if (isTableExist("ACCOUNT")){
             stmt.executeUpdate(createAccountTableSql);
         }
 
-        if (!isTableExist("TODOLIST")) {
+        if (isTableExist("TODOLIST")) {
             stmt.executeUpdate("CREATE TABLE TODOLIST" +
                                    "(ID INT PRIMARY KEY NOT NULL," +
                                    " USERID INT NOT NULL," +
@@ -74,7 +68,7 @@ public class JDBCSQlite {
                                    " END      TEXT NOT NULL)");
         }
 
-        if (!isTableExist("IMPORTANT")) {
+        if (isTableExist("IMPORTANT")) {
             stmt.executeUpdate("CREATE TABLE IMPORTANT" +
                     "(ID INT PRIMARY KEY NOT NULL," +
                     " USERID INT NOT NULL," +
@@ -84,7 +78,7 @@ public class JDBCSQlite {
                     " END      TEXT NOT NULL)");
         }
 
-        if (!isTableExist("EVENT")) {
+        if (isTableExist("EVENT")) {
             stmt.executeUpdate("CREATE TABLE EVENT" +
                     "(ID INT PRIMARY KEY NOT NULL," +
                     " USERID INT NOT NULL," +
@@ -93,7 +87,6 @@ public class JDBCSQlite {
                     " START    TEXT NOT NULL," +
                     " END      TEXT NOT NULL)");
         }
-
     }
 
     public boolean isTableExist(String table) {
@@ -105,7 +98,7 @@ public class JDBCSQlite {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return flag;
+        return !flag;
     }
 
     public boolean createNewUser(String userName, String userEmail, String userPassword) throws SQLException {
@@ -152,7 +145,8 @@ public class JDBCSQlite {
     public String getUserPassword(String userName) throws SQLException {
         ResultSet rs = stmt.executeQuery(getUserPasswordSql + "'" + userName + "'");
         if (rs.next()) {
-            return rs.getString("PASSWORD");
+            String res = rs.getString("PASSWORD");
+            return res;
         } else {
             return null;
         }
@@ -161,7 +155,8 @@ public class JDBCSQlite {
     public String getUserPasswordByID(int ID) throws SQLException {
         ResultSet rs = stmt.executeQuery(getUserPasswordByIDSql + Integer.toString(ID));
         if (rs.next()) {
-            return rs.getString("PASSWORD");
+            String res = rs.getString("PASSWORD");
+            return res;
         } else {
             return null;
         }
@@ -170,7 +165,8 @@ public class JDBCSQlite {
     public String getUserEmail(String userName) throws SQLException {
         ResultSet rs = stmt.executeQuery(getUserEmailSql + "'" + userName + "'");
         if (rs.next()) {
-            return rs.getString("EMAIL");
+            String res = rs.getString("EMAIL");
+            return res;
         } else {
             return null;
         }
@@ -179,7 +175,9 @@ public class JDBCSQlite {
     public String getUserEmailByID(int ID) throws SQLException {
         ResultSet rs = stmt.executeQuery(getUserEmailByIDSql + "'" + Integer.toString(ID) + "'");
         if (rs.next()) {
-            return rs.getString("EMAIL");
+            String res = rs.getString("EMAIL");
+            close();
+            return res;
         } else {
             return null;
         }
@@ -188,6 +186,7 @@ public class JDBCSQlite {
     public boolean changeUserNameByID (int ID, String newUserName) throws SQLException {
         if (isUserIDExist(ID)){
             stmt.executeUpdate("UPDATE ACCOUNT SET USERNAME = " + "'" + newUserName + "'" + " WHERE ID = " + Integer.toString(ID) + ";");
+            close();
             return true;
         }
         return false;
@@ -196,6 +195,7 @@ public class JDBCSQlite {
     public boolean changeUserNameByUserName(String oldUserName, String newUserName) throws SQLException {
         if (isUserNameExist(oldUserName)) {
             stmt.executeUpdate("UPDATE ACCOUNT SET USERNAME = " + "'" + newUserName + "'" + " WHERE USERNAME = " + "'" + oldUserName + "'" + ";");
+            close();
             return true;
         }
         return false;
@@ -204,6 +204,7 @@ public class JDBCSQlite {
     public boolean changeUserEmailByUserName(String userName, String newEmail) throws SQLException {
         if (isUserNameExist(userName)) {
             stmt.executeUpdate("UPDATE ACCOUNT SET EMAIL =" + "'" + newEmail + "'" + "WHERE USERNAME = " + "'" + userName + "'");
+            close();
             return true;
         }
         return false;
@@ -212,6 +213,7 @@ public class JDBCSQlite {
     public boolean changeUserEmailByID(int ID, String newEmail) throws SQLException {
         if (isUserIDExist(ID)) {
             stmt.executeUpdate("UPDATE ACCOUNT SET EMAIL =" + "'" + newEmail + "'" + "WHERE ID = " + Integer.toString(ID));
+            close();
             return true;
         }
         return false;
@@ -220,6 +222,7 @@ public class JDBCSQlite {
     public boolean changeUserPasswordByUserName(String userName, String newPassword) throws SQLException {
         if (isUserNameExist(userName)) {
             stmt.executeUpdate("UPDATE ACCOUNT SET PASSWORD =" + "'" + newPassword + "'" + "WHERE USERNAME = " + "'" + userName + "'");
+            close();
             return true;
         }
         return false;
@@ -228,6 +231,7 @@ public class JDBCSQlite {
     public boolean changeUserPasswordByID(int ID, String newPassword) throws SQLException {
         if (isUserIDExist(ID)) {
             stmt.executeUpdate("UPDATE ACCOUNT SET PASSWORD =" + "'" + newPassword + "'" + "WHERE ID = " + ID);
+            close();
             return true;
         }
         return false;
@@ -242,6 +246,7 @@ public class JDBCSQlite {
         int userID = getUserIDByUserName(userName);
         if (userID != -1) {
             stmt.executeUpdate("INSERT INTO TODOLIST VALUES (" + nextID + "," + "'" + userID + "'" + "," + "'" + userName + "'" + "," + "'" + task + "'" + "," + "'" + end.toString() + "'" + ")");
+            close();
             return true;
         }
         return false;
@@ -266,6 +271,7 @@ public class JDBCSQlite {
         if (rs.next()) {
             System.out.println("UPDATE TODOLIST SET TASK = " + "'" + task + "'" + " WHERE ID = " + TaskID);
             stmt.executeUpdate("UPDATE TODOLIST SET TASK = " + "'" + task + "'" + " WHERE ID = " + TaskID);
+            close();
             return true;
         }
         return false;
@@ -275,6 +281,7 @@ public class JDBCSQlite {
         ResultSet rs = stmt.executeQuery("SELECT * FROM TODOLIST WHERE ID = " + TaskID);
         if (rs.next()) {
             stmt.executeUpdate("UPDATE TODOLIST SET END = " + "'" + end.toString() + "'" + " WHERE ID = " + TaskID);
+            close();
             return true;
         }
         return false;
@@ -296,6 +303,7 @@ public class JDBCSQlite {
             fetchAllUserToDoTasks(res, rs);
         }
         if (res.size() > 0) {
+            close();
             return res;
         }
         return null;
@@ -308,6 +316,7 @@ public class JDBCSQlite {
             fetchAllUserToDoTasks(res, rs);
         }
         if (res.size() > 0) {
+            close();
             return res;
         }
         return null;
@@ -334,6 +343,7 @@ public class JDBCSQlite {
         String userName = getUserNameByID(userID);
         if (userName != null && userName.length() > 0) {
             stmt.executeUpdate("INSERT INTO EVENT VALUES (" + nextID + ","  + userID  + "," + "'" + userName + "'" + "," + "'" + task + "'" + "," + "'" + start.toString()  + "'" + "," + "'" + end.toString() + "'" + ")");
+            close();
             return true;
         }
         return false;
@@ -348,6 +358,7 @@ public class JDBCSQlite {
         int userID = getUserIDByUserName(userName);
         if (userID != -1) {
             stmt.executeUpdate("INSERT INTO EVENT VALUES (" + nextID + ","  + userID  + "," + "'" + userName + "'" + "," + "'" + task + "'" + "," + "'" + start.toString()  + "'" + "," + "'" + end.toString() + "'" + ")");
+            close();
             return true;
         }
         return false;
@@ -357,15 +368,18 @@ public class JDBCSQlite {
         ResultSet rs = stmt.executeQuery("SELECT * FROM EVENT WHERE ID = " + TaskID);
         if (rs.next()) {
             stmt.executeUpdate("UPDATE EVENT SET TASK = " + "'" + task + "'" + " WHERE ID = " + TaskID);
+            close();
             return true;
         }
         return false;
     }
 
     public boolean changeUserEventTaskStartByTaskID(int TaskID, LocalDate start) throws SQLException {
+        create();
         ResultSet rs = stmt.executeQuery("SELECT * FROM EVENT WHERE ID = " + TaskID);
         if (rs.next()) {
             stmt.executeUpdate("UPDATE EVENT SET START = " + "'" + start.toString() + "'" + " WHERE ID = " + TaskID);
+            close();
             return true;
         }
         return false;
