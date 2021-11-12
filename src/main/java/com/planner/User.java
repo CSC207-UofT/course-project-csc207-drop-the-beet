@@ -1,10 +1,5 @@
 package com.planner;
 
-import planner.Schedule;
-import planner.ScheduleManager;
-import planner.ToDoList;
-import planner.ToDoListManager;
-
 import java.io.Serializable;
 
 /** User contains basic information of this user.
@@ -42,15 +37,6 @@ public class User {
 
     public void setPassword(String password) {this.password = password; }
 
-    public void setEmail (String Email) {this.email = email; }
-
-
-    public void changeEmail(String newEmail) {
-        this.email = newEmail;
-    }
-
-    public void changePassword(String newPassword) {
-        this.password = newPassword;
-    }
+    public void setEmail(String Email) {this.email = email; }
 
 }

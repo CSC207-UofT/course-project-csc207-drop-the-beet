@@ -1,26 +1,22 @@
 package com.ui.planner;
 
+import com.planner.Connection.InfoReadWriter;
 import com.datebase.JDBCSQlite;
-import com.planner.User;
+import com.planner.ToDoListsController;
+import com.planner.UserManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class TodoListViewController implements Initializable {
@@ -36,7 +32,7 @@ public class TodoListViewController implements Initializable {
 
     private ObservableList<ToDoEventModel> toDoEventModels = FXCollections.observableArrayList();
 
-    private User user;
+    private UserManager user;//done
 
     /**
      * Called to initialize a controller after its root element has been
@@ -63,14 +59,7 @@ public class TodoListViewController implements Initializable {
 
     @FXML
     public void showEvents() {
-        JDBCSQlite jdbcsQlite = new JDBCSQlite();
-        jdbcsQlite.create();
-        ArrayList<ArrayList<String>> lst = null;
-        try{
-            lst = jdbcsQlite.getAllUserToDoTasksByUserName(user.getName());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        ArrayList<ArrayList<String>> lst = ToDoListsController.loadToDo(user);//done
 
         if (lst != null && lst.size() > 0) {
             for (ArrayList<String> l : lst){
@@ -78,10 +67,9 @@ public class TodoListViewController implements Initializable {
             }
             toDoLstTb.setItems(toDoEventModels);
         }
-        jdbcsQlite.close();
     }
 
-    public void setUser(User currUser) {
+    public void setUser(UserManager currUser) {
         this.user = currUser;
     }
 }

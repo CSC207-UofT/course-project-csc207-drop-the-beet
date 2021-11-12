@@ -1,6 +1,7 @@
 package com.ui.planner;
 
 import com.planner.User;
+import com.planner.UserManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
@@ -34,7 +35,7 @@ public class SettingsViewController implements Initializable {
     private String userPassWord;
 
 
-    public void setUser(User user) {
+    public void setUser(UserManager user) { //Todo
         userName = user.getName();
         userEmail = user.getEmail();
         userPassWord = user.getPassword();
@@ -59,7 +60,7 @@ public class SettingsViewController implements Initializable {
 
             jdbcsQlite.changeUserEmailByUserName(newUserName, newEmail);
             jdbcsQlite.changeUserPasswordByUserName(newUserName, newPassword);
-            jdbcsQlite.close();
+            jdbcsQlite.close(); //Todo 53 62
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Change User Info Successfully!");

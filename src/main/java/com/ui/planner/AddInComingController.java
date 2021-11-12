@@ -1,7 +1,9 @@
 package com.ui.planner;
 
+
 import com.datebase.JDBCSQlite;
-import com.planner.User;
+import com.planner.SchedulesController;
+import com.planner.UserManager;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.Alert;
@@ -25,25 +27,19 @@ public class AddInComingController {
     @FXML
     private Button cancelBtn;
 
-    private User user;
+    private UserManager user;//done
 
     @FXML
     protected void onConfirmBtnClicked() {
         if (startDatePicker.getValue() != null && endingDatePicker.getValue() != null && eventTextField.getText().length() != 0) {
-            // TODO: Store the user created to-do list task.
+            // TODO: Store the user created schedule.
             LocalDate startDateInput = startDatePicker.getValue();
             LocalDate endingDateInput = endingDatePicker.getValue();
             String event = eventTextField.getText();
             System.out.println("Starting date: " + startDateInput);
             System.out.println("Ending date: " + endingDateInput);
             System.out.println(event);
-            JDBCSQlite jdbcsQlite = new JDBCSQlite();
-            jdbcsQlite.create();
-            try{
-                jdbcsQlite.createEventTaskByUserName(user.getName(), event, startDateInput, endingDateInput);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            SchedulesController.newScheduleWrite(user,startDateInput,endingDateInput,event);//done
 
             // To close the dialog.
             Stage stage = (Stage)cancelBtn.getScene().getWindow();
@@ -74,7 +70,7 @@ public class AddInComingController {
         confirmBtn.setCursor(Cursor.HAND);
     }
 
-    public void setUser(User user) {
+    public void setUser(UserManager user) {
         this.user = user;
     }
 }

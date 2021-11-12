@@ -28,7 +28,7 @@ public class DashboardView extends Application {
         Parent root = (Parent)fxmlLoader.load();
 
         DashboardController controller = fxmlLoader.<DashboardController>getController();
-        controller.setUser(userName, userEmail, userPassword);
+        controller.setUser(userName, userEmail, userPassword); //done
 
         Scene scene = new Scene(root, 842, 521);
         stage.setTitle("Drop The Beets Group Planner Demo");

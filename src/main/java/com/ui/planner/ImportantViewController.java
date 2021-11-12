@@ -1,7 +1,8 @@
 package com.ui.planner;
 
+import com.planner.Connection.InfoReadWriter;
 import com.datebase.JDBCSQlite;
-import com.planner.User;
+import com.planner.UserManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -32,8 +33,8 @@ public class ImportantViewController implements Initializable {
 
     private ObservableList<ImportantEventModel> importantEventModels = FXCollections.observableArrayList();
 
-    private User user;
-
+    private UserManager user;//done
+//Todo This Method
 
     /**
      * Called to initialize a controller after its root element has been
@@ -53,14 +54,7 @@ public class ImportantViewController implements Initializable {
 
     @FXML
     public void showEvents() {
-        JDBCSQlite jdbcsQlite = new JDBCSQlite();
-        jdbcsQlite.create();
-        ArrayList<ArrayList<String>> lst = null;
-        try{
-             lst = jdbcsQlite.getAllUserImportantTasksByUserName(user.getName());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        ArrayList<ArrayList<String>> lst = InfoReadWriter.loadImportant(user); //done
 
         if (lst != null && lst.size() > 0) {
             for (ArrayList<String> l : lst){
@@ -68,7 +62,6 @@ public class ImportantViewController implements Initializable {
             }
             importantEventTb.setItems(importantEventModels);
         }
-        jdbcsQlite.close();
     }
 
     @FXML
@@ -79,14 +72,14 @@ public class ImportantViewController implements Initializable {
     @FXML
     protected void newEventBtnClicked() throws IOException {
         AddImportantView addImportantView = new AddImportantView();
-        addImportantView.setUser(user);
+        addImportantView.setUser(user); //Todo
         addImportantView.showWindow();
         importantEventModels.clear();
         showEvents();
     }
 
 
-    public void setUser(User currUser) {
+    public void setUser(UserManager currUser) {
         user = currUser;
-    }
+    }//Todo set new user
 }

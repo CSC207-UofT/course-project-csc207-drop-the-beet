@@ -1,7 +1,7 @@
 package com.ui.planner;
 
 import com.datebase.JDBCSQlite;
-import com.planner.User;
+import com.planner.UserManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -26,7 +26,7 @@ public class IncomingViewController implements Initializable {
     @FXML
     private TableView<ScheduleEventModel> inComingTb;
 
-    private User user;
+    private UserManager user; //done
 
     private ObservableList<ScheduleEventModel> scheduleEventModels = FXCollections.observableArrayList();
 
@@ -52,7 +52,7 @@ public class IncomingViewController implements Initializable {
         jdbcsQlite.create();
         ArrayList<ArrayList<String>> lst = null;
         try{
-            lst = jdbcsQlite.getAllUserEventTasksByUserName(user.getName());
+            lst = jdbcsQlite.getAllUserEventTasksByUserName(user.getName());//done
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -70,13 +70,13 @@ public class IncomingViewController implements Initializable {
     @FXML
     protected void onNewEventClicked() throws IOException {
         AddIncomingApplication addIncomingApplication = new AddIncomingApplication();
-        addIncomingApplication.setUser(user);
+        addIncomingApplication.setUser(user);//done
         addIncomingApplication.showWindow();
         scheduleEventModels.clear();
         showEvents();
     }
 
-    public void setUser(User currUser) {
+    public void setUser(UserManager currUser) {
         user = currUser;
     }
 }

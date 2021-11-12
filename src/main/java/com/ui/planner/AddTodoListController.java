@@ -1,6 +1,8 @@
 package com.ui.planner;
 
+import com.planner.ToDoListsController;
 import com.planner.User;
+import com.planner.UserManager;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,6 +18,7 @@ import com.datebase.*;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.HashMap;
 
 public class AddTodoListController {
     @FXML
@@ -27,26 +30,31 @@ public class AddTodoListController {
     @FXML
     private Button cancelBtn;
 
-    private User user;
+    private UserManager user; //done
 
 
 
     @FXML
     protected void onConfirmBtnClicked() {
         if (whenDatePicker.getValue() != null && eventTextField.getText().length() != 0) {
-            JDBCSQlite jdbcsQlite = new JDBCSQlite();
-            jdbcsQlite.create();
 
             // TODO: Store the user created to-do list task.
             LocalDate dateInput = whenDatePicker.getValue();
             String event = eventTextField.getText();
             System.out.println(dateInput);
             System.out.println(event);
-            try {
-                jdbcsQlite.createUserToDoListTaskByUserName(user.getName(), event, dateInput);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+//            JDBCSQlite jdbcsQlite = new JDBCSQlite();
+//            jdbcsQlite.create();
+//
+//            try {
+////                HashMap<LocalDate, String> todo = new HashMap<>();
+////                todo.put(dateInput, event);
+////                user.getToDoLists().addTaskInList(todo);
+//                jdbcsQlite.createUserToDoListTaskByUserName(user.getName(), event, dateInput);
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+            ToDoListsController.newTask(user, event, dateInput);
             // To close the dialog.
             Stage stage = (Stage)cancelBtn.getScene().getWindow();
             stage.close();
@@ -76,7 +84,7 @@ public class AddTodoListController {
         confirmBtn.setCursor(Cursor.HAND);
     }
 
-    public void setUser(User user) {
+    public void setUser(UserManager user) {
         this.user = user;
     }
 }

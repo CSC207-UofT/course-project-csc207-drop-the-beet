@@ -1,6 +1,7 @@
 package com.ui.planner;
 
 import com.planner.User;
+import com.planner.UserManager;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.Alert;
@@ -25,7 +26,7 @@ public class AddImportantController {
     @FXML
     private Button cancelBtn;
 
-    private User user;
+    private UserManager user; //done
 
     @FXML
     protected void onConfirmBtnClicked() {
@@ -44,7 +45,7 @@ public class AddImportantController {
                 jdbcsQlite.createImportantTaskByUserName(user.getName(), event, startDateInput, endingDateInput);
             } catch (SQLException e) {
                 e.printStackTrace();
-            }
+            }//Todo
             jdbcsQlite.close();
             // To close the dialog.
             Stage stage = (Stage)cancelBtn.getScene().getWindow();
@@ -75,7 +76,7 @@ public class AddImportantController {
         confirmBtn.setCursor(Cursor.HAND);
     }
 
-    public void setUser(User user) {
+    public void setUser(UserManager user) {
         this.user = user;
     }
 }
