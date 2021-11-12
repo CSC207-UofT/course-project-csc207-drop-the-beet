@@ -1,5 +1,6 @@
 package com.ui.planner;
-import com.planner.User;
+
+import com.planner.UserManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,9 +13,9 @@ import java.io.IOException;
 public class AddtodoListView extends Application {
     Stage stage = new Stage();
 
-    private User user;
+    private UserManager user;
 
-    public void setUser(User user) {
+    public void setUser(UserManager user) {
         this.user = user;
     }
 

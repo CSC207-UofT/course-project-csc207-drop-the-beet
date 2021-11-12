@@ -1,5 +1,6 @@
 package com.ui.planner;
 
+import com.planner.UserManager;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.Alert;
@@ -46,16 +47,23 @@ public class SignupController {
             });
         }
     }
+    private String getPassword() {return passWordText.getText();}
+
+    private String getUsername() {return userNameText.getText();}
+
+    private String getEmail() {return emailText.getText();}
+
+    private Boolean verifyPassword() {return getPassword().equals(confirmPasswordText.getText());}
 
     @FXML
     protected void onSignUpBtnClicked() throws SQLException {
         JDBCSQlite jdbcsQlite = new JDBCSQlite();
         jdbcsQlite.create();
 
-        if (passWordText.getText().equals(confirmPasswordText.getText()) && !jdbcsQlite.isUserNameExist(userNameText.getText())) {
-            jdbcsQlite.createNewUser(userNameText.getText(), emailText.getText(), passWordText.getText());
+        if (verifyPassword() && !jdbcsQlite.isUserNameExist(getUsername())) {
+            UserManager userManager = new UserManager(getUsername(), getEmail(), getPassword());
+            jdbcsQlite.createNewUser(userManager.getName(), userManager.getEmail(), userManager.getPassword());
             signUpSuccessHandler();
-            jdbcsQlite.close();
 
         } else {
             // No need to Change the code under this line
@@ -65,8 +73,8 @@ public class SignupController {
             alert.setContentText("Fail to sign up, the password not match.");
             alert.showAndWait();
             signUpFailureHandler();
-            jdbcsQlite.close();
-        }
+        } //Todo 52 69  都是private 写不了
+        jdbcsQlite.close();
     }
 
     @FXML

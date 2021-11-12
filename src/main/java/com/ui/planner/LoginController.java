@@ -3,7 +3,6 @@ package com.ui.planner;
 import com.planner.User;
 import com.datebase.*;
 
-import planner.*;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -61,7 +60,7 @@ public class LoginController implements Initializable {
         }
         else {
             passwordFailedView();
-        }
+        }//Todo 57 64
     }
 
     /**
