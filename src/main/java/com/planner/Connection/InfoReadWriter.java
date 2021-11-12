@@ -1,13 +1,8 @@
 package com.planner.Connection;
 
-import com.ui.planner.SignupController;
-import com.datebase.JDBCSQlite;
 import com.planner.UserManager;
-import javafx.scene.control.Alert;
-
-import java.sql.Date;
+import com.database.JDBCSQlite;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 

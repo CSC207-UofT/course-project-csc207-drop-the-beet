@@ -1,8 +1,8 @@
-package datebase;
+package com.database;
 import javafx.concurrent.Task;
 import org.jetbrains.annotations.Nullable;
 import org.xml.sax.Locator;
-import planner.User;
+
 
 import javax.xml.transform.Result;
 import java.nio.file.FileSystemAlreadyExistsException;

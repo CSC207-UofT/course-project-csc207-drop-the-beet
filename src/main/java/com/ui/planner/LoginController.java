@@ -1,15 +1,12 @@
 package com.ui.planner;
 
 import com.planner.User;
-import com.datebase.*;
-
-import javafx.event.EventHandler;
+import com.database.JDBCSQlite;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 

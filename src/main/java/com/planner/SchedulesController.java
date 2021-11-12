@@ -1,7 +1,6 @@
 package com.planner;
 
-import com.datebase.JDBCSQlite;
-import com.planner.UserManager;
+import com.database.JDBCSQlite;
 
 import java.sql.Date;
 import java.sql.SQLException;

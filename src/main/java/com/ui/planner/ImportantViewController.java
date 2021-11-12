@@ -1,7 +1,7 @@
 package com.ui.planner;
 
 import com.planner.Connection.InfoReadWriter;
-import com.datebase.JDBCSQlite;
+import com.database.JDBCSQlite;
 import com.planner.UserManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,7 +15,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 

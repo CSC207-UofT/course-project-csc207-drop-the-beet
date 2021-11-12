@@ -1,14 +1,10 @@
 package com.planner;
 
-import com.datebase.*;
-import com.planner.UserManager;
-import datebase.JDBCSQlite;
+import com.database.JDBCSQlite;
 
-import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class ToDoListsController {
     public static void newToDoList(String userID, String listName) {

@@ -1,5 +1,6 @@
 package com.ui.planner;
 
+import com.database.JDBCSQlite;
 import com.planner.UserManager;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
@@ -8,11 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import com.datebase.*;
 
-import java.io.IOException;
 import java.sql.SQLException;
 
 public class SignupController {

@@ -1,7 +1,7 @@
 package com.ui.planner;
 
 
-import com.datebase.JDBCSQlite;
+import com.database.*;
 import com.planner.SchedulesController;
 import com.planner.UserManager;
 import javafx.fxml.FXML;
@@ -12,7 +12,6 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.sql.SQLException;
 import java.time.LocalDate;
 
 public class AddInComingController {

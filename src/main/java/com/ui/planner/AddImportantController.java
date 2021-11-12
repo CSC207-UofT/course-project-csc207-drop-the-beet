@@ -1,6 +1,6 @@
 package com.ui.planner;
 
-import com.planner.User;
+import com.database.JDBCSQlite;
 import com.planner.UserManager;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import com.datebase.*;
 
 import java.sql.SQLException;
 import java.time.LocalDate;

@@ -1,6 +1,6 @@
 package com.ui.planner;
 
-import com.planner.User;
+import com.database.JDBCSQlite;
 import com.planner.UserManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,12 +9,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import com.datebase.*;
 
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.Set;
 
 public class SettingsViewController implements Initializable {
     @FXML
