@@ -1,7 +1,7 @@
 package com.ui.planner;
 
 
-import com.datebase.JDBCSQlite;
+import com.database.JDBCSQlite;
 import com.planner.SchedulesController;
 import com.planner.UserManager;
 import javafx.fxml.FXML;

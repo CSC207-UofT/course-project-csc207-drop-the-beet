@@ -1,7 +1,7 @@
 package com.ui.planner;
 
 import com.planner.Connection.InfoReadWriter;
-import com.datebase.JDBCSQlite;
+import com.database.JDBCSQlite;
 import com.planner.ToDoListsController;
 import com.planner.UserManager;
 import javafx.collections.FXCollections;

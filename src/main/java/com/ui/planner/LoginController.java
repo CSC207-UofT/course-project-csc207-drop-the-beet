@@ -1,7 +1,7 @@
 package com.ui.planner;
 
 import com.planner.User;
-import com.datebase.*;
+import com.database.*;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
