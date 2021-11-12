@@ -1,6 +1,6 @@
 package com.planner;
 
-import com.datebase.JDBCSQlite;
+import com.database.JDBCSQlite;
 import com.planner.UserManager;
 
 import java.sql.Date;

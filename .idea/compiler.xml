@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="planner" />
+        <module name="course-project-csc207-drop-the-beet" />
       </profile>
     </annotationProcessing>
   </component>

@@ -1,7 +1,7 @@
 package com.planner.Connection;
 
 import com.ui.planner.SignupController;
-import com.datebase.JDBCSQlite;
+import com.database.*;
 import com.planner.UserManager;
 import javafx.scene.control.Alert;
 
