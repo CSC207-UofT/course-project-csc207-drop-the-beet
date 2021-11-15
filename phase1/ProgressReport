@@ -1,11 +1,13 @@
-Phase 1
 
-## Updated Specification.
-Briefly highlight any additional functionality that you have implemented between phase 0 and the end of phase 1.
-Implemented an early stage of GUI functionalities for users to login, register, add ToDoList and Schedule.
-Connected Database SQLite as data storage for user information and login credentials.
-Implemented Momento and Observer design pattern.
- # Specification
+# Phase 1 Progress Report
+
+## Updated Specification
+* Briefly highlight any additional functionality that you have implemented between phase 0 and the end of phase 1.
+* Implemented an early stage of GUI functionalities for users to login, register, add ToDoList and Schedule.
+* Connected Database SQLite as data storage for user information and login credentials.
+* Implemented Momento and Observer design pattern.
+
+## Phase 0 Specification (for reference)
 Running the project starts a web-based service that allows users to interact with a daily planner web-application.
 While running, the web-based application will run a daily planner with a graphic user interface. On the interface,
 users can add, delete, search, or modify their daily plans by clicking on the buttons –  selecting the calender and
@@ -22,327 +24,56 @@ The web-based application supports multi-users and mysql database search as well
 * Past: This feature allows users to retroact all the reminders that have passed due. A new page will be prompted and list all the reminders that are past events.
 * Past due: This feature allows users to retroact all the reminders that are not completed and have passed due. A new page will be prompted and list all the reminders that are not completed and have passed due.
 
-Functions we have added in phase 1
+## Functions we have added in phase 1
 * Signup: This feature allows the user to sign up with their email, password, and username.
 * Forget password: This feature allows the user to get their password.
 * Schedule: This feature returns all schedules
 
 
-
-
-Optionally, include a well-formatted diagram of your code. This is called a class diagram (Links to an external site.), and there is an international standard called the Unified Modelling Language (Links to an external site.) (UML) that describes them in detail. However! Please don't worry about the details, just use boxes and arrows like we do in the slides. If you're curious, you can create a full UML class diagram for all or part (at your group's discretion) of your program.
-NOTE 1: This can really help your TA understand what you did, but if presented poorly it won't be of much use.
-NOTE 2: If you have access to the Pro version of IntelliJ, it can generate class diagrams for you, but make sure it is well formatted if you hand one in!
-
-
-##A description of any major design decisions your group has made (along with brief explanations of why you made them).
+## A description of any major design decisions our group has made
 We started phase 1 by planning to use the database. We decided to use SQLite for our database, since there is a way for us to view the data, it is easy to check if there is anything wrong when we are reading or writing the database. We also have deleted or added some specifications. When we have a visualizable GUI, we found some specifications are not needed. For example “Past due”. 
 We also decided to add ID for all schedules and to-do lists. We have found that it may be possible that two schedules or to-do lists are the same. In order to match the correct schedule or to-do lists, we assigned each task with different IDs.
  
  
-##A brief description of how your project adheres to Clean Architecture (if you notice a violation and aren't sure how to fix it, talk about that too!)
+## A brief description of how our project adheres to Clean Architecture
  
 We separate our classes, in terms of their usage, by entities, use cases,  controllers, and UI, databases. When we were doing this project, we have always found that the methods in the controller call the methods in entities. Therefore we created methods in use cases to call the methods in entities, then let the methods in the controller to call the methods in use cases. We try to make each class depend on its adjacent layer or within the same layer. And make sure they only point inwards. 
 We have divided the functions of controllers into 2 parts. One has the methods more about the use cases, and one has the methods more about the UI. So that they can connect the use cases and UI and database better. 
 But we are not sure if we can do it in that way. For now we have too many controllers. Some of the controllers function more like glue codes with UI or Database. We are trying to make them clearer.
  
-##A brief description of how your project is consistent with the SOLID design principles (if you notice a violation and aren't sure how to fix it, talk about that too!)
-*Single responsibility principle (SRP)
--Each of our classes have a single responsibility.
-*Open/closed principle (OCP)
-_We have a violation to the open/closed principle because if we wish to include other types of tasks we are unable to implement it currently. However we do think the two task types are sufficient enough because these two are what most daily planner apps use.
-*Liskov substitution principle (LSP)
-_There is no implementation relation in our project, hence there should be no violation on LSP
-*Interface segregation principle (ISP)
--All the interfaces are kept small to avoid any unnecessary implementations of codes and potential corrupting depency.
-*Dependency inversion principle (DIP)
--We have defined the high level classes before brainstorming the lower classes. During the implementation of User and UserManager we have made the mistake of incorrectly depending on ScheduleManager and UserManager, but the mistake was corrected by now.
+## A brief description of how our project is consistent with the SOLID design principles
+ * Single responsibility principle (SRP)
+	* Each of our classes have a single responsibility.
+* Open/closed principle (OCP)
+	* We have a violation to the open/closed principle because if we wish to include other types of tasks we are unable to implement it currently. However we do think the two task types are sufficient enough because these two are what most daily planner apps use.
+* Liskov substitution principle (LSP)
+	* There is no implementation relation in our project, hence there should be no violation on LSP
+* Interface segregation principle (ISP)
+	* All the interfaces are kept small to avoid any unnecessary implementations of codes and potential corrupting depency.
+* Dependency inversion principle (DIP)
+	* We have defined the high level classes before brainstorming the lower classes. During the implementation of User and UserManager we have made the mistake of incorrectly depending on ScheduleManager and UserManager, but the mistake was corrected by now.
 	
-##A brief description of which packaging strategies you considered, which you decided to use, and why. (see slide 7 from the packages slides)
+## A brief description of which packaging strategies we considered, which we decided to use, and why
 The packaging strategy we considered is to separate out classes by feature. We have a UI package, a JDBCSQlite package, a planner package and a memento package. 
-The UI package contains glue codes with the GUI and some controllers with the methods for the GUI. 
-The JDBCSQlite package contains all methods for the database.
-The planner package contains Entities, UseCases, and Controller package. The controllers in the Controller package are the back end controllers connecting the different types of classes, this is where every operation is processed. Data is taken and processed and sent to the planner package; and the planner package takes a series of operations, feeds the information to the UI and displays the human-readable information to our users through the UI. 
-Last but not least, we have a memento package. This is a design pattern our group implemented and will be explained in the “Summary of design patterns”.
-We use package by feature instead of the traditional packaging style (Clean Architecture, Entities, Use Cases etc.). The main reason is that we have many different applications of different coding. For example database, GUI, backend. Using feature packaging we would avoid clusters of code in one package which would result in difficult class search and organization. As well as to maximize Open/Closed Principle, making future extensions easier.
+* The UI package contains glue codes with the GUI and some controllers with the methods for the GUI. 
+* The JDBCSQlite package contains all methods for the database.
+* The planner package contains Entities, UseCases, and Controller package. The controllers in the Controller package are the back end controllers connecting the different types of classes, this is where every operation is processed. Data is taken and processed and sent to the planner package; and the planner package takes a series of operations, feeds the information to the UI and displays the human-readable information to our users through the UI. 
+* Last but not least, we have a memento package. This is a design pattern our group implemented and will be explained in the “Summary of design patterns”.
+* We use package by feature instead of the traditional packaging style (Clean Architecture, Entities, Use Cases etc.). The main reason is that we have many different applications of different coding. For example database, GUI, backend. Using feature packaging we would avoid clusters of code in one package which would result in difficult class search and organization. As well as to maximize Open/Closed Principle, making future extensions easier.
  
-##A summary of any design patterns your group has implemented (or plans to implement).
-We have implemented the observer design pattern for notifications. It would be logical to view the user as the observer potentially requesting to check their schedule and todo list status. As well as having an updater to inform the observer for any changes to the schedule and todo list the user has added.
-We also have implemented memento design so that the user can undo completion or deletion for to-do lists. 
- 
-##A progress report
-##open questions your group is struggling with
-There are many compatibility issues with packages in Intellij not being recognized, even if we are using the same versions of SDK. How do we minimize this issue?
-How should we approach efficient data storage in the database without losing accessibility to the data?
-Does connecting the database to the back end for the back end to manipulate data in the database count as an adapter/bridge design pattern? If not, would it make sense to design the communication between the database with backend and GUI with the database to be an adapter/bridge pattern?
-Are the glue codes of the GUI at the level of the controller or the frameworks?
-##What has worked well so far with our design
-Successfully integrated the initial versions of the GUI and the database. 
-##a summary of what each group member has been working on and plans to work on next
+## A summary of design patterns our group has implemented (or plans to implement)
+* We have implemented the observer design pattern for notifications. It would be logical to view the user as the observer potentially requesting to check their schedule and todo list status. As well as having an updater to inform the observer for any changes to the schedule and todo list the user has added.
+* We also have implemented memento design so that the user can undo completion or deletion for to-do lists. 
+
+# A progress report
+## open questions our group is struggling with
+* There are many compatibility issues with packages in Intellij not being recognized, even if we are using the same versions of SDK. How do we minimize this issue?
+* How should we approach efficient data storage in the database without losing accessibility to the data?
+* Does connecting the database to the back end for the back end to manipulate data in the database count as an adapter/bridge design pattern? If not, would it make sense to design the communication between the database with backend and GUI with the database to be an adapter/bridge pattern?
+* Are the glue codes of the GUI at the level of the controller or the frameworks?
+## What has worked well so far with our design
+We have successfully integrated the initial versions of the GUI and the database. 
+## A summary of what each group member has been working on and plans to work on next
 
 	
 David, Yi and Vincent have been working on the back end, they will keep working on it, and to discover more functions in our project. They will also help with the front end work if necessary. Hao has been working on the UI. Sunny has been working on the Database. Yilin has been working on the connections of the backend and frontend, and the memento design pattern.They will keep working on those fields. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Phase 0
-
-
-Daily planner
-
-Task 2 - Specification
-Running the project starts a web-based service that allows users to interact with a daily planner web-application. While running, the web-based application will run a daily planner with a graphic user interface. On the interface, users can add, delete, search, or modify their daily plans by clicking on the buttons –  selecting the cascader and using the checkbox, and input data with a basic widget to interact with the system.
-The web-based application supports multi-users and mysql database search as well as message queues.
-Login: This feature will prompt a widget which allows users to enter their username and password. The user identity is then authenticated.
-New Reminder: Add a new plan to the to-do list of the current user. This will prompt a widget that allows users to input the event, place, flagged or not, and due date; the time remaining is then calculated and will appear on this event.
-Delete: This button allows users to delete an event. The event will be marked as deleted and will appear in the trash bin. The time remaining is still being calculated and the users are still able to check this event in the trash bin.
-Edit: This button will enable the users to edit any events they wish to modify. A widget is prompted with content recorded in the database. The users are able to modify the event, place, and due date. Then, it will be updated in the database.
-Add List: This feature allows users to add a custom to-do list. This will prompt a widget that allows users to input the name of the to-do list, and the priority of the list. Then a to-do list will be created in the system.
-All: This feature allows users to retroact all the reminders. A new page will be prompted and list all the reminders including the past ones.
-Today: This feature allows users to retroact all the reminders that will be due by today. A new page will be prompted and list all the events that will be due by today in the user's to-do list.
-Flagged: This feature allows users to retroact all the reminders that are flagged. A new page will be prompted and list all the reminders that are flagged.
-Past: This feature allows users to retroact all the reminders that have passed due. A new page will be prompted and list all the reminders of past events.
-Past due: This feature allows users to retroact all the reminders that are not completed and have passed due. A new page will be prompted and list all the reminders that are not completed and have passed due.
-
-
-
-
-Command Line Interface
-Man: format and display the manual page which helps the users to understand the command.
-Usage: man [command name]
-List: format and display the events in any planner
-Usage: list [planner name]
-Select: select a planer as current planer
-Usage: select [planer name]
-Delete: Delete a schedule in the current planer
-Usage: delete [schedule name]
-Edit: Edit a schedule in the current planner
-Usage: edit [schedule name] [due date, location, new information]
-Flag: flag a schedule as important in the current planer
-Usage: flag [schedule name]
-Today: retroact all the schedules in today’s planner
-Usage: today
-Past: retroact all the schedules in past planer
-Usage: past
-PastDue: retroact all the schedules in past due planer
-Usage: pastDue
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Task-3
-Entity Classes: 
-Schedule: Stores the date and time that a user needs to finish their tasks on. 
-ToDoList: Stores the tasks that are on the plan to be completed in either a short or long term. 
-Notification: Send reminders regularly once there are tasks scheduled or remain on ToDoList.
-User: Stores username, email, password, task list and a list of completed tasks.
-
-Descriptions: The Calendar class stores the dates and tasks onto the date with the attribute date, Task. The Schedule class schedules
-
-Use Case Classes:
-CalendarManager:  Allows to add, delete, change the holidays and birthdays.
-ScheduleManager: Allows to add, delete, change, search the task with a deadline.
-ToDoListManager: Allows to add, delete, change the task without a strict deadline, and mark done for completion.
-User Manager: Allows to sign up, login, modify personal information.
-MasterUserManager: Stores a hashmap of usernames and user objects, and correspondence with DBMS.
-
-Controller:
-PlanMaker: Allows the users to login, register, logoff, change password, add schedule, add todolist, change notification settings and profile settings.
-
-Basic Command Line Interface:
-Command: allows users to login, register, logoff, add schedule, add todo list, change notification settings and profile settings.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Task 4 - Scenario Walkthrough
-
-Schedule: task(String), start time, duration, due date, alarmAt(ArrayList<LocalDate>), repeated(boolean)
-ToDoList: tasks(ArrayList<String>), due date, alarmAt(ArrayList<LocalDate>), repeated(boolean)
-User: name(String), password(String), email(String)
-Notification: Schedule, ToDoList, Holidays,  Birthday (alarm sound)
-
-A user can log in/register (with username, email, password) and create schedules/to-do lists stored in the user’s information (hashmap/ArrayList). All of their information can be stored and back-uped on different devices. A schedule can be repeatable in a certain time interval. The user can arrange their schedule on a calendar, check the user’s birthday and public holiday. They will get a notification of their schedule. The user can also make up their to-do list and once they complete their tasks they can mark the tasks as complete. Then it is removed from the user’s tasks and added to the user’s completed tasks. The to-do list has no time limit, but the user can still set up the notification at a specific time about how many tasks are waiting for completion.  Unfinished to-do lists can pass to the next day.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Task 6 — Progress Report (30 marks)
-This will help your TA grade your Phase 0 and ensure you get the grade your group deserves — so make sure you put time into it so they know what you've done and where your group would like guidance.
-Part of the mark for this will be based on your group presentation and the organization of your report. All materials should appear professional.
-Has your group provided a brief summary of:
-your specification?
-your CRC model?
-your scenario walk-through?
-your skeleton program?
-what each group member has been working on and plans to work on next?
-what has worked well so far with your design as you have started implementing the code?
-Have you clearly indicated at least one open question your group is struggling with, so that your TA can address it in their feedback for phase 0?
-Specification Summary:
-In our program, the user can log in to their accounts (or register if they do not have an account), modify their own information, and perform the following operations：
-The user can add/edit/remove schedules from the calendar and set up notifications for each schedule.
-The user can create to-do lists, add/edit/remove and view tasks in each list. Once they have done a task, they may mark the task as completed.
-CRC Model Summary:
-We have created:
-Three entity classes: Schedule, ToDoList, User
-Three Use case Classes: ScheduleManager, ToDoListManager, UserManager
-Two controllers: PlanMaker, Setting
-One interface: Notification
-We decided to use different use case classes to modify each entity class. Since we have found that all of the three entities are operated and implemented differently in most cases, one use case class per entity is easier to manage.
-Scenario Walkthrough Summary:
-The scenario walkthrough is created based on the user’s view. It demonstrates how a user will use this application. 
-There are two main functions: schedule and to-do list. Schedule is a time-based task. The goal for Schedule is to arrange the user’s time. Notification on Schedule is to remind the user that there is a task coming at a specific time. The ToDoList is not time-based, the goal for ToDoList is to motivate the user to finish their tasks. The user can also set up Notification for ToDoList, so that the user can be motivated to finish these tasks. In general, the Schedule is for long-term planning of day-to-day events/tasks. The ToDoList is for short-term daily notes.
-Skeleton program Summary:
-We have built the skeleton for all of the classes and interface described in the scenario walkthrough and most of the commands in specification. The classes include the entity classes of Schedule, ToDoList, User. Use case classes of ScheduleManager. ToDoListManager, UserManager. As well as an interface Notification that is implemented by Schedule, ScheduleManager, ToDoList, ToDoListManager. In addition, we included controllers PlanMaker and Setting for the user to edit the Schedules/ToDoList they wish to edit and change their profile settings. The commands includes Delect, Edit, Flag, List, Man, Past, PastDue, Select, Today, Add_List, New_Reminder.
-Open-ended questions: 
-How would the users interact with our program? Android or text UI? up to us
-Should we compose User with ToDoLishManager(use case) or ToDoList(entity)? (We are considering letting Users have an array of ToDoLists.) 
-Where can we store a current user object, UserManager(use case) or Setting(controller)?
-How are we supposed to store the data of each user? Should we store all user login data separate from their schedules or todolist data or should they be together? Is there a difference in memory usage? Efficiency?
-Since we are putting logIn and register methods in Setting, which is a controller, we cannot refer to User directly. Are we supposed to take a UserManager(use case) object as a parameter in logIn and register? Moreover, are we supposed to implement these two methods in UserManager and just make one-line function calls in logIn and register?
-Should we let the Schedule and ToDoList classes implement Notification or should ScheduleManager and ToDoListManager classes implement Notification? 
-What has worked well for the team so far with your design as you have started implementing the code?
-We think making the Notification class an interface is well designed because Schedule and ToDoList have different notification and notification settings. Thus, making the notification class an interface allows us to polymorph the relevant methods for notification purposes in our use case classes. 
-When implementing the classes, we followed the single responsibility to make sure each class only does things that are closely related to it. Those are what have worked well so far.
-Summary of what each group member has worked:
-Has been working on
-Yi: scenario walkthrough, CRC Model, skeleton (User, UserManager, Setting), progress report
-Vincent: scenario walkthrough, CRC Model, skeleton (Schedule, ScheduleManager, ScheduleManagerTest), progress report
-Zheng: CRC Model, Skeleton (ToDoList, ToDoListManager), progress report
-Hao: specification, command line design, ideas for front-end design, progress report
-Sunny: specification, command line design, progress report
-Yilin: scenario walkthrough, CRC Model, skeleton integration and (PlanMaker, ToDoListManagerTest), progress report
-
-Plans to work on next
-Yi: Compose User with ToDoListManager and ScheduleManager; implement User, 
-UserManager and Setting; let UserManager and Setting implement Notification if needed.
-Vincent: Implement the Schedule, ScheduleManager, and any Notification related problems.
-Zheng: Implement the ToDoList, ToDoListManager, and any Notification related problems. And are responsible for keeping in touch with our TA.
-Hao: Implement the Command-line interface including word parsing,  building syntax tree, and semantic analysis. Build the command line application and the manual page of the commands.
-Sunny: Implement the GUI interface and DBMS to manage the data storage. Build the web-based application interface. And build software documentation for the GUI interface.
-Yilin: Implement PlanMaker. Push and assist other members to work. Integration of all classes, ensure the consistency of code between classes, ensure our work is on track.  
-
-From phase 0, we have found each member’s role in this team. Yi, Vincent and mainly do back-end programs. Hao and Sunny perform more on front-end work. Zheng works in back-end programs and is responsible for communicating with our TA. Yilin works in back-end programs and performs as a project manager in this group. Any of us helped and assisted in each other’s work if necessary. In the future phases, we will carry out this division of labor. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
