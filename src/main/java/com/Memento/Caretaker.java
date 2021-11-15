@@ -1,4 +1,4 @@
-package planner.Memento;
+package com.Memento;
 
 import java.util.ArrayList;
 import java.util.List;

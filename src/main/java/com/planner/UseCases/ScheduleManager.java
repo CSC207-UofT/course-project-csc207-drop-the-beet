@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class ScheduleManager {
     Map<String, Schedule> schedules;
-    String userName;
+
 
     public ScheduleManager() {
         this.schedules = new HashMap<>();
@@ -27,16 +27,16 @@ public class ScheduleManager {
         Schedule schedule = new Schedule(start, end, task);
         this.schedules.put(userName, schedule);}
 
-//    public void removeSchedule(String scheduleID) {this.schedules.remove(scheduleID);}
-//
-//    public void modifySchedule(String scheduleID, Date newStart, Date newEnd, String newTask) {
-//        this.schedules.get(scheduleID).modifySchedule(newStart, newEnd, newTask);
-//    }
-//    public void modifyStart(HashMap<String, Schedule> schedules, String scheduleID, Date newStart) {
+    public void removeSchedule(String scheduleID) {this.schedules.remove(scheduleID);}
+
+    public void modifySchedule(String scheduleID, LocalDate newStart, LocalDate newEnd, String newTask) {
+        this.schedules.get(scheduleID).modifySchedule(newStart, newEnd, newTask);
+    }
+//    public void modifyStart(HashMap<String, Schedule> schedules, String scheduleID, LocalDate newStart) {
 //        schedules.get(scheduleID).start = newStart;
 //    }
 //
-//    public void modifyEnd(HashMap<String, Schedule> schedules, String scheduleID, Date newEnd) {
+//    public void modifyEnd(HashMap<String, Schedule> schedules, String scheduleID, LocalDate newEnd) {
 //        schedules.get(scheduleID).start = newEnd;
 //    }
 //

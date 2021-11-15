@@ -1,5 +1,7 @@
 package com.planner.Controller;
 
+import com.Memento.Memento;
+import com.planner.UseCases.ToDoListManager;
 import com.planner.UseCases.UserManager;
 import com.database.JDBCSQlite;
 
@@ -14,13 +16,13 @@ public class ToDoListsController {
         //call infoReadWriter to open the file first,
     }
 
-    public static void modifyToDoList(String userID, String listID, String newListName) {
-
-    }
-
-    public static void deleteToDoList(String listID) {
-
-    }
+//    public static void modifyToDoList(String userID, String listID, String newListName) {
+//
+//    }
+//
+//    public static void deleteToDoList(String listID) {
+//
+//    }
 
     public static void newTask(UserManager user, String task, LocalDate deadline) {
         JDBCSQlite jdbcsQlite = new JDBCSQlite();
@@ -76,5 +78,23 @@ public class ToDoListsController {
             throwables.printStackTrace();
         }
         return todoNum;
+    }
+
+    private ToDoListManager state;
+    /* lots of memory consumptive private data that is not necessary to define the
+     * state and should thus not be saved. Hence the small memento object. */
+
+    public void setState(ToDoListManager state) {
+        System.out.println("Originator: Setting state to " + state);
+        this.state = state;
+    }
+
+    public Memento save() {
+        System.out.println("Originator: Saving to Memento.");
+        return new Memento(state);
+    }
+    public void restore(Memento m) {
+        state = m.getState();
+        System.out.println("Originator: State after restoring from Memento: " + state);
     }
 }
