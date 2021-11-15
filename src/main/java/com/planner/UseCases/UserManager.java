@@ -1,5 +1,7 @@
-package com.planner;
+package com.planner.UseCases;
 
+
+import com.planner.Entities.User;
 
 public class UserManager {
     User user;

@@ -1,6 +1,6 @@
 package com.ui.planner;
 
-import com.planner.UserManager;
+import com.planner.UseCases.UserManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,8 +15,8 @@ public class AddIncomingApplication extends Application {
 
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(LoginView.class.getResource("addIncoming-view.fxml"));
-        Parent root = (Parent)fxmlLoader.load();
-        AddInComingController addInComingController = (AddInComingController) fxmlLoader.getController();
+        Parent root = fxmlLoader.load();
+        AddInComingController addInComingController = fxmlLoader.getController();
         addInComingController.setUser(user);//done
         Scene scene = new Scene(root, 369, 268);
         stage.setTitle("Add Incoming List Task Demo");

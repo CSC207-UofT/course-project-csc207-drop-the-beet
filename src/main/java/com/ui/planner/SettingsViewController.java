@@ -1,7 +1,6 @@
 package com.ui.planner;
 
-import com.planner.User;
-import com.planner.UserManager;
+import com.planner.UseCases.UserManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
@@ -45,7 +44,7 @@ public class SettingsViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ;
+
     }
 
     @FXML

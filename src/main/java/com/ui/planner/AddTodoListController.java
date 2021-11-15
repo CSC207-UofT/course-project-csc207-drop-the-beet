@@ -1,24 +1,15 @@
 package com.ui.planner;
 
-import com.planner.ToDoListsController;
-import com.planner.User;
-import com.planner.UserManager;
-import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import com.planner.Controller.ToDoListsController;
+import com.planner.UseCases.UserManager;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import com.database.*;
-
-import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.HashMap;
 
 public class AddTodoListController {
     @FXML

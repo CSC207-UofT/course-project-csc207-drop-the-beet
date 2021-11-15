@@ -1,10 +1,10 @@
 package com.ui.planner;
 
-import com.planner.Connection.InfoReadWriter;
-import com.planner.SchedulesController;
-import com.planner.ToDoListsController;
-import com.planner.UserController;
-import com.planner.UserManager;
+import com.planner.Controller.ImportantController;
+import com.planner.Controller.SchedulesController;
+import com.planner.Controller.ToDoListsController;
+import com.planner.Controller.UserController;
+import com.planner.UseCases.UserManager;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -72,7 +72,7 @@ public class DashboardController implements Initializable {
     @FXML
     private TableView<ToDoEventModel> todayTable;
     @FXML
-    ArrayList<Button> arrBtn = new ArrayList<Button>();
+    ArrayList<Button> arrBtn = new ArrayList<>();
 
     private ArrayList<ArrayList<String>> allUserToDoTasks;
     private ArrayList<ArrayList<String>> allUserSchedules;
@@ -95,7 +95,7 @@ public class DashboardController implements Initializable {
         currUser = new UserManager(userName, userEmail, passWord);//done
         int scheduleNum = SchedulesController.loadScheduleBubble(currUser, jdbcsQlite);
         int todoNum = ToDoListsController.loadTodoBubble(currUser, jdbcsQlite);
-        int importantNum = InfoReadWriter.loadImportantBubble(currUser, jdbcsQlite);
+        int importantNum = ImportantController.loadImportantBubble(currUser, jdbcsQlite);
 
         todoNumLabel.setText(Integer.toString(todoNum));
 
@@ -106,7 +106,7 @@ public class DashboardController implements Initializable {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("incoming-view.fxml"));
             incomingView = fxmlLoader.load();
-            IncomingViewController incomingViewController = (IncomingViewController) fxmlLoader.getController();
+            IncomingViewController incomingViewController = fxmlLoader.getController();
             incomingViewController.setUser(currUser);//done
             incomingViewController.showEvents();
         } catch (IOException e) {
@@ -118,7 +118,7 @@ public class DashboardController implements Initializable {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("todoList-view.fxml"));
             todoListView = fxmlLoader.load();
-            TodoListViewController todoListViewController = (TodoListViewController) fxmlLoader.getController();
+            TodoListViewController todoListViewController = fxmlLoader.getController();
             todoListViewController.setUser(currUser);//done
             todoListViewController.showEvents();
         } catch (IOException e) {
@@ -129,7 +129,7 @@ public class DashboardController implements Initializable {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("important-view.fxml")));
             importantView = fxmlLoader.load();
-            ImportantViewController importantViewController = (ImportantViewController) fxmlLoader.getController();
+            ImportantViewController importantViewController = fxmlLoader.getController();
             importantViewController.setUser(currUser);//done
             importantViewController.showEvents();
         } catch (IOException e) {
@@ -140,7 +140,7 @@ public class DashboardController implements Initializable {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("settings-view.fxml"));
             settingsView = fxmlLoader.load();
-            SettingsViewController settingsViewController = (SettingsViewController) fxmlLoader.getController();
+            SettingsViewController settingsViewController = fxmlLoader.getController();
             settingsViewController.setUser(currUser);//done
         } catch (IOException e) {
             e.printStackTrace();
@@ -203,7 +203,7 @@ public class DashboardController implements Initializable {
         jdbcsQlite.create();
         int scheduleNum = SchedulesController.loadScheduleBubble(currUser, jdbcsQlite);
         int todoNum = ToDoListsController.loadTodoBubble(currUser, jdbcsQlite);
-        int importantNum = InfoReadWriter.loadImportantBubble(currUser, jdbcsQlite);
+        int importantNum = ImportantController.loadImportantBubble(currUser, jdbcsQlite);
         jdbcsQlite.close();
             todoNumLabel.setText(Integer.toString(todoNum));
 

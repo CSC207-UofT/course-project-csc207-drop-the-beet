@@ -1,15 +1,11 @@
 package com.ui.planner;
 
-import com.planner.User;
 import com.database.*;
-
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -55,7 +51,6 @@ public class LoginController implements Initializable {
 
         if (jdbcsQlite.getUserPassword(userName).equals(passWord)) {
             String userEmail = jdbcsQlite.getUserEmail(userName);
-            User currUser = new User(userName, userEmail, passWord);
             passwordSuccessView(userName, userEmail, passWord);
         }
         else {

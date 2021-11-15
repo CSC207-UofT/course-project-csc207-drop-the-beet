@@ -1,6 +1,6 @@
 package com.ui.planner;
 
-import com.planner.UserManager;
+import com.planner.UseCases.UserManager;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.Alert;

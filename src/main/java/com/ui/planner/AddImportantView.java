@@ -1,7 +1,7 @@
 package com.ui.planner;
 
-import com.planner.User;
-import com.planner.UserManager;
+import com.planner.UseCases.UserManager;
+import com.ui.planner.LoginView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,8 +21,8 @@ public class AddImportantView extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(LoginView.class.getResource("addImportantList-view.fxml"));
-        Parent root = (Parent)fxmlLoader.load();
-        AddImportantController addImportantController = (AddImportantController) fxmlLoader.getController();
+        Parent root = fxmlLoader.load();
+        AddImportantController addImportantController = fxmlLoader.getController();
         addImportantController.setUser(user); //done
         Scene scene = new Scene(root, 369, 268);
         stage.setTitle("Add To-do List Task Demo");
