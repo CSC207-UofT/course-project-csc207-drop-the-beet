@@ -1,10 +1,10 @@
-package planner.Memento;
+package com.memento;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Caretaker {
-    private List<Memento> mementoList = new ArrayList<Memento>();
+    private List<Memento> mementoList = new ArrayList<>();
 
     public void add(Memento state){
         mementoList.add(state);

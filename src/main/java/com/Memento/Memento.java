@@ -1,4 +1,4 @@
-package planner.Memento;
+package com.memento;
 
 import java.io.Serializable;
 import java.util.HashMap;

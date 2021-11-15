@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="connections done in schedule and user, added memento">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/datebase/JDBCSQlite.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/datebase/JDBCSQlite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Connection/InfoReadWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Connection/InfoReadWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/SchedulesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/SchedulesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/ToDoListsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/ToDoListsController.java" afterDir="false" />
@@ -100,9 +98,9 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/ui/planner" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.18620689" />
+    <property name="project.structure.side.proportion" value="0.41264367" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
     <property name="settings.editor.splitter.proportion" value="0.2580645" />
   </component>
@@ -138,7 +136,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="16" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.Driver" />
-      <module name="course-project-csc207-drop-the-beet" />
+      <module name="planner" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,7 +146,7 @@
       <module name="planner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.datebase.*" />
+          <option name="PATTERN" value="com.database.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -219,10 +217,7 @@
       <workItem from="1636657519691" duration="226000" />
       <workItem from="1636657821088" duration="7446000" />
       <workItem from="1636666997596" duration="34212000" />
-      <workItem from="1636706938789" duration="198000" />
-      <workItem from="1636707160273" duration="494000" />
-      <workItem from="1636754126726" duration="573000" />
-      <workItem from="1636754777105" duration="654000" />
+      <workItem from="1636756387900" duration="841000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>
@@ -427,14 +422,7 @@
       <option name="project" value="LOCAL" />
       <updated>1636706718345</updated>
     </task>
-    <task id="LOCAL-00030" summary="connections done in schedule and user, added memento">
-      <created>1636707028147</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1636707028147</updated>
-    </task>
-    <option name="localTasksCounter" value="31" />
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
