@@ -1,9 +1,12 @@
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
+package com.planner;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
+
+/** Hasn't been implement yet.
+ */
 
 public class SendNotification {
     private String name;

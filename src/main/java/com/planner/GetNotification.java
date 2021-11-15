@@ -1,6 +1,12 @@
+package com.planner;
+
+import com.planner.User;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
+
+/** Hasn't been implement yet.
+ */
 
 public class GetNotification{
     private String name;
@@ -32,15 +38,15 @@ public class GetNotification{
     }
 }
 
-class Demo{
-    public static void main(String[] args) {
-        User user = new User("dz","@","123");
-        ToDoList todolist = new ToDoList("csc207");
-        todolist.addTask("phase 0");
-        todolist.observable.addObserver(user.observer);
-        todolist.observable.sendNotification("due");
-        user.observer.checkNotification();
-        user.observer.checkNotification();
-
-    }
-}
+//class Demo{
+//    public static void main(String[] args) {
+//        User user = new User("dz","@","123");
+//        ToDoList todolist = new ToDoList("csc207");
+//        todolist.addTask("phase 0");
+//        todolist.observable.addObserver(user.observer);
+//        todolist.observable.sendNotification("due");
+//        user.observer.checkNotification();
+//        user.observer.checkNotification();
+//
+//    }
+//}
