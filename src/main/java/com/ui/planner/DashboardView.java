@@ -1,6 +1,6 @@
 package com.ui.planner;
+
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -25,9 +25,9 @@ public class DashboardView extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(LoginView.class.getResource("dashboard-view.fxml"));
-        Parent root = (Parent)fxmlLoader.load();
+        Parent root = fxmlLoader.load();
 
-        DashboardController controller = fxmlLoader.<DashboardController>getController();
+        DashboardController controller = fxmlLoader.getController();
         controller.setUser(userName, userEmail, userPassword); //done
 
         Scene scene = new Scene(root, 842, 521);

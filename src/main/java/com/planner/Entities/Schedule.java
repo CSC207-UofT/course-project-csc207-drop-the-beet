@@ -1,4 +1,4 @@
-package com.planner;
+package com.planner.Entities;
 
 import java.time.LocalDate;
 

@@ -1,6 +1,6 @@
-package com.planner;
+package com.planner.Controller;
 
-import com.planner.UserManager;
+import com.planner.UseCases.UserManager;
 import com.database.JDBCSQlite;
 
 import java.sql.Date;
@@ -27,13 +27,14 @@ public class ToDoListsController {
         jdbcsQlite.create();
 
         try {
-//            HashMap<LocalDate, String> todo = new HashMap<>();
-//            todo.put(deadline, task);
-//            user.getToDoLists().addTaskInList(todo);
-            jdbcsQlite.createUserToDoListTaskByUserName(user.getName(), task, deadline);
+            Integer taskID = jdbcsQlite.getLastToDoTaskID();
+            user.getToDoLists().addTask(taskID, task, deadline);
+            jdbcsQlite.createUserToDoListTaskByUserName(user.getName(), user.getToDoLists().getTask(taskID),
+                    user.getToDoLists().getDeadline(taskID));
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
 
     public static void modifyTask(String userID, String listID, String taskID, String newTask) {

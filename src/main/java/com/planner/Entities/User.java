@@ -1,4 +1,4 @@
-package com.planner;
+package com.planner.Entities;
 
 import java.io.Serializable;
 
@@ -37,6 +37,6 @@ public class User {
 
     public void setPassword(String password) {this.password = password; }
 
-    public void setEmail(String Email) {this.email = email; }
+    public void setEmail(String newEmail) {this.email = newEmail; }
 
 }

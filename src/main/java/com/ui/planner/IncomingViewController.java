@@ -1,7 +1,8 @@
 package com.ui.planner;
 
 import com.database.JDBCSQlite;
-import com.planner.UserManager;
+import com.planner.UseCases.UserManager;
+import com.ui.planner.ScheduleEventModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

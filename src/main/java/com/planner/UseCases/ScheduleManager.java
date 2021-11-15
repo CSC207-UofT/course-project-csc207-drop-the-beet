@@ -1,4 +1,6 @@
-package com.planner;
+package com.planner.UseCases;
+
+import com.planner.Entities.Schedule;
 
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -12,7 +14,7 @@ public class ScheduleManager {
     String userName;
 
     public ScheduleManager() {
-        this.schedules = new HashMap<String, Schedule>();
+        this.schedules = new HashMap<>();
 
     }
 

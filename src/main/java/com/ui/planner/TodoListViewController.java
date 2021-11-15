@@ -1,9 +1,8 @@
 package com.ui.planner;
 
-import com.planner.Connection.InfoReadWriter;
-import com.database.JDBCSQlite;
-import com.planner.ToDoListsController;
-import com.planner.UserManager;
+import com.planner.Controller.ToDoListsController;
+import com.planner.UseCases.UserManager;
+import com.ui.planner.ToDoEventModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

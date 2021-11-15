@@ -1,8 +1,7 @@
 package com.ui.planner;
 
-import com.planner.Connection.InfoReadWriter;
-import com.database.JDBCSQlite;
-import com.planner.UserManager;
+import com.planner.Controller.ImportantController;
+import com.planner.UseCases.UserManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,7 +14,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -54,7 +52,7 @@ public class ImportantViewController implements Initializable {
 
     @FXML
     public void showEvents() {
-        ArrayList<ArrayList<String>> lst = InfoReadWriter.loadImportant(user); //done
+        ArrayList<ArrayList<String>> lst = ImportantController.loadImportant(user); //done
 
         if (lst != null && lst.size() > 0) {
             for (ArrayList<String> l : lst){

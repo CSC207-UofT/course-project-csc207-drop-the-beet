@@ -2,8 +2,8 @@ package com.ui.planner;
 
 
 import com.database.JDBCSQlite;
-import com.planner.SchedulesController;
-import com.planner.UserManager;
+import com.planner.Controller.SchedulesController;
+import com.planner.UseCases.UserManager;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.Alert;
