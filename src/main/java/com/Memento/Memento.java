@@ -1,16 +1,23 @@
-package planner.Memento;
+package com.Memento;
+
+import com.planner.Controller.ToDoListsController;
+import com.planner.UseCases.ToDoListManager;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Memento implements Serializable {
-    private HashMap state;
+    private ToDoListManager state;
 
-    void setState(HashMap state) {
+    public Memento(ToDoListManager state) {
+    }
+
+    void setState(ToDoListManager state) {
         this.state = state;
     }
 
-    HashMap getState() {
+    public ToDoListManager getState() {
         return state;
     }
 }
