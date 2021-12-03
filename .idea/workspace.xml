@@ -4,58 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="connections done in schedule and user, added memento">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/datebase/JDBCSQlite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Connection/InfoReadWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Connection/InfoReadWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/SchedulesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/SchedulesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/ToDoListsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/ToDoListsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddImportantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddImportantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddInComingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddInComingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddTodoListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/AddTodoListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/SettingsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/SettingsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/TodoListViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/TodoListViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/CMUtility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Command/Add_List.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Command/ArgumentsTuple.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Command/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Command/CommandExecutor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Command/CommandReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Command/Delete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Command/Edit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Command/Flag.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Command/List.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Command/Man.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Command/New_Schedule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Command/Past.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Command/PastDue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Command/Select.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Command/Today.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Connection/InfoReadWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Connection/ReadWrite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Memento/Caretaker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Memento/Memento.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Notification.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/PlanMaker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Schedule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/ScheduleManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/SchedulesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/Setting.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/ToDoList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/ToDoListManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/ToDoListsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planner/UserManager.java" beforeDir="false" />
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="added memento, Specification and class diagram">
+      <change afterPath="$PROJECT_DIR$/phase1/Progress_Report" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Connection/ReadWrite.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Controller/ToDoListsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Controller/ToDoListsController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
