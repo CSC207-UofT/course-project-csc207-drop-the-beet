@@ -5,11 +5,10 @@ import com.planner.UseCases.ToDoListManager;
 import com.planner.UseCases.UserManager;
 import com.database.JDBCSQlite;
 
-import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
+
 
 public class ToDoListsController {
     public static void newToDoList(String userID, String listName) {
@@ -85,16 +84,13 @@ public class ToDoListsController {
      * state and should thus not be saved. Hence the small memento object. */
 
     public void setState(ToDoListManager state) {
-        System.out.println("Originator: Setting state to " + state);
         this.state = state;
     }
 
     public Memento save() {
-        System.out.println("Originator: Saving to Memento.");
         return new Memento(state);
     }
     public void restore(Memento m) {
         state = m.getState();
-        System.out.println("Originator: State after restoring from Memento: " + state);
     }
 }
