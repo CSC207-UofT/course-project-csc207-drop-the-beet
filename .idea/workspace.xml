@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="added memento, Specification and class diagram">
-      <change afterPath="$PROJECT_DIR$/phase1/Progress_Report" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Connection/ReadWrite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Controller/ToDoListsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Controller/ToDoListsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/test.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +75,7 @@
       <recent name="com" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Driver">
+  <component name="RunManager" selected="Application.JDBCSQlite (1)">
     <configuration name="DashboardView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ui.planner.DashboardView" />
       <module name="planner" />
@@ -91,6 +94,19 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.Driver" />
       <module name="course-project-csc207-drop-the-beet" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JDBCSQlite (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.database.JDBCSQlite" />
+      <module name="planner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -121,24 +137,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="sqlite-jdbc-3.36.0.3.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/src/main/resources/database/sqlite-jdbc-3.36.0.3.jar" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Application.DashboardView" />
       <item itemvalue="Application.Driver" />
       <item itemvalue="Application.JDBCSQlite" />
       <item itemvalue="Application.LoginView" />
-      <item itemvalue="JAR Application.sqlite-jdbc-3.36.0.3.jar" />
+      <item itemvalue="Application.JDBCSQlite (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.JDBCSQlite (1)" />
         <item itemvalue="Application.Driver" />
         <item itemvalue="Application.DashboardView" />
         <item itemvalue="Application.JDBCSQlite" />
         <item itemvalue="Application.LoginView" />
-        <item itemvalue="JAR Application.sqlite-jdbc-3.36.0.3.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -175,6 +187,7 @@
       <workItem from="1636707160273" duration="494000" />
       <workItem from="1636754126726" duration="573000" />
       <workItem from="1636754777105" duration="654000" />
+      <workItem from="1638674751823" duration="6613000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>

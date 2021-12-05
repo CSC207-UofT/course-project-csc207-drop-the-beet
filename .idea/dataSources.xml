@@ -15,5 +15,12 @@
       <jdbc-url>jdbc:sqlite:C:\Users\qin18\Desktop\course-project-csc207-drop-the-beet\src\main\resources\database\test.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="test [2]" uuid="f8b55c69-c48a-43b1-84af-6c10571797f7">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\qin18\Desktop\tmp\src\main\resources\database\test.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
