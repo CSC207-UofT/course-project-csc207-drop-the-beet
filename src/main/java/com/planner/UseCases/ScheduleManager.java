@@ -3,6 +3,7 @@ package com.planner.UseCases;
 import com.planner.Entities.Schedule;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 /** ScheduleManager is a map of all schedules. public
@@ -43,4 +44,5 @@ public class ScheduleManager {
 //    public void modifyStart(HashMap<String, Schedule> schedules, String scheduleID, String T) {
 //        schedules.get(scheduleID).start = newStart;
 //    }
+
 }

@@ -1,14 +1,13 @@
 package com.database;
-import javafx.concurrent.Task;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.xml.sax.Locator;
 
-import javax.xml.transform.Result;
-import java.nio.file.FileSystemAlreadyExistsException;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.stream.StreamSupport;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class JDBCSQlite {
     /**
@@ -805,6 +804,98 @@ public class JDBCSQlite {
         return false;
     }
 
+    /**
+     *
+     * @param suchMap a Map with key as a string, value as a arraylist of a Map with a string key
+     *                and a arraylist as values.
+     * @throws SQLException Sql Exception.
+     */
+
+    public void addMap(@NotNull Map<String, ArrayList<Map<String, ArrayList<String>>>> suchMap) throws SQLException {
+        for (String i: suchMap.keySet()) {
+            Collection<ArrayList<String>> scheduleSet = suchMap.get(i).get(0).values();
+            Collection<ArrayList<String>> todoListSet = suchMap.get(i).get(1).values();
+            Collection<ArrayList<String>> importantSet = suchMap.get(i).get(2).values();
+            for (ArrayList<String> scheduleLst: scheduleSet) {
+                System.out.println(scheduleLst);
+                ResultSet rs = stmt.executeQuery("SELECT MAX(EVENT.ID) FROM EVENT;");
+                int nextID = 1;
+                if (rs.next()) {
+                    nextID = rs.getInt(1) + 1;
+                }
+                int userID = getUserIDByUserName(i);
+                if (userID != -1) {
+                    stmt.executeUpdate("INSERT INTO EVENT VALUES (" + nextID + ","  + userID  + "," + "'" + i + "'" + "," + "'" + scheduleLst.get(0) + "'" + "," + "'" + scheduleLst.get(1)  + "'" + "," + "'" + scheduleLst.get(2) + "'" + ")");
+                }
+            }
+
+            for (ArrayList<String> todoLst: todoListSet) {
+                ResultSet rs = stmt.executeQuery("SELECT MAX(TODOLIST.ID) FROM TODOLIST");
+                int nextID = 1;
+                if (rs.next()) {
+                    nextID = rs.getInt(1) + 1;
+                }
+                int userID = getUserIDByUserName(i);
+                if (userID != -1) {
+                    stmt.executeUpdate("INSERT INTO TODOLIST VALUES (" + nextID + "," + "'" + userID + "'" + "," + "'" + i + "'" + "," + "'" + todoLst.get(0) + "'" + "," + "'" + todoLst.get(1) + "'" + ")");
+                }
+            }
+
+            for (ArrayList<String> importantLst: importantSet) {
+                ResultSet rs = stmt.executeQuery("SELECT MAX(IMPORTANT.ID) FROM IMPORTANT;");
+                int nextID = 1;
+                if (rs.next()) {
+                    nextID = rs.getInt(1) + 1;
+                }
+                int userID = getUserIDByUserName(i);
+                if (userID != -1) {
+                    stmt.executeUpdate("INSERT INTO IMPORTANT VALUES (" + nextID + ","  + userID  + "," + "'" + i + "'" + "," + "'" + importantLst.get(0) + "'" + "," + "'" + importantLst.get(1)  + "'" + "," + "'" + importantLst.get(2) + "'" + ")");
+                }
+            }
+
+        }
+    }
+
+    public Map<String, ArrayList<Map<String, ArrayList<String>>>> getMap(String userName) throws SQLException {
+        ArrayList<ArrayList<String>> allUserSchedule = getAllUserEventTasksByUserName(userName);
+        ArrayList<ArrayList<String>> allUserTodoList = getAllUserToDoTasksByUserName(userName);
+        ArrayList<ArrayList<String>> allUserImportant = getAllUserImportantTasksByUserName(userName);
+        Map<String, ArrayList<Map<String, ArrayList<String>>>> res = new HashMap<>();
+        ArrayList<Map<String, ArrayList<String>>> allLst = new ArrayList<Map<String, ArrayList<String>>>();
+        Map<String, ArrayList<String>> scheduleMap = new HashMap<String, ArrayList<String>>();
+        Map<String, ArrayList<String>> todoMap = new HashMap<String, ArrayList<String>>();
+        Map<String, ArrayList<String>> importantMap = new HashMap<String, ArrayList<String>>();
+        getAllMap(allUserSchedule, scheduleMap);
+        getAllMap(allUserImportant, importantMap);
+
+        for (ArrayList<String> n: allUserTodoList) {
+            ArrayList<String> events = new ArrayList<String>();
+            events.add(n.get(2));
+            events.add(n.get(3));
+            events.add(n.get(4));
+            todoMap.put(n.get(0), events);
+        }
+
+        allLst.add(scheduleMap);
+        allLst.add(todoMap);
+        allLst.add(importantMap);
+
+        res.put(userName, allLst);
+
+        return res;
+    }
+
+    private void getAllMap(ArrayList<ArrayList<String>> allUserTodoList, Map<String, ArrayList<String>> todoMap) {
+        for (ArrayList<String> m: allUserTodoList) {
+            ArrayList<String> events = new ArrayList<String>();
+            events.add(m.get(2));
+            events.add(m.get(3));
+            events.add(m.get(4));
+            events.add(m.get(5));
+            todoMap.put(m.get(0), events);
+        }
+    }
+
     public static void main(String[] args) throws SQLException {
         System.out.println(System.getProperty("user.dir"));
         JDBCSQlite jdbcsqlite = new JDBCSQlite();
@@ -821,6 +912,32 @@ public class JDBCSQlite {
         System.out.println(jdbcsqlite.getUserEmailByID(11));
         System.out.println(jdbcsqlite.getUserEmailByID(999));
         System.out.println(jdbcsqlite.changeUserNameByID(2, "NewUserName"));
+        ArrayList<String> tmp11 = new ArrayList<>();
+        tmp11.add("schedule");
+        tmp11.add("2020-01-01");
+        tmp11.add("2020-01-01");
+        Map<String, ArrayList<String>> tmp1 = new HashMap<String, ArrayList<String>>();
+        tmp1.put("1", tmp11);
+        ArrayList<String> tmp22 = new ArrayList<>();
+        tmp22.add("todo");
+        tmp22.add("2020-01-01");
+        tmp22.add("2020-01-01");
+        Map<String, ArrayList<String>> tmp2 = new HashMap<String, ArrayList<String>>();
+        tmp2.put("1", tmp22);
+        ArrayList<String> tmp33 = new ArrayList<>();
+        tmp33.add("important");
+        tmp33.add("2020-01-01");
+        tmp33.add("2020-01-01");
+        Map<String, ArrayList<String>> tmp3 = new HashMap<String, ArrayList<String>>();
+        tmp3.put("1", tmp33);
+        ArrayList<Map<String, ArrayList<String>>> tmp4 = new ArrayList<>();
+        tmp4.add(tmp1);
+        tmp4.add(tmp2);
+        tmp4.add(tmp3);
+        Map<String, ArrayList<Map<String, ArrayList<String>>>> testMap = new HashMap<String, ArrayList<Map<String, ArrayList<String>>>>();
+        testMap.put("user", tmp4);
+        jdbcsqlite.addMap(testMap);
+        System.out.println(jdbcsqlite.getMap("user"));
         jdbcsqlite.close();
     }
 }
