@@ -138,7 +138,6 @@ public class JDBCSQlite {
      * @param userPassword the user's password
      */
     public boolean createNewUser(String userName, String userEmail, String userPassword) throws SQLException {
-
         if (!isUserNameExist(userName)) {
             ResultSet rs = stmt.executeQuery(getMaxIDSql);
             rs.next();
@@ -483,7 +482,6 @@ public class JDBCSQlite {
      * @param userName the user's username
      */
     public ArrayList<ArrayList<String>> getAllUserToDoTasksByUserName(String userName) throws SQLException {
-
         ArrayList<ArrayList<String>> res = new ArrayList<>();
         if (isUserNameExist(userName)) {
             ResultSet rs = stmt.executeQuery("SELECT * FROM TODOLIST WHERE USERNAME = " + "'" + userName + "'");
@@ -780,7 +778,6 @@ public class JDBCSQlite {
      * @param end the deadline of the plan for some task(s)
      */
     public boolean changeUserImportantTaskEndByTaskID(int TaskID, LocalDate end) throws SQLException {
-
         ResultSet rs = stmt.executeQuery("SELECT * FROM IMPORTANT WHERE ID = " + TaskID);
         if (rs.next()) {
             stmt.executeUpdate("UPDATE IMPORTANT SET END = " + "'" + end.toString() + "'" + " WHERE ID = " + TaskID);

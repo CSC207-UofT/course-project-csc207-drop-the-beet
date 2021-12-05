@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="DB Change">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +52,7 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/ui/planner" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.18620689" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
@@ -70,7 +72,7 @@
       <recent name="com" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JDBCSQlite (1)">
+  <component name="RunManager" selected="Application.Driver">
     <configuration name="DashboardView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ui.planner.DashboardView" />
       <module name="planner" />
@@ -85,10 +87,9 @@
       </method>
     </configuration>
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="16" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.Driver" />
-      <module name="course-project-csc207-drop-the-beet" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -141,9 +142,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JDBCSQlite (1)" />
         <item itemvalue="Application.Driver" />
         <item itemvalue="Application.DashboardView" />
+        <item itemvalue="Application.JDBCSQlite (1)" />
         <item itemvalue="Application.JDBCSQlite" />
         <item itemvalue="Application.LoginView" />
       </list>
@@ -182,7 +183,8 @@
       <workItem from="1636707160273" duration="494000" />
       <workItem from="1636754126726" duration="573000" />
       <workItem from="1636754777105" duration="654000" />
-      <workItem from="1638674751823" duration="6801000" />
+      <workItem from="1638674751823" duration="7871000" />
+      <workItem from="1638689926133" duration="5571000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>
@@ -408,7 +410,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638681883955</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="DB Change">
+      <created>1638681900107</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1638681900107</updated>
+    </task>
+    <task id="LOCAL-00034" summary="DB Change">
+      <created>1638681918705</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1638681918705</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
