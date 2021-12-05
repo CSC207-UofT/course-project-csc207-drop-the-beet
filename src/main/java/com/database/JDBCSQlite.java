@@ -880,7 +880,6 @@ public class JDBCSQlite {
         allLst.add(todoMap);
         allLst.add(importantMap);
         res.put(userName, allLst);
-
         return res;
     }
 
