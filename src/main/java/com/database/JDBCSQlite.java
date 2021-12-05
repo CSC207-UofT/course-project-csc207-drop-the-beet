@@ -879,7 +879,6 @@ public class JDBCSQlite {
         allLst.add(scheduleMap);
         allLst.add(todoMap);
         allLst.add(importantMap);
-
         res.put(userName, allLst);
 
         return res;
