@@ -891,6 +891,7 @@ public class JDBCSQlite {
             events.add(m.get(4));
             events.add(m.get(5));
             todoMap.put(m.get(0), events);
+
         }
     }
 
