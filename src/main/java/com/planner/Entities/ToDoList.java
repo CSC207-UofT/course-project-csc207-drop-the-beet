@@ -1,9 +1,6 @@
 package com.planner.Entities;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.*;
 
 /** TodoList is a list of tasks. Each task has an ID.
  * If a task is done, mark the task as complete(move that into the list of completion).

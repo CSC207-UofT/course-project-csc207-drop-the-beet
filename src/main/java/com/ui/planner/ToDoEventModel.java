@@ -3,8 +3,8 @@ package com.ui.planner;
 import javafx.beans.property.SimpleStringProperty;
 
 public class ToDoEventModel {
-    private SimpleStringProperty event;
-    private  SimpleStringProperty end;
+    private final SimpleStringProperty event;
+    private final SimpleStringProperty end;
 
     public ToDoEventModel(String event,  String end) {
         this.event = new SimpleStringProperty(event);

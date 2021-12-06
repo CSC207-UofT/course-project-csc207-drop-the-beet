@@ -1,6 +1,5 @@
 package com.ui.planner;
 
-import com.planner.Entities.Schedule;
 import com.planner.Entities.ToDoList;
 import com.planner.UseCases.UserManager;
 import javafx.application.Platform;

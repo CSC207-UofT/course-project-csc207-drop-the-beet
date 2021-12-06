@@ -7,7 +7,6 @@ import java.sql.SQLException;
 
 
 public class UserGateway {
-    UserManager userManager;
 
     public static UserManager loadAllUserInfo(String username) {
         JDBCSQlite jdbcsQlite = new JDBCSQlite();

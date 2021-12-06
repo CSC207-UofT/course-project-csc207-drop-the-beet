@@ -30,8 +30,6 @@ public class LoginController implements Initializable {
     private CheckBox rememberMe;
     @FXML
     private Button loginButton;
-//    @FXML
-//    private Pane bgPane;
 
     private final JDBCSQlite jdbcsQlite = new JDBCSQlite();
 
