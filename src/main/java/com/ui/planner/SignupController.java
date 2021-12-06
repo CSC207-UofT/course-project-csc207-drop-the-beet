@@ -55,7 +55,7 @@ public class SignupController {
 
     @FXML
     protected void onSignUpBtnClicked() throws SQLException {
-        JDBCSQlite jdbcsQlite = new JDBCSQlite();
+        DBUser jdbcsQlite = new DBUser();
         jdbcsQlite.create();
 
         if (verifyPassword() && !jdbcsQlite.isUserNameExist(getUsername())) {

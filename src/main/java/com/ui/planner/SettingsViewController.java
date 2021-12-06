@@ -48,7 +48,7 @@ public class SettingsViewController implements Initializable {
     @FXML
     protected void onConfirmButtonClicked() throws SQLException {
         if (newPasswordText.getText().equals(confirmPasswordText.getText()) && newPasswordText.getLength() != 0 && confirmPasswordText.getLength() != 0) {
-            JDBCSQlite jdbcsQlite = new JDBCSQlite();
+            DBUser jdbcsQlite = new DBUser();
             jdbcsQlite.create();
             String newUserName = userNameText.getText();
             String newEmail = emailText.getText();

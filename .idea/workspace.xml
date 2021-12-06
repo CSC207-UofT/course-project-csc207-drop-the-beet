@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="added javadocs, deleted some unnecessary methods in SQL">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/database/DBTodoList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/database/DBUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ToDoListManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ToDoListManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ToDoListsGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ToDoListsGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/UserGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/UserGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +94,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.Driver" />
+      <module name="planner" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -189,6 +191,7 @@
       <workItem from="1638674751823" duration="7871000" />
       <workItem from="1638689926133" duration="5571000" />
       <workItem from="1638751423195" duration="3065000" />
+      <workItem from="1638815233296" duration="1334000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>

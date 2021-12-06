@@ -1,5 +1,6 @@
 package com.planner.Gateway;
 
+import com.database.DBUser;
 import com.database.JDBCSQlite;
 import com.planner.UseCases.UserManager;
 
@@ -9,7 +10,7 @@ import java.sql.SQLException;
 public class UserGateway {
 
     public static UserManager loadAllUserInfo(String username) {
-        JDBCSQlite jdbcsQlite = new JDBCSQlite();
+        DBUser jdbcsQlite = new DBUser();
         jdbcsQlite.create();
         try{
             String password = jdbcsQlite.getUserPassword(username);
@@ -28,7 +29,7 @@ public class UserGateway {
     }
 
     public static void writeAllUserInfo(UserManager user) {
-        JDBCSQlite jdbcsQlite = new JDBCSQlite();
+        DBUser jdbcsQlite = new DBUser();
         jdbcsQlite.create();
         try {
             SchedulesGateway.writeAllSchedule(user);

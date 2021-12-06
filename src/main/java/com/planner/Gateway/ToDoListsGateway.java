@@ -1,6 +1,7 @@
 package com.planner.Gateway;
 
 import com.Memento.Memento;
+import com.database.DBTodoList;
 import com.planner.Entities.ToDoList;
 import com.planner.UseCases.ToDoListManager;
 import com.planner.UseCases.UserManager;
@@ -9,12 +10,13 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import com.database.DBUser;
 
 
 public class ToDoListsGateway {
 
     public static ToDoListManager getAllToDoLists(String username) {
-        JDBCSQlite jdbcsQlite = new JDBCSQlite();
+        DBTodoList jdbcsQlite = new DBTodoList();
         jdbcsQlite.create();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         try{
@@ -33,10 +35,10 @@ public class ToDoListsGateway {
     }
 
     public static void writeAllToDoList(UserManager user) {
-        JDBCSQlite jdbcsQlite = new JDBCSQlite();
+        DBTodoList jdbcsQlite = new DBTodoList();
         jdbcsQlite.create();
         try {
-            List<List<String>> toDos = jdbcsQlite.getAllUserImportantTasksByUserName(user.getName());
+            List<List<String>> toDos = jdbcsQlite.getAllUserToDoTasksByUserName(user.getName());
             for (List<String> toDo : toDos) {
                 int id = Integer.parseInt(toDo.get(0));
                 jdbcsQlite.deleteUserToDoListByTaskID(id);
