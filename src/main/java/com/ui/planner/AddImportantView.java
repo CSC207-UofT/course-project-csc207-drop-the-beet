@@ -1,7 +1,6 @@
 package com.ui.planner;
 
 import com.planner.UseCases.UserManager;
-import com.ui.planner.LoginView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

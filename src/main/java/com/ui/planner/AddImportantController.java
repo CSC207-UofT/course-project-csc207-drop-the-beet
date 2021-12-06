@@ -8,9 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import com.database.*;
-
-import java.sql.SQLException;
 import java.time.LocalDate;
 
 public class AddImportantController {
@@ -38,15 +35,7 @@ public class AddImportantController {
             System.out.println(endingDateInput);
             System.out.println(event);
 
-            JDBCSQlite jdbcsQlite = new JDBCSQlite();
-            jdbcsQlite.create();
-            try{
-                jdbcsQlite.createImportantTaskByUserName(user.getName(), event, startDateInput, endingDateInput);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }//Todo
-            jdbcsQlite.close();
-            // To close the dialog.
+            user.getImportant().addSchedule(startDateInput, endingDateInput, event);
             Stage stage = (Stage)cancelBtn.getScene().getWindow();
             stage.close();
 
