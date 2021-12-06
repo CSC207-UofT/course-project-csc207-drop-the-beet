@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="DB Change">
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="added javadocs, deleted some unnecessary methods in SQL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Controller/ImportantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Controller/ImportantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Controller/SchedulesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Controller/SchedulesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Controller/ToDoListsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Controller/ToDoListsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Entities/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Entities/Schedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Entities/ToDoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Entities/ToDoList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/TodoListViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/TodoListViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ToDoListManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ToDoListManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +53,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/ui/planner" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../course-project-csc207-drop-the-beet_notchanged_keepit" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -193,7 +188,7 @@
       <workItem from="1636754777105" duration="654000" />
       <workItem from="1638674751823" duration="7871000" />
       <workItem from="1638689926133" duration="5571000" />
-      <workItem from="1638751423195" duration="1899000" />
+      <workItem from="1638751423195" duration="3065000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>
@@ -433,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638681918705</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="added javadocs, deleted some unnecessary methods in SQL">
+      <created>1638753415922</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1638753415922</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,6 +479,7 @@
     <MESSAGE value="connections done in schedule and user, added memento" />
     <MESSAGE value="added memento, Specification and class diagram" />
     <MESSAGE value="DB Change" />
-    <option name="LAST_COMMIT_MESSAGE" value="DB Change" />
+    <MESSAGE value="added javadocs, deleted some unnecessary methods in SQL" />
+    <option name="LAST_COMMIT_MESSAGE" value="added javadocs, deleted some unnecessary methods in SQL" />
   </component>
 </project>

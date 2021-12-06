@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
@@ -177,7 +178,7 @@ public class DashboardController implements Initializable {
     public void showEvents() {
         JDBCSQlite jdbcsQlite = new JDBCSQlite();
         jdbcsQlite.create();
-        ArrayList<ArrayList<String>> lst = null;
+        List<List<String>> lst = null;
         try{
             lst = jdbcsQlite.getAllUserToDoTasksTodayByUserName(currUser.getName());
             //return lst
@@ -186,7 +187,7 @@ public class DashboardController implements Initializable {
         } //Todo 210 217
 
         if (lst != null && lst.size() >= 1) {
-            for (ArrayList<String> l : lst){
+            for (List<String> l : lst){
                 toDoEventModels.add(new ToDoEventModel(l.get(3), l.get(4)));
             }
             todayTable.setItems(toDoEventModels);

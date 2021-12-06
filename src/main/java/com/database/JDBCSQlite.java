@@ -205,35 +205,35 @@ public class JDBCSQlite {
         }
     }
 
-//    /**
-//     * Change the user's email by its username and update it.
-//     *
-//     * @param userName the user's username
-//     * @param newEmail the new user email
-//     */
-//    public boolean changeUserEmailByUserName(String userName, String newEmail) throws SQLException {
-//
-//        if (isUserNameExist(userName)) {
-//            stmt.executeUpdate("UPDATE ACCOUNT SET EMAIL =" + "'" + newEmail + "'" + "WHERE USERNAME = " + "'" + userName + "'");
-//            return true;
-//        }
-//        return false;
-//    }
+    /**
+     * Change the user's email by its username and update it.
+     *
+     * @param userName the user's username
+     * @param newEmail the new user email
+     */
+    public boolean changeUserEmailByUserName(String userName, String newEmail) throws SQLException {
 
-//    /**
-//     * change the user's password by its username and create a new password.
-//     *
-//     * @param userName the user's username
-//     * @param newPassword the new user password
-//     */
-//    public boolean changeUserPasswordByUserName(String userName, String newPassword) throws SQLException {
-//
-//        if (isUserNameExist(userName)) {
-//            stmt.executeUpdate("UPDATE ACCOUNT SET PASSWORD =" + "'" + newPassword + "'" + "WHERE USERNAME = " + "'" + userName + "'");
-//            return true;
-//        }
-//        return false;
-//    }
+        if (isUserNameExist(userName)) {
+            stmt.executeUpdate("UPDATE ACCOUNT SET EMAIL =" + "'" + newEmail + "'" + "WHERE USERNAME = " + "'" + userName + "'");
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * change the user's password by its username and create a new password.
+     *
+     * @param userName the user's username
+     * @param newPassword the new user password
+     */
+    public boolean changeUserPasswordByUserName(String userName, String newPassword) throws SQLException {
+
+        if (isUserNameExist(userName)) {
+            stmt.executeUpdate("UPDATE ACCOUNT SET PASSWORD =" + "'" + newPassword + "'" + "WHERE USERNAME = " + "'" + userName + "'");
+            return true;
+        }
+        return false;
+    }
 
     /**
      * Create a UserToDoList with the tasks by the user's username with the deadline.
