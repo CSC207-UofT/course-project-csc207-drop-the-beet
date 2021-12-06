@@ -4,9 +4,7 @@ import com.planner.Entities.ToDoList;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /** ToDoListManager is a map of all lists.
  * Each list has an ID.

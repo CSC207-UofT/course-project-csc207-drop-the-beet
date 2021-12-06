@@ -1,12 +1,10 @@
 package com.planner.Entities;
 
-import java.io.Serializable;
-
 /** User contains basic information of this user.
  */
 
 public class User {
-    private String name;
+    private final String name;
     private String email;
     private String password;
 

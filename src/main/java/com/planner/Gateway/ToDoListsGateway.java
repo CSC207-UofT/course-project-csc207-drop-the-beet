@@ -1,32 +1,17 @@
 package com.planner.Gateway;
 
 import com.Memento.Memento;
-import com.planner.Entities.Schedule;
 import com.planner.Entities.ToDoList;
-import com.planner.UseCases.ScheduleManager;
 import com.planner.UseCases.ToDoListManager;
 import com.planner.UseCases.UserManager;
 import com.database.JDBCSQlite;
-
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class ToDoListsGateway {
-    public static void newToDoList(String userID, String listName) {
-        //call infoReadWriter to open the file first,
-    }
-
-//    public static void modifyToDoList(String userID, String listID, String newListName) {
-//
-//    }
-//
-//    public static void deleteToDoList(String listID) {
-//
-//    }
 
     public static ToDoListManager getAllToDoLists(String username) {
         JDBCSQlite jdbcsQlite = new JDBCSQlite();
@@ -45,27 +30,6 @@ public class ToDoListsGateway {
             e.printStackTrace();
             return null;
         }
-    }
-
-    public static void deleteTask(String userID, String listID, String taskID) {
-
-    }
-
-    public static void completeTask(String userID, String listID, String taskID) {
-
-    }
-
-    public static List<List<String>> loadToDo(UserManager user) {
-        JDBCSQlite jdbcsQlite = new JDBCSQlite();
-        jdbcsQlite.create();
-        List<List<String>> lst = null;
-        try{
-            lst = jdbcsQlite.getAllUserToDoTasksByUserName(user.getName());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        jdbcsQlite.close();
-        return lst;
     }
 
     public static void writeAllToDoList(UserManager user) {
@@ -98,6 +62,7 @@ public class ToDoListsGateway {
     public Memento save() {
         return new Memento(state);
     }
+
     public void restore(Memento m) {
         state = m.getState();
     }

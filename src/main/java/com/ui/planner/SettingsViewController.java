@@ -9,11 +9,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import com.database.*;
-
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.Set;
 
 public class SettingsViewController implements Initializable {
     @FXML
@@ -34,7 +32,7 @@ public class SettingsViewController implements Initializable {
     private String userPassWord;
 
 
-    public void setUser(UserManager user) { //Todo
+    public void setUser(UserManager user) {
         userName = user.getName();
         userEmail = user.getEmail();
         userPassWord = user.getPassword();

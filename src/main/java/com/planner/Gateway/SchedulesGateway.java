@@ -35,10 +35,6 @@ public class SchedulesGateway {
         }
     }
 
-    public static void deleteSchedule(String scheduleID) {
-
-    }
-
     public static void writeAllSchedule(UserManager user) {
         JDBCSQlite jdbcsQlite = new JDBCSQlite();
         jdbcsQlite.create();
