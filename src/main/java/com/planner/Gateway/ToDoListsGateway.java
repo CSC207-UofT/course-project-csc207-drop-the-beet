@@ -1,17 +1,21 @@
-package com.planner.Controller;
+package com.planner.Gateway;
 
 import com.Memento.Memento;
+import com.planner.Entities.Schedule;
+import com.planner.Entities.ToDoList;
+import com.planner.UseCases.ScheduleManager;
 import com.planner.UseCases.ToDoListManager;
 import com.planner.UseCases.UserManager;
 import com.database.JDBCSQlite;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class ToDoListsController {
+public class ToDoListsGateway {
     public static void newToDoList(String userID, String listName) {
         //call infoReadWriter to open the file first,
     }
@@ -24,23 +28,23 @@ public class ToDoListsController {
 //
 //    }
 
-    public static void newTask(UserManager user, String task, LocalDate deadline) {
+    public static ToDoListManager getAllToDoLists(String username) {
         JDBCSQlite jdbcsQlite = new JDBCSQlite();
         jdbcsQlite.create();
-
-        try {
-            Integer taskID = jdbcsQlite.getLastToDoTaskID();
-            user.getToDoLists().addTask(taskID, task, deadline);
-            jdbcsQlite.createUserToDoListTaskByUserName(user.getName(), user.getToDoLists().getTask(taskID),
-                    user.getToDoLists().getDeadline(taskID));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        try{
+            List<List<String>> toDos = jdbcsQlite.getAllUserToDoTasksByUserName(username);
+            ToDoListManager toDoListManager = new ToDoListManager();
+            for (List<String> toDo : toDos) {
+                String task = toDo.get(3);
+                LocalDate deadline = LocalDate.parse(toDo.get(4), formatter);
+                toDoListManager.addTask(task, deadline);
+            }
+            return toDoListManager;
         } catch (SQLException e) {
             e.printStackTrace();
+            return null;
         }
-
-    }
-
-    public static void modifyTask(String userID, String listID, String taskID, String newTask) {
-
     }
 
     public static void deleteTask(String userID, String listID, String taskID) {
@@ -64,20 +68,23 @@ public class ToDoListsController {
         return lst;
     }
 
-    public static int loadTodoBubble(UserManager currUser, JDBCSQlite jdbcsQlite) {
-        int todoNum = 0;
+    public static void writeAllToDoList(UserManager user) {
+        JDBCSQlite jdbcsQlite = new JDBCSQlite();
+        jdbcsQlite.create();
         try {
-            List<List<String>> allUserToDoTasks = jdbcsQlite.getAllUserToDoTasksByUserName(currUser.getName());
-
-            if (allUserToDoTasks != null) {
-                todoNum = allUserToDoTasks.size();
+            List<List<String>> toDos = jdbcsQlite.getAllUserImportantTasksByUserName(user.getName());
+            for (List<String> toDo : toDos) {
+                int id = Integer.parseInt(toDo.get(0));
+                jdbcsQlite.deleteUserToDoListByTaskID(id);
             }
-            return todoNum;
-
+            List<ToDoList> toDoWrite = user.getToDoLists().getToDos();
+            for (ToDoList toDo : toDoWrite) {
+                jdbcsQlite.createUserToDoListTaskByUserName(user.getName(), toDo.getTask(), toDo.getDeadline());
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return todoNum;
+        jdbcsQlite.close();
     }
 
     private ToDoListManager state;
