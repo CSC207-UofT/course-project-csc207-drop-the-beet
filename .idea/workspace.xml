@@ -7,7 +7,15 @@
     <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="DB Change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Controller/ImportantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Controller/ImportantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Controller/SchedulesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Controller/SchedulesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Controller/ToDoListsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Controller/ToDoListsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Entities/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Entities/Schedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Entities/ToDoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Entities/ToDoList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/TodoListViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/TodoListViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,6 +193,7 @@
       <workItem from="1636754777105" duration="654000" />
       <workItem from="1638674751823" duration="7871000" />
       <workItem from="1638689926133" duration="5571000" />
+      <workItem from="1638751423195" duration="1899000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>

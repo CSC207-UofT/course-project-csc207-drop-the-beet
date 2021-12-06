@@ -4,6 +4,7 @@ import com.database.*;
 import com.planner.UseCases.UserManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class ImportantController {
@@ -12,10 +13,15 @@ public class ImportantController {
      * important
      */
 
-    public static ArrayList<ArrayList<String>> loadImportant(UserManager user) {
+    /**
+     *
+     * @param user the login userManager
+     * @return a list
+     */
+    public static List<List<String>> loadImportant(UserManager user) {
         JDBCSQlite jdbcsQlite = new JDBCSQlite();
         jdbcsQlite.create();
-        ArrayList<ArrayList<String>> lst = null;
+        List<List<String>> lst = null;
         try{
             lst = jdbcsQlite.getAllUserImportantTasksByUserName(user.getName());
         } catch (SQLException e) {
@@ -28,7 +34,7 @@ public class ImportantController {
     public static int loadImportantBubble (UserManager currUser, JDBCSQlite jdbcsQlite) {
         int importantNum = 0;
         try {
-            ArrayList<ArrayList<String>> allUserImportantTasks = jdbcsQlite.getAllUserImportantTasksByUserName(currUser.getName());
+            List<List<String>> allUserImportantTasks = jdbcsQlite.getAllUserImportantTasksByUserName(currUser.getName());
 
             if (allUserImportantTasks != null) {
                 importantNum = allUserImportantTasks.size();
