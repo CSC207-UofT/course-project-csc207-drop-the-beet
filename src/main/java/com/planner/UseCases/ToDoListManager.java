@@ -5,6 +5,7 @@ import com.planner.Entities.ToDoList;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /** ToDoListManager is a map of all lists.
@@ -14,30 +15,43 @@ import java.util.Map;
  */
 
 public class ToDoListManager{
-    Map<Integer, ToDoList> toDos;
+    List<ToDoList> toDos;
 
     public ToDoListManager() {
-        this.toDos = new HashMap<>();
+        this.toDos = new ArrayList<>();
 
     }
 
-    public void addTask(Integer taskID, String task, LocalDate deadline) {
+    public List<ToDoList> getToDos() {
+        return this.toDos;
+    }
+
+    public int getSize() {
+        return this.toDos.size();
+    }
+
+    public void addTask(String task, LocalDate deadline) {
         ToDoList toDo = new ToDoList(task, deadline);
-        this.toDos.put(taskID, toDo);
+        this.toDos.add(toDo);
     }
 
-    public String getTask(Integer taskID) {
-        return this.toDos.get(taskID).getTask();
-    }
-
-    public LocalDate getDeadline(Integer taskID) {
-        return this.toDos.get(taskID).getDeadline();
-    }
-
-    public void removeTask(int taskId) {
-        this.toDos.remove(taskId);
-    }
-
+//    public String getTask(Integer taskID) {
+//        return this.toDos.get(taskID).getTask();
+//    }
+//
+//    public LocalDate getDeadline(Integer taskID) {
+//        return this.toDos.get(taskID).getDeadline();
+//    }
+//
+//    public void removeTask(int taskId) {
+//        this.toDos.remove(taskId);
+//    }
+//
+//    public void modifyTask(Integer taskId, String newTask, LocalDate newDeadline) {
+//        ToDoList newToDo = new ToDoList(newTask, newDeadline);
+//        this.toDos.get(taskId).modifyTask(newTask);
+//        this.toDos.get(taskId).modifyDeadline(newDeadline);
+//    }
 //
 //    public void removeTask(String listID, String taskID) {
 //        this.toDoLists.get(listID).removeTask(taskID);
