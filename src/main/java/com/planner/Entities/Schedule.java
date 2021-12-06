@@ -6,9 +6,9 @@ import java.time.LocalDate;
  */
 
 public class Schedule{
-    private final String task;
-    private final LocalDate start;
-    private final LocalDate end;
+    private String task;
+    private LocalDate start;
+    private LocalDate end;
 //    private ArrayList<Object> repeat = new ArrayList<>();
 
     /**
