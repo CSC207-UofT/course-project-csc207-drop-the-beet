@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import com.planner.Entities.User;
+import com.planner.UseCases.UserManager;
 
 
 public class UserManagerTest {

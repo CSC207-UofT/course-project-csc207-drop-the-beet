@@ -1,4 +1,5 @@
 import org.junit.*;
+import java.time.LocalDate;
 import static org.junit.Assert.*;
 import com.planner.Entities.Schedule;
 import com.planner.UseCases.ScheduleManager;
@@ -10,8 +11,8 @@ public class ScheduleTest {
 
     @Before
     public void setUp(){
-        s1 = new Schedule("2021/10/14", "11:00", "12:00", "I need to cook");
-        s2 = new Schedule("2021/10/14", "13:00", "14:00", "I need to study");
+        s1 = new Schedule(LocalDate.now(), LocalDate.now(), "I need to cook");
+        s2 = new Schedule(LocalDate.now(), LocalDate.now(), "I need to study");
         sm = new ScheduleManager();
     }
 
