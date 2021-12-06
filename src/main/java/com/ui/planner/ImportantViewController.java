@@ -52,12 +52,12 @@ public class ImportantViewController implements Initializable {
 
     @FXML
     public void showEvents() {
-        List<Schedule> lst;
-        lst = user.getImportant().getSchedules();
+        List<List<String>> lst;
+        lst = user.getImportant().getScheduleLists();
 
         if (lst != null && lst.size() > 0) {
-            for (Schedule l : lst){
-                importantEventModels.add(new ImportantEventModel(l.getTask(), l.getStart().toString(), l.getEnd().toString()));
+            for (List<String> l : lst){
+                importantEventModels.add(new ImportantEventModel(l.get(0), l.get(1), l.get(2)));
             }
             importantEventTb.setItems(importantEventModels);
         }

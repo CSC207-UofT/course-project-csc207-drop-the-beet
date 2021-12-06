@@ -1,5 +1,6 @@
 package com.planner.UseCases;
 
+import com.planner.Entities.Schedule;
 import com.planner.Entities.ToDoList;
 
 import java.time.LocalDate;
@@ -20,8 +21,19 @@ public class ToDoListManager{
 
     }
 
-    public List<ToDoList> getToDos() {
-        return this.toDos;
+//    public List<ToDoList> getToDos() {
+//        return this.toDos;
+//    }
+
+    public List<List<String>> getToDoListLists() {
+        List<List<String>> toDoListLists = new ArrayList<>();
+        for (ToDoList toDoList : this.toDos) {
+            List<String> toDoListList = new ArrayList<>();
+            toDoListList.add(toDoList.getTask());
+            toDoListList.add(toDoList.getDeadline().toString());
+            toDoListLists.add(toDoListList);
+        }
+        return toDoListLists;
     }
 
     public int getSize() {
@@ -43,12 +55,6 @@ public class ToDoListManager{
 //
 //    public void removeTask(int taskId) {
 //        this.toDos.remove(taskId);
-//    }
-//
-//    public void modifyTask(Integer taskId, String newTask, LocalDate newDeadline) {
-//        ToDoList newToDo = new ToDoList(newTask, newDeadline);
-//        this.toDos.get(taskId).modifyTask(newTask);
-//        this.toDos.get(taskId).modifyDeadline(newDeadline);
 //    }
 //
 //    public void removeTask(String listID, String taskID) {

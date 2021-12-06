@@ -1,7 +1,5 @@
 package com.ui.planner;
 
-import com.planner.Entities.ToDoList;
-
 import com.planner.UseCases.UserManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -55,12 +53,12 @@ public class TodoListViewController implements Initializable {
 
     @FXML
     public void showEvents() {
-        List<ToDoList> lst;
-        lst = user.getToDoLists().getToDos();
+        List<List<String>> lst;
+        lst = user.getToDoLists().getToDoListLists();
 
         if (lst != null && lst.size() > 0) {
-            for (ToDoList l : lst){
-                toDoEventModels.add(new ToDoEventModel(l.getTask(), l.getDeadline().toString()));
+            for (List<String> l : lst){
+                toDoEventModels.add(new ToDoEventModel(l.get(0), l.get(1)));
             }
             toDoLstTb.setItems(toDoEventModels);
         }
