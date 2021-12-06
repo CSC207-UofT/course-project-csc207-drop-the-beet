@@ -23,20 +23,40 @@ public class User {
         this.password = password;
     }
 
+    /**
+     *
+     * @return username of this user
+     */
     public String getName() {
         return this.name;
     }
 
+    /**
+     *
+     * @return email of this user
+     */
     public String getEmail() {
         return this.email;
     }
 
+    /**
+     *
+     * @return password of this user
+     */
     public String getPassword() {
         return this.password;
     }
 
+    /**
+     * set new password
+     * @param password new password
+     */
     public void setPassword(String password) {this.password = password; }
 
+    /**
+     * set new email
+     * @param newEmail new email
+     */
     public void setEmail(String newEmail) {this.email = newEmail; }
 
 }

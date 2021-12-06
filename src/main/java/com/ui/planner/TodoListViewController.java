@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class TodoListViewController implements Initializable {
@@ -58,10 +59,10 @@ public class TodoListViewController implements Initializable {
 
     @FXML
     public void showEvents() {
-        ArrayList<ArrayList<String>> lst = ToDoListsController.loadToDo(user);//done
+        List<List<String>> lst = ToDoListsController.loadToDo(user);//done
 
         if (lst != null && lst.size() > 0) {
-            for (ArrayList<String> l : lst){
+            for (List<String> l : lst){
                 toDoEventModels.add(new ToDoEventModel(l.get(3), l.get(4)));
             }
             toDoLstTb.setItems(toDoEventModels);
