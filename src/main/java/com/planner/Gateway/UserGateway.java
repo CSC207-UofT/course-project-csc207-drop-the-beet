@@ -1,7 +1,6 @@
 package com.planner.Gateway;
 
 import com.database.DBUser;
-import com.database.JDBCSQlite;
 import com.planner.UseCases.UserManager;
 
 import java.sql.SQLException;
@@ -19,6 +18,7 @@ public class UserGateway {
             userManager.setSchedules(SchedulesGateway.getAllSchedule(username));
             userManager.setToDoLists(ToDoListsGateway.getAllToDoLists(username));
             userManager.setImportant(ImportantGateway.getAllImportant(username));
+
             jdbcsQlite.close();
             return userManager;
         } catch (SQLException throwables) {

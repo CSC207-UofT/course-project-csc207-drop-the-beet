@@ -4,6 +4,7 @@ import com.planner.Entities.Schedule;
 import com.planner.Entities.ToDoList;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +25,19 @@ public class ToDoListManager{
 //    public List<ToDoList> getToDos() {
 //        return this.toDos;
 //    }
+    public void setToDos(List<List<String>> toDoListLists) {
+        List<ToDoList> toDos = new ArrayList<>();
+        if (toDoListLists.size() != 0) {
+            for (List<String> l : toDoListLists) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                String task = l.get(3);
+                LocalDate deadline = LocalDate.parse(l.get(4), formatter);
+                ToDoList toDoList = new ToDoList(task, deadline);
+                toDos.add(toDoList);
+            }
+        }
+        this.toDos = toDos;
+    }
 
     public List<List<String>> getToDoListLists() {
         List<List<String>> toDoListLists = new ArrayList<>();

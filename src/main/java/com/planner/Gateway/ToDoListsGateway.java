@@ -2,15 +2,13 @@ package com.planner.Gateway;
 
 import com.Memento.Memento;
 import com.database.DBTodoList;
-import com.planner.Entities.ToDoList;
 import com.planner.UseCases.ToDoListManager;
 import com.planner.UseCases.UserManager;
-import com.database.JDBCSQlite;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
-import com.database.DBUser;
 
 
 public class ToDoListsGateway {
@@ -18,16 +16,16 @@ public class ToDoListsGateway {
     public static ToDoListManager getAllToDoLists(String username) {
         DBTodoList jdbcsQlite = new DBTodoList();
         jdbcsQlite.create();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
         try{
             List<List<String>> toDos = jdbcsQlite.getAllUserToDoTasksByUserName(username);
             ToDoListManager toDoListManager = new ToDoListManager();
-            for (List<String> toDo : toDos) {
-                String task = toDo.get(3);
-                LocalDate deadline = LocalDate.parse(toDo.get(4), formatter);
-                toDoListManager.addTask(task, deadline);
+            if (toDos == null) {
+                toDos = new ArrayList<>();
             }
+            toDoListManager.setToDos(toDos);
             return toDoListManager;
+
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -39,16 +37,19 @@ public class ToDoListsGateway {
         jdbcsQlite.create();
         try {
             List<List<String>> toDos = jdbcsQlite.getAllUserToDoTasksByUserName(user.getName());
-            for (List<String> toDo : toDos) {
-                int id = Integer.parseInt(toDo.get(0));
-                jdbcsQlite.deleteUserToDoListByTaskID(id);
+            if (toDos != null) {
+                for (List<String> toDo : toDos) {
+                    int id = Integer.parseInt(toDo.get(0));
+                    jdbcsQlite.deleteUserToDoListByTaskID(id);
+                }
+                List<List<String>> toDoWrite = user.getToDoLists().getToDoListLists();
+                for (List<String> toDo : toDoWrite) {
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                    LocalDate deadline = LocalDate.parse(toDo.get(1), formatter);
+                    jdbcsQlite.createUserToDoListTaskByUserName(user.getName(), toDo.get(0), deadline);
+                }
             }
-            List<List<String>> toDoWrite = user.getToDoLists().getToDoListLists();
-            for (List<String> toDo : toDoWrite) {
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                LocalDate deadline = LocalDate.parse(toDo.get(1), formatter);
-                jdbcsQlite.createUserToDoListTaskByUserName(user.getName(), toDo.get(0), deadline);
-            }
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

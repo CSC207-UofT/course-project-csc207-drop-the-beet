@@ -2,6 +2,7 @@ package com.planner.UseCases;
 
 import com.planner.Entities.Schedule;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +25,20 @@ public class ScheduleManager {
 //    public List<Schedule> getSchedules() {
 //        return this.schedules;
 //    }
+    public void setSchedules(List<List<String>> schedulesLists) {
+        List<Schedule> schedules = new ArrayList<>();
+        if (schedulesLists.size() != 0) {
+            for (List<String> l : schedulesLists) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                String task = l.get(3);
+                LocalDate start = LocalDate.parse(l.get(4), formatter);
+                LocalDate end = LocalDate.parse(l.get(5), formatter);
+                Schedule schedule = new Schedule(start, end, task);
+                schedules.add(schedule);
+            }
+        }
+        this.schedules = schedules;
+    }
 
     public List<List<String>> getScheduleLists() {
         List<List<String>> scheduleLists = new ArrayList<>();

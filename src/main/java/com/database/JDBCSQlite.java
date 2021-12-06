@@ -1,7 +1,6 @@
 package com.database;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
+import org.jetbrains.annotations.Nullable;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.*;

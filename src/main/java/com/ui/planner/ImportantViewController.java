@@ -1,6 +1,5 @@
 package com.ui.planner;
 
-import com.planner.Entities.Schedule;
 import com.planner.UseCases.UserManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

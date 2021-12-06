@@ -4,8 +4,6 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import com.database.JDBCSQlite;
-import com.database.DBUser;
 import org.jetbrains.annotations.Nullable;
 
 public class DBTodoList {

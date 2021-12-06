@@ -49,13 +49,12 @@ public class LoginController implements Initializable {
 
         UserManager user = UserGateway.loadAllUserInfo(userName);
         System.out.println("xx" + user);
-        assert user != null;
-        if (user.getPassword().equals(passWord)) {
+        if (user != null && user.getPassword().equals(passWord)) {
             passwordSuccessView(user);
         }
         else {
             passwordFailedView();
-        }//Todo 57 64
+        }
     }
 
     /**
