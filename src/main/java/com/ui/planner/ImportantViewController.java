@@ -15,6 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ImportantViewController implements Initializable {
@@ -52,10 +53,10 @@ public class ImportantViewController implements Initializable {
 
     @FXML
     public void showEvents() {
-        ArrayList<ArrayList<String>> lst = ImportantController.loadImportant(user); //done
+        List<List<String>> lst = ImportantController.loadImportant(user); //done
 
         if (lst != null && lst.size() > 0) {
-            for (ArrayList<String> l : lst){
+            for (List<String> l : lst){
                 importantEventModels.add(new ImportantEventModel(l.get(3), l.get(4), l.get(5)));
             }
             importantEventTb.setItems(importantEventModels);

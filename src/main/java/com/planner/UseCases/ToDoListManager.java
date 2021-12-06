@@ -38,11 +38,6 @@ public class ToDoListManager{
         this.toDos.remove(taskId);
     }
 
-    public void modifyTask(Integer taskId, String newTask, LocalDate newDeadline) {
-        ToDoList newToDo = new ToDoList(newTask, newDeadline);
-        this.toDos.get(taskId).modifyTask(newTask);
-        this.toDos.get(taskId).modifyDeadline(newDeadline);
-    }
 //
 //    public void removeTask(String listID, String taskID) {
 //        this.toDoLists.get(listID).removeTask(taskID);
