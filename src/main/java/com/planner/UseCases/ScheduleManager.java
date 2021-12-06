@@ -1,7 +1,6 @@
 package com.planner.UseCases;
 
 import com.planner.Entities.Schedule;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +21,20 @@ public class ScheduleManager {
 
     }
 
-    public List<Schedule> getSchedules() {
-        return this.schedules;
+//    public List<Schedule> getSchedules() {
+//        return this.schedules;
+//    }
+
+    public List<List<String>> getScheduleLists() {
+        List<List<String>> scheduleLists = new ArrayList<>();
+        for (Schedule schedule : this.schedules) {
+            List<String> scheduleList = new ArrayList<>();
+            scheduleList.add(schedule.getTask());
+            scheduleList.add(schedule.getStart().toString());
+            scheduleList.add(schedule.getEnd().toString());
+            scheduleLists.add(scheduleList);
+        }
+        return scheduleLists;
     }
 
     public int getSize() {

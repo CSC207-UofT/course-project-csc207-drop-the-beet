@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="added javadocs, deleted some unnecessary methods in SQL">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/database/DBTodoList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/database/DBUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ToDoListsGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ToDoListsGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/UserGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/UserGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupController.java" afterDir="false" />
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="deleted unused import">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ToDoListManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ToDoListManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/TodoListViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/TodoListViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/test.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +37,18 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/AddImportantView.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/AddInComingController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/SettingsViewController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/Test/ScheduleTest.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/AddTodoListController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/Test/UserManagerTest.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/Test/ToDoListTest.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20fit97KyV7vIepMHrBp1eiRiQZ" />
   <component name="ProjectLevelVcsManager">
@@ -449,7 +463,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

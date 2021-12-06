@@ -1,6 +1,5 @@
 package com.ui.planner;
 
-import com.planner.Entities.Schedule;
 import com.planner.UseCases.UserManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,7 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -47,12 +45,12 @@ public class IncomingViewController implements Initializable {
 
     @FXML
     public void showEvents() {
-        List<Schedule> lst;
-        lst = user.getSchedules().getSchedules();
+        List<List<String>> lst;
+        lst = user.getSchedules().getScheduleLists();
 
         if (lst != null && lst.size() > 0) {
-            for (Schedule l : lst){
-                scheduleEventModels.add(new ScheduleEventModel(l.getTask(), l.getStart().toString(), l.getEnd().toString()));
+            for (List<String> l : lst){
+                scheduleEventModels.add(new ScheduleEventModel(l.get(0), l.get(1), l.get(2)));
             }
             inComingTb.setItems(scheduleEventModels);
         }

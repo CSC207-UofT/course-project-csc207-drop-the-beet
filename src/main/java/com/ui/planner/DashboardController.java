@@ -1,6 +1,5 @@
 package com.ui.planner;
 
-import com.planner.Entities.ToDoList;
 import com.planner.UseCases.UserManager;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -151,14 +150,14 @@ public class DashboardController implements Initializable {
 
     @FXML
     public void showEvents() {
-        List<ToDoList> lst;
+        List<List<String>> lst;
         System.out.println("xxx" + currUser);
-        lst = currUser.getToDoLists().getToDos();
+        lst = currUser.getToDoLists().getToDoListLists();
         System.out.println(lst);
 
         if (lst != null && lst.size() >= 1) {
-            for (ToDoList l : lst){
-                toDoEventModels.add(new ToDoEventModel(l.getTask(), l.getDeadline().toString()));
+            for (List<String> l : lst){
+                toDoEventModels.add(new ToDoEventModel(l.get(0), l.get(1)));
             }
             todayTable.setItems(toDoEventModels);
         }
