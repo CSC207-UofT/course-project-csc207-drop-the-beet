@@ -1,6 +1,5 @@
 package com.ui.planner;
 
-import com.planner.Controller.ToDoListsController;
 import com.planner.UseCases.UserManager;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
@@ -21,12 +20,12 @@ public class AddTodoListController {
     @FXML
     private Button cancelBtn;
 
-    private UserManager user; //done
+    private UserManager userManager; //done
 
 
 
     @FXML
-    protected void onConfirmBtnClicked() {
+    public void onConfirmBtnClicked() {
         if (whenDatePicker.getValue() != null && eventTextField.getText().length() != 0) {
 
             // TODO: Store the user created to-do list task.
@@ -34,18 +33,8 @@ public class AddTodoListController {
             String event = eventTextField.getText();
             System.out.println(dateInput);
             System.out.println(event);
-//            JDBCSQlite jdbcsQlite = new JDBCSQlite();
-//            jdbcsQlite.create();
-//
-//            try {
-////                HashMap<LocalDate, String> todo = new HashMap<>();
-////                todo.put(dateInput, event);
-////                user.getToDoLists().addTaskInList(todo);
-//                jdbcsQlite.createUserToDoListTaskByUserName(user.getName(), event, dateInput);
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-            ToDoListsController.newTask(user, event, dateInput);
+
+            userManager.getToDoLists().addTask(event, dateInput);
             // To close the dialog.
             Stage stage = (Stage)cancelBtn.getScene().getWindow();
             stage.close();
@@ -76,6 +65,6 @@ public class AddTodoListController {
     }
 
     public void setUser(UserManager user) {
-        this.user = user;
+        this.userManager = user;
     }
 }

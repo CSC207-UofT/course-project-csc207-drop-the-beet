@@ -1,8 +1,5 @@
 package com.ui.planner;
 
-
-import com.database.JDBCSQlite;
-import com.planner.Controller.SchedulesController;
 import com.planner.UseCases.UserManager;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
@@ -12,7 +9,6 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.sql.SQLException;
 import java.time.LocalDate;
 
 public class AddInComingController {
@@ -39,7 +35,7 @@ public class AddInComingController {
             System.out.println("Starting date: " + startDateInput);
             System.out.println("Ending date: " + endingDateInput);
             System.out.println(event);
-            SchedulesController.newScheduleWrite(user,startDateInput,endingDateInput,event);//done
+            user.getSchedules().addSchedule(startDateInput, endingDateInput, event);//done
 
             // To close the dialog.
             Stage stage = (Stage)cancelBtn.getScene().getWindow();

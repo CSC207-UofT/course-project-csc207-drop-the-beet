@@ -1,9 +1,7 @@
 package com.ui.planner;
 
-import com.planner.Controller.ImportantController;
-import com.planner.Controller.SchedulesController;
-import com.planner.Controller.ToDoListsController;
-import com.planner.Controller.UserController;
+import com.planner.Entities.Schedule;
+import com.planner.Entities.ToDoList;
 import com.planner.UseCases.UserManager;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -20,11 +18,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import com.database.*;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -75,40 +71,20 @@ public class DashboardController implements Initializable {
     @FXML
     ArrayList<Button> arrBtn = new ArrayList<>();
 
-    private ArrayList<ArrayList<String>> allUserToDoTasks;
-    private ArrayList<ArrayList<String>> allUserSchedules;
-    private ArrayList<ArrayList<String>> allUserImportantTasks;
-
-    private ObservableList<ToDoEventModel> toDoEventModels = FXCollections.observableArrayList();
-
-    private JDBCSQlite jdbcsQlite;
+    private final ObservableList<ToDoEventModel> toDoEventModels = FXCollections.observableArrayList();
 
     private UserManager currUser;
 
 
-    public void setUser(String userName, String userEmail, String passWord) {
-        jdbcsQlite = new JDBCSQlite();
-        jdbcsQlite.create();
-        System.out.println(userName);
-        System.out.println(userEmail);
-        System.out.println(passWord);
-
-        currUser = new UserManager(userName, userEmail, passWord);//done
-        int scheduleNum = SchedulesController.loadScheduleBubble(currUser, jdbcsQlite);
-        int todoNum = ToDoListsController.loadTodoBubble(currUser, jdbcsQlite);
-        int importantNum = ImportantController.loadImportantBubble(currUser, jdbcsQlite);
-
-        todoNumLabel.setText(Integer.toString(todoNum));
-
-        scheduledNumLabel.setText(Integer.toString(scheduleNum));
-
-        importantNumLabel.setText(Integer.toString(importantNum));
+    public void setUser(UserManager user) {
+        currUser = user;
+        refreshBubbleStatus();
 
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("incoming-view.fxml"));
             incomingView = fxmlLoader.load();
             IncomingViewController incomingViewController = fxmlLoader.getController();
-            incomingViewController.setUser(currUser);//done
+            incomingViewController.setUser(user);//done
             incomingViewController.showEvents();
         } catch (IOException e) {
             e.printStackTrace();
@@ -120,7 +96,7 @@ public class DashboardController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("todoList-view.fxml"));
             todoListView = fxmlLoader.load();
             TodoListViewController todoListViewController = fxmlLoader.getController();
-            todoListViewController.setUser(currUser);//done
+            todoListViewController.setUser(user);//done
             todoListViewController.showEvents();
         } catch (IOException e) {
             e.printStackTrace();
@@ -131,7 +107,7 @@ public class DashboardController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader((getClass().getResource("important-view.fxml")));
             importantView = fxmlLoader.load();
             ImportantViewController importantViewController = fxmlLoader.getController();
-            importantViewController.setUser(currUser);//done
+            importantViewController.setUser(user);//done
             importantViewController.showEvents();
         } catch (IOException e) {
             e.printStackTrace();
@@ -142,7 +118,7 @@ public class DashboardController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("settings-view.fxml"));
             settingsView = fxmlLoader.load();
             SettingsViewController settingsViewController = fxmlLoader.getController();
-            settingsViewController.setUser(currUser);//done
+            settingsViewController.setUser(user);//done
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -176,41 +152,35 @@ public class DashboardController implements Initializable {
 
     @FXML
     public void showEvents() {
-        JDBCSQlite jdbcsQlite = new JDBCSQlite();
-        jdbcsQlite.create();
-        List<List<String>> lst = null;
-        try{
-            lst = jdbcsQlite.getAllUserToDoTasksTodayByUserName(currUser.getName());
-            //return lst
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } //Todo 210 217
+        List<ToDoList> lst;
+        System.out.println("xxx" + currUser);
+        lst = currUser.getToDoLists().getToDos();
+        System.out.println(lst);
 
         if (lst != null && lst.size() >= 1) {
-            for (List<String> l : lst){
-                toDoEventModels.add(new ToDoEventModel(l.get(3), l.get(4)));
+            for (ToDoList l : lst){
+                toDoEventModels.add(new ToDoEventModel(l.getTask(), l.getDeadline().toString()));
             }
             todayTable.setItems(toDoEventModels);
         }
-        jdbcsQlite.close();
     }
 
     private void refreshUserStatus() {
-        UserController.loadModifyUser(currUser);
+        currUser.setEmail(currUser.getEmail());
+        currUser.setPassword(currUser.getPassword());
     }
 
     private void refreshBubbleStatus() {
-        JDBCSQlite jdbcsQlite = new JDBCSQlite();
-        jdbcsQlite.create();
-        int scheduleNum = SchedulesController.loadScheduleBubble(currUser, jdbcsQlite);
-        int todoNum = ToDoListsController.loadTodoBubble(currUser, jdbcsQlite);
-        int importantNum = ImportantController.loadImportantBubble(currUser, jdbcsQlite);
-        jdbcsQlite.close();
-            todoNumLabel.setText(Integer.toString(todoNum));
 
-            scheduledNumLabel.setText(Integer.toString(scheduleNum));
+        int scheduleNum = currUser.getSchedules().getSize();
+        int todoNum = currUser.getToDoLists().getSize();
+        int importantNum = currUser.getImportant().getSize();
 
-            importantNumLabel.setText(Integer.toString(importantNum));
+        todoNumLabel.setText(Integer.toString(todoNum));
+
+        scheduledNumLabel.setText(Integer.toString(scheduleNum));
+
+        importantNumLabel.setText(Integer.toString(importantNum));
 
     }
 
@@ -300,7 +270,6 @@ public class DashboardController implements Initializable {
         refreshBtnStatus(signoutBtn);
         refreshUserStatus();
         refreshBubbleStatus();
-        jdbcsQlite.close();
         Platform.exit();
     }
 
