@@ -9,9 +9,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-import com.database.*;
-
-import java.sql.SQLException;
+import com.database.DBUser;
+import java.sql
+.SQLException;
 
 public class SignupController {
     @FXML

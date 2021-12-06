@@ -2,8 +2,6 @@ package com.database;
 
 import java.sql.*;
 
-import com.database.JDBCSQlite;
-
 public class DBUser {
     Connection dbConnection;
     Statement stmt;
