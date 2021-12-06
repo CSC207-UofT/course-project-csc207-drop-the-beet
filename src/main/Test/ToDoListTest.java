@@ -3,6 +3,8 @@ import org.junit.*;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
+import com.planner.Entities.ToDoList;
+import com.planner.UseCases.ToDoListManager;
 
 public class ToDoListTest {
     ToDoList a;
