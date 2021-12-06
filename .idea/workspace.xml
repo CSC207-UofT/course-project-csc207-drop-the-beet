@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="deleted unused import">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ToDoListManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ToDoListManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/TodoListViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/TodoListViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/test.db" afterDir="false" />
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="revised dependency problems in UI">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ImportantGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ImportantGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/SchedulesGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/SchedulesGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ToDoListsGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ToDoListsGateway.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -452,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638753415922</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="revised dependency problems in UI">
+      <created>1638821231634</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1638821231634</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +485,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Name Change" />
     <MESSAGE value="Change to functions" />
     <MESSAGE value="Add New Event UI" />
     <MESSAGE value="Add Important Add New Event Button UI" />
@@ -509,6 +509,7 @@
     <MESSAGE value="added memento, Specification and class diagram" />
     <MESSAGE value="DB Change" />
     <MESSAGE value="added javadocs, deleted some unnecessary methods in SQL" />
-    <option name="LAST_COMMIT_MESSAGE" value="added javadocs, deleted some unnecessary methods in SQL" />
+    <MESSAGE value="revised dependency problems in UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="revised dependency problems in UI" />
   </component>
 </project>
