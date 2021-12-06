@@ -1,21 +1,17 @@
 package com.ui.planner;
 
-import com.planner.Controller.ToDoListsController;
+import com.planner.Entities.ToDoList;
+
 import com.planner.UseCases.UserManager;
-import com.ui.planner.ToDoEventModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -27,10 +23,10 @@ public class TodoListViewController implements Initializable {
     @FXML
     private TableView<ToDoEventModel> toDoLstTb;
 
-    @FXML
-    private Button todoListNewEventBtn;
+//    @FXML
+//    private Button todoListNewEventBtn;
 
-    private ObservableList<ToDoEventModel> toDoEventModels = FXCollections.observableArrayList();
+    private final ObservableList<ToDoEventModel> toDoEventModels = FXCollections.observableArrayList();
 
     private UserManager user;//done
 
@@ -59,11 +55,12 @@ public class TodoListViewController implements Initializable {
 
     @FXML
     public void showEvents() {
-        List<List<String>> lst = ToDoListsController.loadToDo(user);//done
+        List<ToDoList> lst;
+        lst = user.getToDoLists().getToDos();
 
         if (lst != null && lst.size() > 0) {
-            for (List<String> l : lst){
-                toDoEventModels.add(new ToDoEventModel(l.get(3), l.get(4)));
+            for (ToDoList l : lst){
+                toDoEventModels.add(new ToDoEventModel(l.getTask(), l.getDeadline().toString()));
             }
             toDoLstTb.setItems(toDoEventModels);
         }
