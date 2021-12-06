@@ -1,6 +1,6 @@
 package com.ui.planner;
 
-import com.database.JDBCSQlite;
+import com.planner.Entities.Schedule;
 import com.planner.UseCases.UserManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,7 +12,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -48,22 +47,16 @@ public class IncomingViewController implements Initializable {
 
     @FXML
     public void showEvents() {
-        JDBCSQlite jdbcsQlite = new JDBCSQlite();
-        jdbcsQlite.create();
-        List<List<String>> lst = null;
-        try{
-            lst = jdbcsQlite.getAllUserEventTasksByUserName(user.getName());//done
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        List<Schedule> lst;
+        lst = user.getSchedules().getSchedules();
 
         if (lst != null && lst.size() > 0) {
-            for (List<String> l : lst){
-                scheduleEventModels.add(new ScheduleEventModel(l.get(3), l.get(4), l.get(5)));
+            for (Schedule l : lst){
+                scheduleEventModels.add(new ScheduleEventModel(l.getTask(), l.getStart().toString(), l.getEnd().toString()));
             }
             inComingTb.setItems(scheduleEventModels);
         }
-        jdbcsQlite.close();
+
     }
 
 

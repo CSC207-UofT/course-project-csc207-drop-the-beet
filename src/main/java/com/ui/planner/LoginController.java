@@ -1,12 +1,13 @@
 package com.ui.planner;
 
 import com.database.*;
+import com.planner.Gateway.UserGateway;
+import com.planner.UseCases.UserManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -29,8 +30,8 @@ public class LoginController implements Initializable {
     private CheckBox rememberMe;
     @FXML
     private Button loginButton;
-    @FXML
-    private Pane bgPane;
+//    @FXML
+//    private Pane bgPane;
 
     private final JDBCSQlite jdbcsQlite = new JDBCSQlite();
 
@@ -49,9 +50,11 @@ public class LoginController implements Initializable {
         String userName = userNameText.getText();
         String passWord = passWordText.getText();
 
-        if (jdbcsQlite.getUserPassword(userName).equals(passWord)) {
-            String userEmail = jdbcsQlite.getUserEmail(userName);
-            passwordSuccessView(userName, userEmail, passWord);
+        UserManager user = UserGateway.loadAllUserInfo(userName);
+        System.out.println("xx" + user);
+        assert user != null;
+        if (user.getPassword().equals(passWord)) {
+            passwordSuccessView(user);
         }
         else {
             passwordFailedView();
@@ -65,7 +68,7 @@ public class LoginController implements Initializable {
      */
     @FXML
     protected void onRememberMeChecked() {
-        // TODO: Write a function to read a file stored to determined whether remember me should be slected
+        // TODO: Write a function to read a file stored to determined whether remember me should be selected
         //  or not.
         rememberMe.setSelected(true);
 
@@ -104,8 +107,8 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    protected void passwordSuccessView(String userName, String userEmail, String passWord) throws IOException {
-        DashboardView dashboard = new DashboardView(userName, userEmail, passWord);
+    protected void passwordSuccessView(UserManager user) throws IOException {
+        DashboardView dashboard = new DashboardView(user);
         dashboard.showWindow();
         Stage stage = (Stage) loginButton.getScene().getWindow();
         jdbcsQlite.close();

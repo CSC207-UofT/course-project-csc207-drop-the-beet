@@ -1,6 +1,7 @@
 import org.junit.*;
-
 import static org.junit.Assert.*;
+import com.planner.Entities.Schedule;
+import com.planner.UseCases.ScheduleManager;
 
 public class ScheduleTest {
     Schedule s1;

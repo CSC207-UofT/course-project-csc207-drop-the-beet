@@ -1,6 +1,6 @@
 package com.ui.planner;
 
-import com.planner.Controller.ImportantController;
+import com.planner.Entities.Schedule;
 import com.planner.UseCases.UserManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,7 +14,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -30,7 +29,7 @@ public class ImportantViewController implements Initializable {
     @FXML
     private Button importantNewEventBtn;
 
-    private ObservableList<ImportantEventModel> importantEventModels = FXCollections.observableArrayList();
+    private final ObservableList<ImportantEventModel> importantEventModels = FXCollections.observableArrayList();
 
     private UserManager user;//done
 //Todo This Method
@@ -53,11 +52,12 @@ public class ImportantViewController implements Initializable {
 
     @FXML
     public void showEvents() {
-        List<List<String>> lst = ImportantController.loadImportant(user); //done
+        List<Schedule> lst;
+        lst = user.getImportant().getSchedules();
 
         if (lst != null && lst.size() > 0) {
-            for (List<String> l : lst){
-                importantEventModels.add(new ImportantEventModel(l.get(3), l.get(4), l.get(5)));
+            for (Schedule l : lst){
+                importantEventModels.add(new ImportantEventModel(l.getTask(), l.getStart().toString(), l.getEnd().toString()));
             }
             importantEventTb.setItems(importantEventModels);
         }
