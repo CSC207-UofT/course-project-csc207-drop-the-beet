@@ -8,6 +8,7 @@ import com.database.JDBCSQlite;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class ToDoListsController {
@@ -50,10 +51,10 @@ public class ToDoListsController {
 
     }
 
-    public static ArrayList<ArrayList<String>> loadToDo(UserManager user) {
+    public static List<List<String>> loadToDo(UserManager user) {
         JDBCSQlite jdbcsQlite = new JDBCSQlite();
         jdbcsQlite.create();
-        ArrayList<ArrayList<String>> lst = null;
+        List<List<String>> lst = null;
         try{
             lst = jdbcsQlite.getAllUserToDoTasksByUserName(user.getName());
         } catch (SQLException e) {
@@ -66,7 +67,7 @@ public class ToDoListsController {
     public static int loadTodoBubble(UserManager currUser, JDBCSQlite jdbcsQlite) {
         int todoNum = 0;
         try {
-            ArrayList<ArrayList<String>> allUserToDoTasks = jdbcsQlite.getAllUserToDoTasksByUserName(currUser.getName());
+            List<List<String>> allUserToDoTasks = jdbcsQlite.getAllUserToDoTasksByUserName(currUser.getName());
 
             if (allUserToDoTasks != null) {
                 todoNum = allUserToDoTasks.size();

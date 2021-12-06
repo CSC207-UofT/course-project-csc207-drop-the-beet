@@ -14,24 +14,29 @@ public class ToDoList {
     String task;
     LocalDate deadline;
 
+    /**
+     * constructor of ToDoList
+     * @param task task content
+     * @param deadline deadline of this task
+     */
     public ToDoList(String task, LocalDate deadline) {
         this.task = task;
         this.deadline = deadline;
     }
 
+    /**
+     *
+     * @return the task content
+     */
     public String getTask() {
         return this.task;
     }
 
+    /**
+     *
+     * @return the deadline
+     */
     public LocalDate getDeadline() {
         return this.deadline;
-    }
-
-    public void modifyTask(String task) {
-        this.task = task;
-    }
-
-    public void modifyDeadline(LocalDate deadline) {
-        this.deadline = deadline;
     }
 }

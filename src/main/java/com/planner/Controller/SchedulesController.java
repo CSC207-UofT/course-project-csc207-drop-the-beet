@@ -7,6 +7,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class SchedulesController {
 
@@ -32,7 +33,7 @@ public class SchedulesController {
     public static int loadScheduleBubble (UserManager currUser, JDBCSQlite jdbcsQlite) {
         int scheduleNum = 0;
         try {
-            ArrayList<ArrayList<String>> allUserSchedules = jdbcsQlite.getAllUserEventTasksByUserName(currUser.getName());
+            List<List<String>> allUserSchedules = jdbcsQlite.getAllUserEventTasksByUserName(currUser.getName());
 
             if (allUserSchedules != null) {
                 scheduleNum = allUserSchedules.size();

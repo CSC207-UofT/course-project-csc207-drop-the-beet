@@ -23,12 +23,23 @@ public class Schedule{
         this.task = task;
     }
 
-    public void modifySchedule(LocalDate newStart, LocalDate newEnd, String newTask) {
-        this.start = newStart;
-        this.end = newEnd;
-        this.task = newTask;
-    }
+    /**
+     *
+     * @return schedule content
+     */
+    public String getTask() {return this.task;}
 
+    /**
+     *
+     * @return start time of this schedule
+     */
+    public LocalDate getStart() {return this.start;}
+
+    /**
+     *
+     * @return end time of this schedule
+     */
+    public LocalDate getEnd() {return this.end;}
 //    /**
 //     * This method updates a new date
 //     * @param date is the new date
