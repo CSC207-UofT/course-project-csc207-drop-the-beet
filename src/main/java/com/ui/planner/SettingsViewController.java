@@ -13,7 +13,6 @@ import com.database.*;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.Set;
 
 public class SettingsViewController implements Initializable {
     @FXML

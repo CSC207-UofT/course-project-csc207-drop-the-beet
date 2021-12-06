@@ -3,9 +3,9 @@ package com.ui.planner;
 import javafx.beans.property.SimpleStringProperty;
 
 public class ScheduleEventModel {
-    private SimpleStringProperty event;
-    private  SimpleStringProperty start;
-    private  SimpleStringProperty end;
+    private final SimpleStringProperty event;
+    private final SimpleStringProperty start;
+    private final SimpleStringProperty end;
 
     public ScheduleEventModel(String event, String start, String end) {
         this.start = new SimpleStringProperty(start);
