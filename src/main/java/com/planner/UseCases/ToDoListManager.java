@@ -22,9 +22,10 @@ public class ToDoListManager{
 
     }
 
-//    public List<ToDoList> getToDos() {
-//        return this.toDos;
-//    }
+    /**
+     * set the toDos from giving list
+     * @param toDoListLists a list of string lists, string list format [todoID, userID, task, deadline]
+     */
     public void setToDos(List<List<String>> toDoListLists) {
         List<ToDoList> toDos = new ArrayList<>();
         if (toDoListLists.size() != 0) {
@@ -39,6 +40,10 @@ public class ToDoListManager{
         this.toDos = toDos;
     }
 
+    /**
+     *
+     * @return a list of string lists, string list format [todoID, userID, task, deadline]
+     */
     public List<List<String>> getToDoListLists() {
         List<List<String>> toDoListLists = new ArrayList<>();
         for (ToDoList toDoList : this.toDos) {
@@ -50,10 +55,19 @@ public class ToDoListManager{
         return toDoListLists;
     }
 
+    /**
+     *
+     * @return size of toDoList
+     */
     public int getSize() {
         return this.toDos.size();
     }
 
+    /**
+     * add a new task
+     * @param task new task content
+     * @param deadline new deadline
+     */
     public void addTask(String task, LocalDate deadline) {
         ToDoList toDo = new ToDoList(task, deadline);
         this.toDos.add(toDo);

@@ -41,14 +41,15 @@ public class ImportantGateway {
                     int id = Integer.parseInt(important.get(0));
                     jdbcsQlite.deleteUserImportantListByTaskID(id);
                 }
-                List<List<String>> importantWrite = user.getImportant().getScheduleLists();
-                for (List<String> important : importantWrite) {
-                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                    LocalDate start = LocalDate.parse(important.get(1), formatter);
-                    LocalDate end = LocalDate.parse(important.get(2), formatter);
-                    jdbcsQlite.createImportantTaskByUserName(user.getName(), important.get(0), start, end);
-                }
             }
+            List<List<String>> importantWrite = user.getImportant().getScheduleLists();
+            for (List<String> important : importantWrite) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate start = LocalDate.parse(important.get(1), formatter);
+                LocalDate end = LocalDate.parse(important.get(2), formatter);
+                jdbcsQlite.createImportantTaskByUserName(user.getName(), important.get(0), start, end);
+                }
+
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

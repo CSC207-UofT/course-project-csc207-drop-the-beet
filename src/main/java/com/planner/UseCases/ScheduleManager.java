@@ -22,9 +22,10 @@ public class ScheduleManager {
 
     }
 
-//    public List<Schedule> getSchedules() {
-//        return this.schedules;
-//    }
+    /**
+     * set schedules from giving list
+     * @param schedulesLists a list of string lists, string list format [todoID, userID, task, start, end]
+     */
     public void setSchedules(List<List<String>> schedulesLists) {
         List<Schedule> schedules = new ArrayList<>();
         if (schedulesLists.size() != 0) {
@@ -40,6 +41,10 @@ public class ScheduleManager {
         this.schedules = schedules;
     }
 
+    /**
+     *
+     * @return a list of string lists, string list format [todoID, userID, task, start, end]
+     */
     public List<List<String>> getScheduleLists() {
         List<List<String>> scheduleLists = new ArrayList<>();
         for (Schedule schedule : this.schedules) {
@@ -52,6 +57,10 @@ public class ScheduleManager {
         return scheduleLists;
     }
 
+    /**
+     *
+     * @return size of schedules
+     */
     public int getSize() {
         return this.schedules.size();
     }
