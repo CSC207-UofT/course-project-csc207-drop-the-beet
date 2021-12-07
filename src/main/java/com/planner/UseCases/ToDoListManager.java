@@ -42,7 +42,7 @@ public class ToDoListManager{
 
     /**
      *
-     * @return a list of string lists, string list format [todoID, userID, task, deadline]
+     * @return a list of string lists, string list format [task, deadline]
      */
     public List<List<String>> getToDoListLists() {
         List<List<String>> toDoListLists = new ArrayList<>();

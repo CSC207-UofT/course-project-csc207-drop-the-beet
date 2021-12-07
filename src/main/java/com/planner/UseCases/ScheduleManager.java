@@ -43,7 +43,7 @@ public class ScheduleManager {
 
     /**
      *
-     * @return a list of string lists, string list format [todoID, userID, task, start, end]
+     * @return a list of string lists, string list format [task, start, end]
      */
     public List<List<String>> getScheduleLists() {
         List<List<String>> scheduleLists = new ArrayList<>();
