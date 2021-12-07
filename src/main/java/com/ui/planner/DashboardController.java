@@ -19,6 +19,7 @@ import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -148,18 +149,27 @@ public class DashboardController implements Initializable {
         end.setCellValueFactory(new PropertyValueFactory<>("End"));
     }
 
+    /**
+     * show TodoLists that are due today
+     */
     @FXML
     public void showEvents() {
-        List<List<String>> lst;
-        System.out.println("xxx" + currUser);
-        lst = currUser.getToDoLists().getToDoListLists();
-        System.out.println(lst);
+        List<List<String>> lst = currUser.getToDoLists().getToDoListLists();
+        List<List<String>> todayList = new ArrayList<>();
 
-        if (lst != null && lst.size() >= 1) {
-            for (List<String> l : lst){
-                toDoEventModels.add(new ToDoEventModel(l.get(0), l.get(1)));
+        if (lst != null) {
+            for (List<String> l : lst) {
+                if (l.get(1).equals(LocalDate.now().toString())) {
+                    todayList.add(l);
+                }
             }
-            todayTable.setItems(toDoEventModels);
+
+            if (todayList.size() >= 1) {
+                for (List<String> l : todayList) {
+                    toDoEventModels.add(new ToDoEventModel(l.get(0), l.get(1)));
+                }
+                todayTable.setItems(toDoEventModels);
+            }
         }
     }
 
