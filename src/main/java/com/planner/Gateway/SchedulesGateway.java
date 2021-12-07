@@ -40,13 +40,13 @@ public class SchedulesGateway {
                     int id = Integer.parseInt(schedule.get(0));
                     jdbcsQlite.deleteUserEventListByTaskID(id);
                 }
-                List<List<String>> scheduleWrite = user.getSchedules().getScheduleLists();
-                for (List<String> schedule : scheduleWrite) {
-                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                    LocalDate start = LocalDate.parse(schedule.get(1), formatter);
-                    LocalDate end = LocalDate.parse(schedule.get(2), formatter);
-                    jdbcsQlite.createEventTaskByUserName(user.getName(), schedule.get(0), start, end);
-                }
+            }
+            List<List<String>> scheduleWrite = user.getSchedules().getScheduleLists();
+            for (List<String> schedule : scheduleWrite) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate start = LocalDate.parse(schedule.get(1), formatter);
+                LocalDate end = LocalDate.parse(schedule.get(2), formatter);
+                jdbcsQlite.createEventTaskByUserName(user.getName(), schedule.get(0), start, end);
             }
 
         } catch (SQLException throwables) {

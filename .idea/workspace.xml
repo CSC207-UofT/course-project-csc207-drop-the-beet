@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="revised dependency problems in Gateway">
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="solved null exception">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Memento/Caretaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Memento/Caretaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/database/DBTodoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/DBTodoList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/database/DBUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/DBUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ImportantGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ImportantGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/SchedulesGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/SchedulesGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ToDoListsGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ToDoListsGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/UserGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/UserGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ToDoListManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ToDoListManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/database/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/test.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -212,7 +204,7 @@
       <workItem from="1638689926133" duration="5571000" />
       <workItem from="1638751423195" duration="3065000" />
       <workItem from="1638815233296" duration="1334000" />
-      <workItem from="1638830499826" duration="2994000" />
+      <workItem from="1638830499826" duration="5106000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>
@@ -473,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638821712034</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="solved null exception">
+      <created>1638833671368</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1638833671368</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +504,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add New Event UI" />
     <MESSAGE value="Add Important Add New Event Button UI" />
     <MESSAGE value="Add Incoming Add New Event Button UI" />
     <MESSAGE value="Add New UI Features" />
@@ -530,6 +528,7 @@
     <MESSAGE value="added javadocs, deleted some unnecessary methods in SQL" />
     <MESSAGE value="revised dependency problems in UI" />
     <MESSAGE value="revised dependency problems in Gateway" />
-    <option name="LAST_COMMIT_MESSAGE" value="revised dependency problems in Gateway" />
+    <MESSAGE value="solved null exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="solved null exception" />
   </component>
 </project>

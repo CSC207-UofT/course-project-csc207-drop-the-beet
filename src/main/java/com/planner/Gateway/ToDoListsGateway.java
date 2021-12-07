@@ -42,12 +42,12 @@ public class ToDoListsGateway {
                     int id = Integer.parseInt(toDo.get(0));
                     jdbcsQlite.deleteUserToDoListByTaskID(id);
                 }
-                List<List<String>> toDoWrite = user.getToDoLists().getToDoListLists();
-                for (List<String> toDo : toDoWrite) {
-                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                    LocalDate deadline = LocalDate.parse(toDo.get(1), formatter);
-                    jdbcsQlite.createUserToDoListTaskByUserName(user.getName(), toDo.get(0), deadline);
-                }
+            }
+            List<List<String>> toDoWrite = user.getToDoLists().getToDoListLists();
+            for (List<String> toDo : toDoWrite) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate deadline = LocalDate.parse(toDo.get(1), formatter);
+                jdbcsQlite.createUserToDoListTaskByUserName(user.getName(), toDo.get(0), deadline);
             }
 
         } catch (SQLException throwables) {
