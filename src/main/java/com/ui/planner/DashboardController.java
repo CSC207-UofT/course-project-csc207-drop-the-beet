@@ -74,7 +74,10 @@ public class DashboardController implements Initializable {
 
     private UserManager currUser;
 
-
+    /**
+     * set up user
+     * @param user from previous step
+     */
     public void setUser(UserManager user) {
         currUser = user;
         refreshBubbleStatus();
@@ -173,6 +176,9 @@ public class DashboardController implements Initializable {
         }
     }
 
+    /**
+     * set user new info
+     */
     private void refreshUserStatus() {
         currUser.setEmail(currUser.getEmail());
         currUser.setPassword(currUser.getPassword());
@@ -230,6 +236,9 @@ public class DashboardController implements Initializable {
         dashboardBtn.setCursor(Cursor.HAND);
     }
 
+    /**
+     * when schedule button is clicked
+     */
     @FXML
     protected void onincomingBtnClicked() {
         incomingView.toFront();
@@ -245,6 +254,9 @@ public class DashboardController implements Initializable {
         incomingBtn.setCursor(Cursor.HAND);
     }
 
+    /**
+     * when todolist button is clicked
+     */
     @FXML
     protected void ontodolistClicked() {
         todoListView.toFront();
@@ -259,6 +271,9 @@ public class DashboardController implements Initializable {
         todolistBtn.setCursor(Cursor.HAND);
     }
 
+    /**
+     * when important button is clicked
+     */
     @FXML
     protected void onimportantBtnClicked() {
         importantView.toFront();
@@ -273,6 +288,9 @@ public class DashboardController implements Initializable {
         importantBtn.setCursor(Cursor.HAND);
     }
 
+    /**
+     * when sign out button is clicked
+     */
     @FXML
     protected void onsignoutBtnClicked() {
         refreshBtnStatus(signoutBtn);
@@ -286,6 +304,9 @@ public class DashboardController implements Initializable {
         signoutBtn.setCursor(Cursor.HAND);
     }
 
+    /**
+     * when setting button is clicked
+     */
     @FXML
     protected void onsettingsBtnClicked() {
         settingsView.toFront();

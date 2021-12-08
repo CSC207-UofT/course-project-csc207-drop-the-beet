@@ -1,6 +1,8 @@
 package com.planner.Entities;
 
 import java.time.LocalDate;
+
+import com.planner.UseCases.ScheduleManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -20,17 +22,21 @@ class ScheduleTest {
 
     @Test
     void getTask() {
+        assertEquals("Sleep", s.getTask());
     }
 
     @Test
     void getStart() {
+        assertEquals(start, s.getStart());
     }
 
     @Test
     void getEnd() {
+        assertEquals(end, s.getEnd());
     }
 
     @Test
     void testToString() {
+        assertEquals("Sleep", s.toString());
     }
 }

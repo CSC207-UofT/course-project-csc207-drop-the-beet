@@ -10,12 +10,18 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
+/**
+ * dashboard page
+ */
 public class DashboardView extends Application {
     Stage stage = new Stage();
 
     private final UserManager user;
 
+    /**
+     * initialize dashboard view
+     * @param user this user
+     */
     public DashboardView(UserManager user){
         this.user = user;
     }

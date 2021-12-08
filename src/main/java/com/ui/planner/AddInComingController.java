@@ -25,6 +25,9 @@ public class AddInComingController {
 
     private UserManager user;//done
 
+    /**
+     * receive the inputs and add new schedule
+     */
     @FXML
     protected void onConfirmBtnClicked() {
         if (startDatePicker.getValue() != null && endingDatePicker.getValue() != null && eventTextField.getText().length() != 0) {
@@ -50,6 +53,9 @@ public class AddInComingController {
         }
     }
 
+    /**
+     * when cancel button is clicked
+     */
     @FXML
     protected void onCancelBtnClicked() {
         Stage stage = (Stage)cancelBtn.getScene().getWindow();
@@ -66,6 +72,10 @@ public class AddInComingController {
         confirmBtn.setCursor(Cursor.HAND);
     }
 
+    /**
+     * set up user
+     * @param user from previous step
+     */
     public void setUser(UserManager user) {
         this.user = user;
     }
