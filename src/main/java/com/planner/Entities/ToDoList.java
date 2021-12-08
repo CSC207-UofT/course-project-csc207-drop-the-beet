@@ -36,4 +36,7 @@ public class ToDoList {
     public LocalDate getDeadline() {
         return this.deadline;
     }
+
+    @Override
+    public String toString() {return this.task;}
 }

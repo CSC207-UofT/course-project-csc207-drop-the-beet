@@ -4,12 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="solved null exception">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="test folder changed">
+      <change afterPath="$PROJECT_DIR$/src/Test/ToDoListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/ToDoListsGatewayTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/UserGatewayTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/com/planner/Gateway/ToDoListsGatewayTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/com/planner/UseCases/test/ToDoListManagerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/java/ScheduleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/java/SettingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/java/UserManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Test/ScheduleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Test/ToDoListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Test/UserManagerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Entities/ToDoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Entities/ToDoList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ImportantGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ImportantGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/SchedulesGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/SchedulesGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ToDoListsGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/ToDoListsGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/UserGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/UserGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ToDoListManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/ToDoListManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/test.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +36,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -39,11 +56,8 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/AddInComingController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/SettingsViewController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/Test/ScheduleTest.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/AddTodoListController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/Test/UserManagerTest.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/Test/ToDoListTest.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20fit97KyV7vIepMHrBp1eiRiQZ" />
@@ -62,9 +76,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/ui/planner" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../course-project-csc207-drop-the-beet_notchanged_keepit" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../IdeaProjects/github-4" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -79,90 +96,128 @@
       <recent name="C:\Users\qin18\Desktop\course-project-csc207-drop-the-beet\src\main\resources\SQLiteJdbcDriver" />
       <recent name="C:\Users\qin18\Desktop\course-project-csc207-drop-the-beet\src\main\resources\com\ui\planner" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.ui.planner" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.planner.UseCases.test" />
       <recent name="Test" />
       <recent name="com" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.planner.Gateway" />
+      <recent name="com.planner.UseCases.test" />
+      <recent name="test" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Driver">
-    <configuration name="DashboardView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ui.planner.DashboardView" />
+  <component name="RunManager" selected="JUnit.ToDoListsGatewayTest">
+    <configuration name="ToDoListManagerTest" type="JUnit" factoryName="JUnit">
       <module name="planner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ui.planner.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="com.planner.UseCases.test" />
+      <option name="MAIN_CLASS_NAME" value="com.planner.UseCases.test.ToDoListManagerTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.Driver" />
+    <configuration name="ToDoListManagerTest.TestAddTask" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="planner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.planner.UseCases.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.planner.UseCases.test" />
+      <option name="MAIN_CLASS_NAME" value="com.planner.UseCases.test.ToDoListManagerTest" />
+      <option name="METHOD_NAME" value="TestAddTask" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JDBCSQlite (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.database.JDBCSQlite" />
+    <configuration name="ToDoListManagerTest.TestGetSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="planner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.database.*" />
+          <option name="PATTERN" value="com.planner.UseCases.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.planner.UseCases.test" />
+      <option name="MAIN_CLASS_NAME" value="com.planner.UseCases.test.ToDoListManagerTest" />
+      <option name="METHOD_NAME" value="TestGetSize" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JDBCSQlite" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.datebase.JDBCSQlite" />
+    <configuration name="ToDoListManagerTest.testGetToDoListLists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="planner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.datebase.*" />
+          <option name="PATTERN" value="com.planner.UseCases.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.planner.UseCases.test" />
+      <option name="MAIN_CLASS_NAME" value="com.planner.UseCases.test.ToDoListManagerTest" />
+      <option name="METHOD_NAME" value="testGetToDoListLists" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ui.planner.LoginView" />
+    <configuration name="ToDoListManagerTest.testSetToDos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="planner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ui.planner.*" />
+          <option name="PATTERN" value="com.planner.UseCases.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.planner.UseCases.test" />
+      <option name="MAIN_CLASS_NAME" value="com.planner.UseCases.test.ToDoListManagerTest" />
+      <option name="METHOD_NAME" value="testSetToDos" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ToDoListsGatewayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="planner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.planner.Gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.planner.Gateway" />
+      <option name="MAIN_CLASS_NAME" value="com.planner.Gateway.ToDoListsGatewayTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.DashboardView" />
-      <item itemvalue="Application.Driver" />
-      <item itemvalue="Application.JDBCSQlite" />
-      <item itemvalue="Application.LoginView" />
-      <item itemvalue="Application.JDBCSQlite (1)" />
+      <item itemvalue="JUnit.ToDoListManagerTest" />
+      <item itemvalue="JUnit.ToDoListManagerTest.TestAddTask" />
+      <item itemvalue="JUnit.ToDoListManagerTest.TestGetSize" />
+      <item itemvalue="JUnit.ToDoListManagerTest.testGetToDoListLists" />
+      <item itemvalue="JUnit.ToDoListManagerTest.testSetToDos" />
+      <item itemvalue="JUnit.ToDoListsGatewayTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Driver" />
-        <item itemvalue="Application.DashboardView" />
-        <item itemvalue="Application.JDBCSQlite (1)" />
-        <item itemvalue="Application.JDBCSQlite" />
-        <item itemvalue="Application.LoginView" />
+        <item itemvalue="JUnit.ToDoListsGatewayTest" />
+        <item itemvalue="JUnit.ToDoListManagerTest.testSetToDos" />
+        <item itemvalue="JUnit.ToDoListManagerTest.testGetToDoListLists" />
+        <item itemvalue="JUnit.ToDoListManagerTest.TestGetSize" />
+        <item itemvalue="JUnit.ToDoListManagerTest.TestAddTask" />
       </list>
     </recent_temporary>
   </component>
@@ -205,7 +260,8 @@
       <workItem from="1638815233296" duration="1334000" />
       <workItem from="1638830499826" duration="5807000" />
       <workItem from="1638856530982" duration="3000" />
-      <workItem from="1638856668292" duration="2174000" />
+      <workItem from="1638856668292" duration="2488000" />
+      <workItem from="1638904144614" duration="19519000" />
     </task>
     <task id="LOCAL-00001" summary="Name Change">
       <created>1636442399502</created>
@@ -480,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638836456369</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="fixed dashboard Today to-dos showing">
+      <created>1638860146675</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1638860146675</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,8 +575,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add Important Add New Event Button UI" />
-    <MESSAGE value="Add Incoming Add New Event Button UI" />
     <MESSAGE value="Add New UI Features" />
     <MESSAGE value="Add New Setting Features" />
     <MESSAGE value="Add Sign up Features" />
@@ -537,6 +598,18 @@
     <MESSAGE value="revised dependency problems in UI" />
     <MESSAGE value="revised dependency problems in Gateway" />
     <MESSAGE value="solved null exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="solved null exception" />
+    <MESSAGE value="fixed dashboard Today to-dos showing" />
+    <MESSAGE value="test folder changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="test folder changed" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

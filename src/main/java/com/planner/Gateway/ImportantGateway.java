@@ -9,9 +9,17 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * IO for all Important
+ */
 
 public class ImportantGateway {
 
+    /**
+     * load all important for this user from database
+     * @param username the username of the user
+     * @return this user's important
+     */
     public static ScheduleManager getAllImportant(String username) {
         JDBCSQlite jdbcsQlite = new JDBCSQlite();
         jdbcsQlite.create();
@@ -31,6 +39,10 @@ public class ImportantGateway {
         }
     }
 
+    /**
+     * write all user important into database
+     * @param user this user in UserManager type
+     */
     public static void writeAllImportant(UserManager user) {
         JDBCSQlite jdbcsQlite = new JDBCSQlite();
         jdbcsQlite.create();
@@ -49,7 +61,6 @@ public class ImportantGateway {
                 LocalDate end = LocalDate.parse(important.get(2), formatter);
                 jdbcsQlite.createImportantTaskByUserName(user.getName(), important.get(0), start, end);
                 }
-
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

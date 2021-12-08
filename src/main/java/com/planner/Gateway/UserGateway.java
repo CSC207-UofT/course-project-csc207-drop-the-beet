@@ -8,6 +8,12 @@ import java.sql.SQLException;
 
 public class UserGateway {
 
+    /**
+     * load all user information for this user from database, including this user's
+     * schedules, toDolists, important
+     * @param username the username of this user
+     * @return this user in UserManager type
+     */
     public static UserManager loadAllUserInfo(String username) {
         DBUser jdbcsQlite = new DBUser();
         jdbcsQlite.create();
@@ -28,6 +34,11 @@ public class UserGateway {
         }
     }
 
+    /**
+     * write all this user's information into database, including this user's
+     * schedules, toDolists, important
+     * @param user this user in UserManager type
+     */
     public static void writeAllUserInfo(UserManager user) {
         DBUser jdbcsQlite = new DBUser();
         jdbcsQlite.create();
