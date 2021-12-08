@@ -1,0 +1,51 @@
+#Project Accessibility Report
+
+####Describe features that you could implement in the future that would adhere to principle
+
+* Principle 1: Equitable Use
+
+We provide the same platform of use of all users.
+
+Provisions for privacy, security, and safety are equally available to all users.
+
+* Principle 2: Flexibility in Use
+
+Our program facilitates the user's accuracy and precision. We could implement other choices of using features, for 
+example, adding a shortcut key for functions.
+
+* Principle 3: Simple and Intuitive Use
+
+Our program is simple but enough for basic daily planning. For each button or textbox, we include a straight-forward
+
+* Principle 4: Perceptible Information
+
+The interface of the program provides different visuals to show the calendar and number of completed tasks.
+
+* Principle 5: Tolerance for Error
+
+The program minimizes and guides the user to properly use the program. For example, when we schedule an event, we have 
+a calendar for the user to click on a date instead of inserting a date by typing. This would avoid invalid date inputs.
+
+* Principle 6: Low Physical Effort
+
+The interface of our program is efficient to use. Users can create their tasks simply by selecting dates and entering 
+names of their tasks. Registration and login work in a similar way. Any functionality of this program can be achieved 
+by typing or moving a mouse, with only the movement of the arm and hand.
+
+* Principle 7: Size and Space for Approach and Use
+
+Program interface and interactive buttons provide sufficient size for a mouse to click on it with precision. Standing 
+and sitting postures of the user can still use the program comfortably.
+
+#### Write a paragraph about who you would market your program towards
+
+Since our program is a time management tool. We would target stakeholders who wish to manage their time better. 
+Especially people who have many short term and long term events or goals. Using our application, they would improve 
+work efficiency and time management with proper utility of the application. The application provides a simple visual 
+pie chart and other representations that motivates the user to complete the tasks they have completed.
+
+#### Write a paragraph about whether or not your program is less likely to be used by certain demographics. 
+
+We expect to add in additional features (in the future) that allow the user to distribute their event on a date to 
+another user in interest. This would greatly open up the utilization of the program because businesses or schools or 
+small groups of friends can share important dates on each other's calendar. 

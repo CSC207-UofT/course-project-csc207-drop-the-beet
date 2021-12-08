@@ -49,12 +49,11 @@ public class DBUser {
 
     /**
      * Create a new user to the planner with the user's basic info
-     *
-     * @param userName the user's username
+     *  @param userName the user's username
      * @param userEmail the user's email
      * @param userPassword the user's password
      */
-    public boolean createNewUser(String userName, String userEmail, String userPassword) throws SQLException {
+    public void createNewUser(String userName, String userEmail, String userPassword) throws SQLException {
         if (!isUserNameExist(userName)) {
             ResultSet rs = stmt.executeQuery(getMaxIDSql);
             rs.next();
@@ -65,9 +64,7 @@ public class DBUser {
             }
             stmt.executeUpdate(createNewUserSql + "(" + nextID + "," + "'" + userName + "'" +
                     "," + "'" + userEmail + "'" + "," + "'" + userPassword + "'" + ")");
-            return true;
         }
-        return false;
     }
 
     /**
@@ -127,32 +124,26 @@ public class DBUser {
 
     /**
      * Change the user's email by its username and update it.
-     *
-     * @param userName the user's username
+     *  @param userName the user's username
      * @param newEmail the new user email
      */
-    public boolean changeUserEmailByUserName(String userName, String newEmail) throws SQLException {
+    public void changeUserEmailByUserName(String userName, String newEmail) throws SQLException {
 
         if (isUserNameExist(userName)) {
             stmt.executeUpdate("UPDATE ACCOUNT SET EMAIL =" + "'" + newEmail + "'" + "WHERE USERNAME = " + "'" + userName + "'");
-            return true;
         }
-        return false;
     }
 
     /**
      * change the user's password by its username and create a new password.
-     *
-     * @param userName the user's username
+     *  @param userName the user's username
      * @param newPassword the new user password
      */
-    public boolean changeUserPasswordByUserName(String userName, String newPassword) throws SQLException {
+    public void changeUserPasswordByUserName(String userName, String newPassword) throws SQLException {
 
         if (isUserNameExist(userName)) {
             stmt.executeUpdate("UPDATE ACCOUNT SET PASSWORD =" + "'" + newPassword + "'" + "WHERE USERNAME = " + "'" + userName + "'");
-            return true;
         }
-        return false;
     }
 
 }
