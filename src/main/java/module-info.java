@@ -4,7 +4,7 @@ module com.ui.planner {
     requires org.jetbrains.annotations;
     requires java.sql;
     requires org.xerial.sqlitejdbc;
-    requires junit;
+//    requires junit;
 
 
     opens com.ui.planner to javafx.fxml;

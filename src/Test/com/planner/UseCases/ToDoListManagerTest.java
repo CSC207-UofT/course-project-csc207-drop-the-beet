@@ -1,4 +1,4 @@
-package com.planner.UseCases.test;
+package com.planner.UseCases;
 
 import com.planner.Entities.ToDoList;
 import com.planner.UseCases.ToDoListManager;
