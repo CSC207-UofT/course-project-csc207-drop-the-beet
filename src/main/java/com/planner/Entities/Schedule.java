@@ -14,7 +14,7 @@ public class Schedule{
     /**
      * Constructor of the Schedule
      * @param from is the start time in YYYY-MM-DD
-     * @param to is the end time in HH:mm (24hrs)
+     * @param to is the end time in YYYY-MM-DD
      * @param task is the title of the task
      */
     public Schedule(LocalDate from, LocalDate to, String task){

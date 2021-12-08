@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="solved null exception">
-      <change afterPath="$PROJECT_DIR$/src/Test/com/planner/Entities/ScheduleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/com/planner/Entities/ToDoListTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/com/planner/Entities/UserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test/com/planner/UseCases/UserManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/ToDoListTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/com/planner/UseCases/test/ToDoListManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/com/planner/UseCases/ToDoListManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/java/UserManagerTest.java" beforeDir="false" />
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="UserTest and UserManagerTest, update UserManager's doc">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Entities/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Entities/Schedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/UseCases/UserManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -498,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638836456369</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="UserTest and UserManagerTest, update UserManager's doc">
+      <created>1638939963430</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1638939963430</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,7 +528,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add Important Add New Event Button UI" />
     <MESSAGE value="Add Incoming Add New Event Button UI" />
     <MESSAGE value="Add New UI Features" />
     <MESSAGE value="Add New Setting Features" />
@@ -555,6 +552,7 @@
     <MESSAGE value="revised dependency problems in UI" />
     <MESSAGE value="revised dependency problems in Gateway" />
     <MESSAGE value="solved null exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="solved null exception" />
+    <MESSAGE value="UserTest and UserManagerTest, update UserManager's doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserTest and UserManagerTest, update UserManager's doc" />
   </component>
 </project>
