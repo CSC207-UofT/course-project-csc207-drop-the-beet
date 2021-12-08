@@ -6,6 +6,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+/**
+ * signup window
+ */
 public class SignupView extends Application {
     Stage stage = new Stage();
 

@@ -51,6 +51,9 @@ public class TodoListViewController implements Initializable {
         showEvents();
     }
 
+    /**
+     * show all the events on the ToDoList page
+     */
     @FXML
     public void showEvents() {
         List<List<String>> lst;

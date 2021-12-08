@@ -29,13 +29,15 @@ public class SettingsViewController implements Initializable {
 
     private String userName;
     private String userEmail;
-    private String userPassWord;
 
-
+    /**
+     * set user from previous step
+     * @param user user sent from previous step
+     */
     public void setUser(UserManager user) {
         userName = user.getName();
         userEmail = user.getEmail();
-        userPassWord = user.getPassword();
+        user.getPassword();
         userNameText.setText(userName);
         emailText.setText(userEmail);
     }
@@ -45,6 +47,10 @@ public class SettingsViewController implements Initializable {
 
     }
 
+    /**
+     * when confirm button of change personal info is clicked
+     * @throws SQLException database error
+     */
     @FXML
     protected void onConfirmButtonClicked() throws SQLException {
         if (newPasswordText.getText().equals(confirmPasswordText.getText()) && newPasswordText.getLength() != 0 && confirmPasswordText.getLength() != 0) {
@@ -57,7 +63,7 @@ public class SettingsViewController implements Initializable {
 
             jdbcsQlite.changeUserEmailByUserName(newUserName, newEmail);
             jdbcsQlite.changeUserPasswordByUserName(newUserName, newPassword);
-            jdbcsQlite.close(); //Todo 53 62
+            jdbcsQlite.close();
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Change User Info Successfully!");
@@ -84,11 +90,18 @@ public class SettingsViewController implements Initializable {
         }
     }
 
+
+    /**
+     * when confirm button is clicked
+     */
     @FXML
     protected void onConfirmBtnMouseEntered() {
         confirmBtn.setCursor(Cursor.HAND);
     }
 
+    /**
+     * when reset button is clicked
+     */
     @FXML
     protected void onResetBtnClicked() {
         userNameText.setText(userName);

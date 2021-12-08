@@ -49,6 +49,9 @@ public class ImportantViewController implements Initializable {
         end.setCellValueFactory(new PropertyValueFactory<>("End"));
     }
 
+    /**
+     * this methods show all important at the important page
+     */
     @FXML
     public void showEvents() {
         List<List<String>> lst;
@@ -67,17 +70,23 @@ public class ImportantViewController implements Initializable {
         importantNewEventBtn.setCursor(Cursor.HAND);
     }
 
+    /**
+     * when add new is clicked
+     */
     @FXML
     protected void newEventBtnClicked() throws IOException {
         AddImportantView addImportantView = new AddImportantView();
-        addImportantView.setUser(user); //Todo
+        addImportantView.setUser(user);
         addImportantView.showWindow();
         importantEventModels.clear();
         showEvents();
     }
 
-
+    /**
+     * set user
+     * @param currUser sent from previous step
+     */
     public void setUser(UserManager currUser) {
         user = currUser;
-    }//Todo set new user
+    }
 }

@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="UserTest and UserManagerTest, update UserManager's doc" />
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="2 DBtest">
+      <change afterPath="$PROJECT_DIR$/src/Test/com/ui/planner/AddImportantControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,33 +79,27 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\14623\workspace\course-project-csc207-drop-the-beet3\src\Test\com\planner\Gateway" />
+      <recent name="C:\Users\14623\workspace\course-project-csc207-drop-the-beet3\src\Test\com\planner\Entities" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.ui.planner" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.planner.Gateway" />
       <recent name="com.planner.UseCases" />
       <recent name="Test" />
       <recent name="com" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.ui.planner" />
+      <recent name="com.planner.Gateway" />
       <recent name="com.planner.Entities" />
       <recent name="com.planner.UseCases" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserManagerTest.getImportant">
-    <configuration name="DashboardView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ui.planner.DashboardView" />
-      <module name="planner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ui.planner.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.UserManagerTest">
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -112,15 +109,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JDBCSQlite (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.database.JDBCSQlite" />
+    <configuration name="AddImportantControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="planner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.database.*" />
+          <option name="PATTERN" value="com.ui.planner.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.ui.planner" />
+      <option name="MAIN_CLASS_NAME" value="com.ui.planner.AddImportantControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddImportantControllerTest.onConfirmBtnClicked" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="planner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ui.planner.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ui.planner" />
+      <option name="MAIN_CLASS_NAME" value="com.ui.planner.AddImportantControllerTest" />
+      <option name="METHOD_NAME" value="onConfirmBtnClicked" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in planner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="planner" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,36 +163,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserManagerTest.getImportant" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="planner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.planner.UseCases.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.planner.UseCases" />
-      <option name="MAIN_CLASS_NAME" value="com.planner.UseCases.UserManagerTest" />
-      <option name="METHOD_NAME" value="getImportant" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.DashboardView" />
       <item itemvalue="Application.Driver" />
-      <item itemvalue="Application.JDBCSQlite (1)" />
+      <item itemvalue="JUnit.AddImportantControllerTest" />
+      <item itemvalue="JUnit.AddImportantControllerTest.onConfirmBtnClicked" />
+      <item itemvalue="JUnit.All in planner" />
       <item itemvalue="JUnit.UserManagerTest" />
-      <item itemvalue="JUnit.UserManagerTest.getImportant" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserManagerTest.getImportant" />
         <item itemvalue="JUnit.UserManagerTest" />
+        <item itemvalue="JUnit.All in planner" />
         <item itemvalue="Application.Driver" />
-        <item itemvalue="Application.DashboardView" />
-        <item itemvalue="Application.JDBCSQlite (1)" />
+        <item itemvalue="JUnit.AddImportantControllerTest.onConfirmBtnClicked" />
+        <item itemvalue="JUnit.AddImportantControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -501,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638940131154</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="2 DBtest">
+      <created>1638940747071</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1638940747071</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,7 +547,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add Incoming Add New Event Button UI" />
     <MESSAGE value="Add New UI Features" />
     <MESSAGE value="Add New Setting Features" />
     <MESSAGE value="Add Sign up Features" />
@@ -558,6 +571,17 @@
     <MESSAGE value="revised dependency problems in Gateway" />
     <MESSAGE value="solved null exception" />
     <MESSAGE value="UserTest and UserManagerTest, update UserManager's doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="UserTest and UserManagerTest, update UserManager's doc" />
+    <MESSAGE value="2 DBtest" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 DBtest" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/course_project_csc207_drop_the_beet3$AddImportantControllerTest_onConfirmBtnClicked.ic" NAME="AddImportantControllerTest.onConfirmBtnClicked Coverage Results" MODIFIED="1638943900139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ui.planner.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/course_project_csc207_drop_the_beet3$Driver.ic" NAME="Driver Coverage Results" MODIFIED="1638943967627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/course_project_csc207_drop_the_beet3$All_in_planner.ic" NAME="All in planner Coverage Results" MODIFIED="1638944125264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/course_project_csc207_drop_the_beet3$UserManagerTest.ic" NAME="UserManagerTest Coverage Results" MODIFIED="1638944320477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.planner.UseCases.*</FILTER>
+    </SUITE>
   </component>
 </project>
