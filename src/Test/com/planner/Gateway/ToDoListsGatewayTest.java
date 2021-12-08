@@ -47,4 +47,11 @@ class ToDoListsGatewayTest {
         }
         jdbcsQlite.close();
     }
+
+    @Test
+    public void TestGetAllToDoLists() {
+        ToDoListsGateway.getAllToDoLists(user.getName());
+        assertEquals("homework", user.getToDoLists().getToDos().get(0).getTask());
+        assertEquals("2021-12-10", user.getToDoLists().getToDos().get(0).getDeadline().toString());
+    }
 }

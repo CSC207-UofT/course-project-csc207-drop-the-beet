@@ -27,6 +27,6 @@ class ToDoListTest {
 
     @Test
     void TestToString() {
-        assertEquals("homework", toDoList.getTask());
+        assertEquals("homework", toDoList.toString());
     }
 }
