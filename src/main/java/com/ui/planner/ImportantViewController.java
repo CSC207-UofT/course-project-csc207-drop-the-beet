@@ -49,6 +49,9 @@ public class ImportantViewController implements Initializable {
         end.setCellValueFactory(new PropertyValueFactory<>("End"));
     }
 
+    /**
+     * this methods show all important at the important page
+     */
     @FXML
     public void showEvents() {
         List<List<String>> lst;
@@ -79,5 +82,5 @@ public class ImportantViewController implements Initializable {
 
     public void setUser(UserManager currUser) {
         user = currUser;
-    }//Todo set new user
+    }
 }
