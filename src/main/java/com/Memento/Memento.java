@@ -3,6 +3,7 @@ package com.Memento;
 import com.planner.UseCases.ToDoListManager;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 /**
  * memento class
@@ -13,6 +14,7 @@ public class Memento implements Serializable {
 
     /**
      * Constructor of Memento
+     *
      * @param state ToDoListManager state
      */
     public Memento(ToDoListManager state) {
@@ -20,6 +22,7 @@ public class Memento implements Serializable {
 
     /**
      * set the state
+     *
      * @param state ToDoListManager state
      */
     void setState(ToDoListManager state) {
@@ -28,9 +31,12 @@ public class Memento implements Serializable {
 
     /**
      * get the state
+     *
      * @return ToDoListManager state
      */
     public ToDoListManager getState() {
         return state;
     }
+
+
 }
