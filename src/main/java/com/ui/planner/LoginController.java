@@ -102,6 +102,11 @@ public class LoginController implements Initializable {
         }
     }
 
+    /**
+     * if password are matched
+     * @param user this user
+     * @throws IOException database access error
+     */
     @FXML
     protected void passwordSuccessView(UserManager user) throws IOException {
         DashboardView dashboard = new DashboardView(user);
@@ -111,6 +116,9 @@ public class LoginController implements Initializable {
         stage.close();
     }
 
+    /**
+     * if password are not matched
+     */
     @FXML
     protected void passwordFailedView() {
         // The password and username is unsuccessful.
@@ -128,6 +136,9 @@ public class LoginController implements Initializable {
         unableToLoginLabel.setVisible(false);
     }
 
+    /**
+     * when remember me is clicked
+     */
     @FXML
     protected void onRememberMeEntered() {
         rememberMe.setCursor(Cursor.HAND);
@@ -138,11 +149,18 @@ public class LoginController implements Initializable {
         forgotPassword.setCursor(Cursor.HAND);
     }
 
+    /**
+     * when forgot password is clicked
+     */
     @FXML
     protected void onForgotPasswordClicked() {
         System.out.println("Forgot Password Clicked!");
     }
 
+    /**
+     * when sign up is clicked
+     * @throws IOException database access error
+     */
     @FXML
     protected void onSignUpClicked() throws IOException {
         SignupView signupView = new SignupView();

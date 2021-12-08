@@ -70,16 +70,22 @@ public class ImportantViewController implements Initializable {
         importantNewEventBtn.setCursor(Cursor.HAND);
     }
 
+    /**
+     * when add new is clicked
+     */
     @FXML
     protected void newEventBtnClicked() throws IOException {
         AddImportantView addImportantView = new AddImportantView();
-        addImportantView.setUser(user); //Todo
+        addImportantView.setUser(user);
         addImportantView.showWindow();
         importantEventModels.clear();
         showEvents();
     }
 
-
+    /**
+     * set user
+     * @param currUser sent from previous step
+     */
     public void setUser(UserManager currUser) {
         user = currUser;
     }

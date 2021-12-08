@@ -43,6 +43,9 @@ public class IncomingViewController implements Initializable {
         end.setCellValueFactory(new PropertyValueFactory<>("End"));
     }
 
+    /**
+     * show all schedules
+     */
     @FXML
     public void showEvents() {
         List<List<String>> lst;
@@ -57,7 +60,10 @@ public class IncomingViewController implements Initializable {
 
     }
 
-
+    /**
+     * when add new is clicked
+     * @throws IOException database access error
+     */
     @FXML
     protected void onNewEventClicked() throws IOException {
         AddIncomingApplication addIncomingApplication = new AddIncomingApplication();
@@ -67,6 +73,10 @@ public class IncomingViewController implements Initializable {
         showEvents();
     }
 
+    /**
+     * setup user
+     * @param currUser sent from previous step
+     */
     public void setUser(UserManager currUser) {
         user = currUser;
     }

@@ -27,6 +27,9 @@ public class SignupController {
     @FXML
     private Button backToLoginBtn;
 
+    /**
+     * when confirm password are clicked
+     */
     @FXML
     protected void onConfirmPasswordTyped() {
         if (userNameText.getLength() != 0 && emailText.getLength() != 0 && passWordText.getLength() != 0 && confirmPasswordText.getLength() != 0) {
@@ -45,14 +48,35 @@ public class SignupController {
             });
         }
     }
+
+    /**
+     * get password input
+     * @return password input
+     */
     private String getPassword() {return passWordText.getText();}
 
+    /**
+     * get username input
+     * @return username input
+     */
     private String getUsername() {return userNameText.getText();}
 
+    /**
+     * get email input
+     * @return email input
+     */
     private String getEmail() {return emailText.getText();}
 
+    /**
+     * check is password are matched
+     * @return true if password are matched
+     */
     private Boolean verifyPassword() {return getPassword().equals(confirmPasswordText.getText());}
 
+    /**
+     * when sign up is clicked
+     * @throws SQLException database access error
+     */
     @FXML
     protected void onSignUpBtnClicked() throws SQLException {
         DBUser jdbcsQlite = new DBUser();
@@ -75,6 +99,9 @@ public class SignupController {
         jdbcsQlite.close();
     }
 
+    /**
+     * when back to login is clicked
+     */
     @FXML
     protected void onBackToLoginBtnClicked() {
         // Close the stage
@@ -82,6 +109,9 @@ public class SignupController {
         stage.close();
     }
 
+    /**
+     * if signup fails
+     */
     @FXML
     protected void signUpFailureHandler() {
         userNameText.clear();
@@ -92,6 +122,9 @@ public class SignupController {
         signupBtn.setDisable(true);
     }
 
+    /**
+     * if signup success
+     */
     @FXML
     protected void signUpSuccessHandler() {
         userNameText.clear();
