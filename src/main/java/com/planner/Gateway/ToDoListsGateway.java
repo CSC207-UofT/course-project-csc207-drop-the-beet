@@ -10,9 +10,17 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * IO for ToDoListsManager
+ */
 
 public class ToDoListsGateway {
 
+    /**
+     * load all toDoList for this user from database
+     * @param username the username of the user
+     * @return this user's toDoList
+     */
     public static ToDoListManager getAllToDoLists(String username) {
         DBTodoList jdbcsQlite = new DBTodoList();
         jdbcsQlite.create();
@@ -32,6 +40,10 @@ public class ToDoListsGateway {
         }
     }
 
+    /**
+     * write all user toDoList into database
+     * @param user this user in UserManager type
+     */
     public static void writeAllToDoList(UserManager user) {
         DBTodoList jdbcsQlite = new DBTodoList();
         jdbcsQlite.create();
@@ -60,14 +72,26 @@ public class ToDoListsGateway {
     /* lots of memory consumptive private data that is not necessary to define the
      * state and should thus not be saved. Hence the small memento object. */
 
+    /**
+     * set the ToDoListManager as a state
+     * @param state ToDoListManager that needed to be set as a state
+     */
     public void setState(ToDoListManager state) {
         this.state = state;
     }
 
+    /**
+     * save the state of ToDoListManager
+     * @return the saved memento of ToDoListManager
+     */
     public Memento save() {
         return new Memento(state);
     }
 
+    /**
+     * restore the memento of ToDoListManager
+     * @param m the memento that is needed to be restored
+     */
     public void restore(Memento m) {
         state = m.getState();
     }

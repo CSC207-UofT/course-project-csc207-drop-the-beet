@@ -1,8 +1,6 @@
 package com.planner.UseCases;
 
-import com.planner.Entities.Schedule;
 import com.planner.Entities.ToDoList;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -20,6 +18,13 @@ public class ToDoListManager{
     public ToDoListManager() {
         this.toDos = new ArrayList<>();
 
+    }
+
+    /**
+     * @return the list of ToDoList
+     */
+    public List<ToDoList> getToDos() {
+        return this.toDos;
     }
 
     /**
