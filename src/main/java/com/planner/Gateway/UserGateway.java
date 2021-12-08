@@ -5,12 +5,15 @@ import com.planner.UseCases.UserManager;
 
 import java.sql.SQLException;
 
+/**
+ * IO for all user information, including this user's schedules, toDoLists, important
+ */
 
 public class UserGateway {
 
     /**
      * load all user information for this user from database, including this user's
-     * schedules, toDolists, important
+     * schedules, toDoLists, important
      * @param username the username of this user
      * @return this user in UserManager type
      */
@@ -36,22 +39,22 @@ public class UserGateway {
 
     /**
      * write all this user's information into database, including this user's
-     * schedules, toDolists, important
+     * schedules, toDoLists, important
      * @param user this user in UserManager type
      */
     public static void writeAllUserInfo(UserManager user) {
-        DBUser jdbcsQlite = new DBUser();
-        jdbcsQlite.create();
+        DBUser dbUser = new DBUser();
+        dbUser.create();
         try {
             SchedulesGateway.writeAllSchedule(user);
             ToDoListsGateway.writeAllToDoList(user);
             ImportantGateway.writeAllImportant(user);
-            jdbcsQlite.changeUserEmailByUserName(user.getName(), user.getEmail());
-            jdbcsQlite.changeUserPasswordByUserName(user.getName(), user.getPassword());
+            dbUser.changeUserEmailByUserName(user.getName(), user.getEmail());
+            dbUser.changeUserPasswordByUserName(user.getName(), user.getPassword());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        jdbcsQlite.close();
+        dbUser.close();
     }
 
 

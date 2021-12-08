@@ -71,7 +71,7 @@ public class SignupController {
             alert.setContentText("Fail to sign up, the password not match.");
             alert.showAndWait();
             signUpFailureHandler();
-        } //Todo 52 69  都是private 写不了
+        }
         jdbcsQlite.close();
     }
 
