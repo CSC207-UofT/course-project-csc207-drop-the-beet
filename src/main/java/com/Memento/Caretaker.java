@@ -1,16 +1,35 @@
 package com.Memento;
 
+import com.planner.UseCases.ToDoListManager;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * caretaker for memento
+ */
 
 public class Caretaker {
     private final List<Memento> mementoList = new ArrayList<>();
 
-    public void add(Memento state){
+    /**
+     * add a memento state
+     *
+     * @param state memento state of ToDoListManager
+     */
+    public void add(Memento state) {
         mementoList.add(state);
     }
 
-    public Memento get(int index){
+    /**
+     * get the memento state at the index
+     *
+     * @param index the index number of the list
+     * @return the memento at the index
+     */
+    public Memento get(int index) {
         return mementoList.get(index);
     }
+
 }

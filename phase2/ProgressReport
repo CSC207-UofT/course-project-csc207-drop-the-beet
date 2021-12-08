@@ -1,0 +1,76 @@
+# Specification
+Running the project starts a web-based service that allows users to interact with a daily planner web-application.
+While running, the web-based application will run a daily planner with a graphic user interface. On the interface,
+users can add, delete, search, or modify their daily plans by clicking on the buttons –  selecting the calender and
+using the checkbox, and input data with a basic widget to interact with the system.
+The web-based application supports multi-users and mysql database search as well as message queues.
+* Login: This feature will prompt a widget which allows users to enter their username and password. The user identity is then authenticated.
+* New_Schedule: Add a new schedule to the to do list of the current user. This will prompt a widget that allows users to input the event, place, flagged or not, and due date, the time remaining is then being calculated and will appear on this event.
+* Delete: This button allows users to delete an event. The event will be marked as deleted and will appear in the trash bin. The time remaining is still being calculated and the users are still able to check this event in the trash bin.
+* Add_List: This feature allows users to add a custom to-do list. This will prompt a widget that allows users to input the name of the to-do list, and the priority of the list. Then a to-do list will be created in the system.
+* ToDoList: This feature allows users to retroact all the reminders. A new page will be prompted and list all the reminders including the past ones.
+* Today: This feature allows users to retroact all the reminders that will be due by today. A new page will be prompted and list all the events that will be due by today in the user's to-do list.
+* Important: This feature allows users to retroact all the reminders that are important. A new page will be prompted and list all the reminders that are flagged.
+
+###Clean architecture
+We separate our classes, in terms of their usage, by entities, use cases,  controllers, gateways and UI, databases, and 
+necessary design pattern classes. And make sure they are only dependent on adjacent layers, from outer to inner, or 
+they are dependent on the same layer. We have fixed the parts where our controller methods always access the database 
+to retrieve information. Now it brings all information from the database of this user into memory once the user has 
+logged in, and loads all information back into the database upon terminating the program. 
+
+###SOLID
+We updated LSP based on the feedback, other parts remain basically the same as what we did in phase 1.
+* Single responsibility principle (SRP)
+
+Each of our classes have a single responsibility just as what we have in phase 1.
+* Open/closed principle (OCP)
+
+We are not able to include other types of tasks.
+We did not make any changes to it as we agreed two types of tasks are sufficient for basic daily planning.
+
+* Liskov substitution principle (LSP)
+
+Our program violated LSP in phase 1, since we declared some variables of type ArrayList. Now we have fixed it by declaring their types as List, so there should be no violation to LSP in our latest version.
+* Interface segregation principle (ISP)
+
+We didn’t change the interface from phase 1. All the interfaces are kept small to avoid any unnecessary implementations of codes and potential corrupting depency.
+* Dependency inversion principle (DIP)
+
+We defined the high level classes before brainstorming the lower classes. 
+
+###Packaging strategy
+We have made minor adjustments to our packaging strategy in phase 2.
+
+The packaging strategy we considered is to separate out classes by feature. We have ui, ui.planner, database, 
+entities, gateway, use cases, and memento package.
+
+The UI package contains glue codes with the GUI and some controllers with the methods for the GUI.
+
+The database package contains all methods for the database.
+
+The planner package contains Entities, UseCases, and Controller packages. The controllers in the Controller package are 
+the backend controllers connecting the different types of classes, this is where every operation is processed. Data is 
+taken and processed and sent to the planner package; and the planner package takes a series of operations, feeds the 
+information to the UI and displays the human-readable information to our users through the UI.
+
+The gateway package contains the loading and writing of date for user, schedules, todolist, and import export to and 
+from the database.
+
+Last but not least, we have a memento package. This is a design pattern our group implemented and will be explained in 
+the “Summary of design patterns”.
+
+We use package by feature instead of the traditional packaging style (Clean Architecture, Entities, Use Cases etc.). 
+The main reason is that we have many applications of different coding. For example database, GUI, backend. 
+Using feature packaging we would avoid clusters of code in one package which would result in difficult class search and 
+organization. As well as to maximize Open/Closed Principle,   making future extensions easier.
+
+###Summary of design patterns our group has implemented (or plans to implement)
+We have implemented the observer design pattern for notifications. It would be logical to view the user as the 
+observer potentially requesting to check their schedule and todo list status. As well as having an updater to inform 
+the observer for any changes to the schedule and todo list the user has added.
+We also have implemented memento design so that the user can undo completion or deletion for to-do lists. 
+
+###Additional comments
+* We have been tried to have the time picker in the GUI, but the time picker does not show up in our JFoenix. This issue has not been solved yet.
+* We use simulation test to test our UI

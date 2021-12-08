@@ -6,9 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
+/**
+ * add new window
+ */
 public class AddIncomingApplication extends Application {
     Stage stage = new Stage();
     private UserManager user;//done
@@ -24,6 +26,10 @@ public class AddIncomingApplication extends Application {
         stage.showAndWait();
     }
 
+    /**
+     * set user
+     * @param user from previous step
+     */
     public void setUser(UserManager user) {
         this.user = user;
     }//done

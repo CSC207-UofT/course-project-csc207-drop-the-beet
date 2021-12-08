@@ -3,23 +3,30 @@ package com.planner.Entities;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ToDoListTest {
+    ToDoList toDoList;
 
     @BeforeEach
     void setUp() {
+        toDoList = new ToDoList("homework", LocalDate.parse("2021-12-10"));
     }
 
     @Test
-    void getTask() {
+    void TestGetTask() {
+        assertEquals("homework", toDoList.getTask());
     }
 
     @Test
-    void getDeadline() {
+    void TestGetDeadline() {
+        assertEquals(LocalDate.parse("2021-12-10"), toDoList.getDeadline());
     }
 
     @Test
-    void testToString() {
+    void TestToString() {
+        assertEquals("homework", toDoList.toString());
     }
 }

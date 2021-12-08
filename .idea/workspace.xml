@@ -4,9 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="2 DBtest">
-      <change afterPath="$PROJECT_DIR$/src/Test/com/ui/planner/AddImportantControllerTest.java" afterDir="false" />
+    <list default="true" id="d040460b-4126-4d22-bddf-20badd1b85e9" name="Changes" comment="test folder changed">
+      <change afterPath="$PROJECT_DIR$/phase2/ProgressReport" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/com/planner/Gateway/ImportantGatewayTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test/com/planner/Gateway/SchedulesGatewayTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/com/planner/Entities/ToDoListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/com/planner/Entities/ToDoListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Memento/Caretaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Memento/Caretaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Memento/Memento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Memento/Memento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/UserGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/planner/Gateway/UserGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantEventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantEventModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ImportantViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/ScheduleEventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ScheduleEventModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/SettingsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/SettingsViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/SignupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ui/planner/ToDoEventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ui/planner/ToDoEventModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/test.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,13 +46,13 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/AddImportantView.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/IncomingViewController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/AddInComingController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/AddTodoListController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/SettingsViewController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/AddImportantView.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/ui/planner/AddTodoListController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/database/JDBCSQlite.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/planner/UseCases/ScheduleManager.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20fit97KyV7vIepMHrBp1eiRiQZ" />
   <component name="ProjectLevelVcsManager">
@@ -99,26 +112,47 @@
       <recent name="com.planner.UseCases" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserManagerTest">
-    <configuration name="Driver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.Driver" />
+  <component name="RunManager" selected="JUnit.ToDoListsGatewayTest">
+    <configuration name="ImportantGatewayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="planner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.planner.Gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.planner.Gateway" />
+      <option name="MAIN_CLASS_NAME" value="com.planner.Gateway.ImportantGatewayTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddImportantControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SchedulesGatewayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="planner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ui.planner.*" />
+          <option name="PATTERN" value="com.planner.Gateway.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.ui.planner" />
-      <option name="MAIN_CLASS_NAME" value="com.ui.planner.AddImportantControllerTest" />
+      <option name="PACKAGE_NAME" value="com.planner.Gateway" />
+      <option name="MAIN_CLASS_NAME" value="com.planner.Gateway.SchedulesGatewayTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ToDoListsGatewayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="planner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.planner.Gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.planner.Gateway" />
+      <option name="MAIN_CLASS_NAME" value="com.planner.Gateway.ToDoListsGatewayTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -164,19 +198,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Driver" />
-      <item itemvalue="JUnit.AddImportantControllerTest" />
-      <item itemvalue="JUnit.AddImportantControllerTest.onConfirmBtnClicked" />
-      <item itemvalue="JUnit.All in planner" />
       <item itemvalue="JUnit.UserManagerTest" />
+      <item itemvalue="JUnit.UserManagerTest.getImportant" />
+      <item itemvalue="JUnit.ImportantGatewayTest" />
+      <item itemvalue="JUnit.SchedulesGatewayTest" />
+      <item itemvalue="JUnit.ToDoListsGatewayTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ToDoListsGatewayTest" />
+        <item itemvalue="JUnit.SchedulesGatewayTest" />
+        <item itemvalue="JUnit.ImportantGatewayTest" />
+        <item itemvalue="JUnit.UserManagerTest.getImportant" />
         <item itemvalue="JUnit.UserManagerTest" />
-        <item itemvalue="JUnit.All in planner" />
-        <item itemvalue="Application.Driver" />
-        <item itemvalue="JUnit.AddImportantControllerTest.onConfirmBtnClicked" />
-        <item itemvalue="JUnit.AddImportantControllerTest" />
       </list>
     </recent_temporary>
   </component>

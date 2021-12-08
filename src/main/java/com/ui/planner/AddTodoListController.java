@@ -23,7 +23,9 @@ public class AddTodoListController {
     private UserManager userManager; //done
 
 
-
+    /**
+     * receive the inputs and add new todolist
+     */
     @FXML
     public void onConfirmBtnClicked() {
         if (whenDatePicker.getValue() != null && eventTextField.getText().length() != 0) {
@@ -48,6 +50,9 @@ public class AddTodoListController {
         }
     }
 
+    /**
+     * when cancel button is clicked
+     */
     @FXML
     protected void onCancelBtnClicked() {
         Stage stage = (Stage)cancelBtn.getScene().getWindow();
@@ -64,6 +69,10 @@ public class AddTodoListController {
         confirmBtn.setCursor(Cursor.HAND);
     }
 
+    /**
+     * set up user
+     * @param user from previous step
+     */
     public void setUser(UserManager user) {
         this.userManager = user;
     }
