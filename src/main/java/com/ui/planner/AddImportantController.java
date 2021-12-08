@@ -10,6 +10,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.time.LocalDate;
 
+/**
+ * receiving info of new important
+ */
 public class AddImportantController {
     @FXML
     private DatePicker startDatePicker;
@@ -24,6 +27,9 @@ public class AddImportantController {
 
     private UserManager user; //done
 
+    /**
+     * receive the inputs and add new important
+     */
     @FXML
     protected void onConfirmBtnClicked() {
         if (startDatePicker.getValue() != null && endingDatePicker.getValue() != null && eventTextField.getText().length() != 0) {
@@ -48,6 +54,9 @@ public class AddImportantController {
         }
     }
 
+    /**
+     * when cancel button is clicked
+     */
     @FXML
     protected void onCancelBtnClicked() {
         Stage stage = (Stage)cancelBtn.getScene().getWindow();
@@ -64,6 +73,10 @@ public class AddImportantController {
         confirmBtn.setCursor(Cursor.HAND);
     }
 
+    /**
+     * set user
+     * @param user from previous step
+     */
     public void setUser(UserManager user) {
         this.user = user;
     }

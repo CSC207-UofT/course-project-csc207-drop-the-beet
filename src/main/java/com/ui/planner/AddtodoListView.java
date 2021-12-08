@@ -9,7 +9,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
+/**
+ * todolist view page
+ */
 public class AddtodoListView extends Application {
     Stage stage = new Stage();
 

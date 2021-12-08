@@ -1,6 +1,8 @@
 package com.planner.UseCases;
 
 import com.planner.Entities.Schedule;
+import com.planner.Entities.ToDoList;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -31,9 +33,9 @@ public class ScheduleManager {
         if (schedulesLists.size() != 0) {
             for (List<String> l : schedulesLists) {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                String task = l.get(3);
-                LocalDate start = LocalDate.parse(l.get(4), formatter);
-                LocalDate end = LocalDate.parse(l.get(5), formatter);
+                String task = l.get(2);
+                LocalDate start = LocalDate.parse(l.get(3), formatter);
+                LocalDate end = LocalDate.parse(l.get(4), formatter);
                 Schedule schedule = new Schedule(start, end, task);
                 schedules.add(schedule);
             }
@@ -90,5 +92,30 @@ public class ScheduleManager {
 //    public void modifyStart(HashMap<String, Schedule> schedules, String scheduleID, String T) {
 //        schedules.get(scheduleID).start = newStart;
 //    }
+
+    public static void main(String[] args) {
+        ScheduleManager sm = new ScheduleManager();
+
+        List<List<String>> bigList = new ArrayList<>();
+        List<String> smallList1 = new ArrayList<>();
+        List<String> smallList2 = new ArrayList<>();
+        smallList1.add("todoID1");
+        smallList1.add("userID1");
+        smallList1.add("Sleep");
+        smallList1.add("2020-01-01");
+        smallList1.add("2021-01-01");
+
+        smallList2.add("todoID1");
+        smallList2.add("userID1");
+        smallList2.add("Eat");
+        smallList2.add("2020-01-01");
+        smallList2.add("2021-01-01");
+
+        bigList.add(smallList1);
+        bigList.add(smallList2);
+        sm.setSchedules(bigList);
+        System.out.println(sm.getSize());
+        System.out.println(sm.getScheduleLists());
+    }
 
 }

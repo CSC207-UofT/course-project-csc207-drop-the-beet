@@ -9,10 +9,17 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * important view page
+ */
 public class AddImportantView extends Application {
     Stage stage = new Stage();
     private UserManager user; //done
 
+    /**
+     * set user
+     * @param user from previous step
+     */
     public void setUser(UserManager user) {
         this.user = user;
     } //done
