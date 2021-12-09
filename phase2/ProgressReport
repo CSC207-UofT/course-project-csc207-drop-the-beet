@@ -63,7 +63,7 @@ the “Summary of design patterns”.
 We use package by feature instead of the traditional packaging style (Clean Architecture, Entities, Use Cases etc.). 
 The main reason is that we have many applications of different coding. For example database, GUI, backend. 
 Using feature packaging we would avoid clusters of code in one package which would result in difficult class search and 
-organization. As well as to maximize Open/Closed Principle,   making future extensions easier.
+organization. As well as to maximize Open/Closed Principle, making future extensions easier.
 
 ###Summary of design patterns our group has implemented (or plans to implement)
 We have implemented the observer design pattern for notifications. It would be logical to view the user as the 
@@ -74,3 +74,4 @@ We also have implemented memento design so that the user can undo completion or 
 ###Additional comments
 * We have been tried to have the time picker in the GUI, but the time picker does not show up in our JFoenix. This issue has not been solved yet.
 * We use simulation test to test our UI
+* intelliJ does not recognize the sqlite language, but the Language & Frameworks are correctly selected. This issue has not been solved yet.
