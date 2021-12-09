@@ -30,15 +30,13 @@ public class ScheduleManager {
      */
     public void setSchedules(List<List<String>> schedulesLists) {
         List<Schedule> schedules = new ArrayList<>();
-        if (schedulesLists.size() != 0) {
-            for (List<String> l : schedulesLists) {
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                String task = l.get(2);
-                LocalDate start = LocalDate.parse(l.get(3), formatter);
-                LocalDate end = LocalDate.parse(l.get(4), formatter);
-                Schedule schedule = new Schedule(start, end, task);
-                schedules.add(schedule);
-            }
+        for (List<String> l : schedulesLists) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            String task = l.get(3);
+            LocalDate start = LocalDate.parse(l.get(4), formatter);
+            LocalDate end = LocalDate.parse(l.get(5), formatter);
+            Schedule schedule = new Schedule(start, end, task);
+            schedules.add(schedule);
         }
         this.schedules = schedules;
     }

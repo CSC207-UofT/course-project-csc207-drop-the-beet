@@ -10,19 +10,8 @@ public class DBTodoList {
     Connection dbConnection;
     Statement stmt;
 
-    String createNewUserSql = "INSERT INTO ACCOUNT VALUES ";
-
-    String getMaxIDSql = "SELECT MAX(ACCOUNT.ID) FROM ACCOUNT";
-
-    String getUserPasswordSql = "SELECT PASSWORD FROM ACCOUNT WHERE ACCOUNT.USERNAME = ";
-
-//    String getUserPasswordByIDSql = "SELECT PASSWORD FROM ACCOUNT WHERE ACCOUNT.ID = ";
-
     String getUserNameSql = "SELECT USERNAME FROM ACCOUNT WHERE ACCOUNT.USERNAME = ";
 
-//    String getUserIDSql = "SELECT ID FROM ACCOUNT WHERE ACCOUNT.ID = ";
-
-    String getUserEmailSql = "SELECT EMAIL FROM ACCOUNT WHERE ACCOUNT.USERNAME = ";
 
     public void create() {
 
@@ -72,12 +61,11 @@ public class DBTodoList {
 
     /**
      * Create a UserToDoList with the tasks by the user's username with the deadline.
-     *
-     * @param userName the user's username
+     *  @param userName the user's username
      * @param task the user's task set to complete
      * @param end the deadline of the plan for some task(s)
      */
-    public boolean createUserToDoListTaskByUserName(String userName, String task, LocalDate end) throws SQLException {
+    public void createUserToDoListTaskByUserName(String userName, String task, LocalDate end) throws SQLException {
         ResultSet rs = stmt.executeQuery("SELECT MAX(TODOLIST.ID) FROM TODOLIST");
         int nextID = 1;
         if (rs.next()) {
@@ -86,9 +74,7 @@ public class DBTodoList {
         int userID = getUserIDByUserName(userName);
         if (userID != -1) {
             stmt.executeUpdate("INSERT INTO TODOLIST VALUES (" + nextID + "," + "'" + userID + "'" + "," + "'" + userName + "'" + "," + "'" + task + "'" + "," + "'" + end.toString() + "'" + ")");
-            return true;
         }
-        return false;
     }
 
     /**
@@ -109,14 +95,12 @@ public class DBTodoList {
      *
      * @param TaskID the ID of the task to complete
      */
-    public boolean deleteUserToDoListByTaskID(int TaskID) throws SQLException {
+    public void deleteUserToDoListByTaskID(int TaskID) throws SQLException {
 
         ResultSet rs = stmt.executeQuery("SELECT * FROM TODOLIST WHERE ID = " + TaskID);
         if (rs.next()) {
             stmt.executeUpdate("DELETE FROM TODOLIST WHERE ID = " + TaskID);
-            return true;
         }
-        return false;
     }
 
 
@@ -165,7 +149,7 @@ public class DBTodoList {
     }
 
     /**
-     * To obtain every event of an user.
+     * To obtain every event of a user.
      */
     @Nullable
     private List<List<String>> fetchAllEventsToArrayList(List<List<String>> res, ResultSet rs) throws SQLException {
